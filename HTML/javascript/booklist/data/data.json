@@ -1,0 +1,69 @@
+{
+    "books":[
+        {
+            "writer" : "닐 게이먼, 테리 프래쳇",
+            "title" : "멋진 징조들",
+            "bookDate" : "2019년"
+        },
+        {
+            "writer" : "이경희",
+            "title" : "모래도시 속 인형들",
+            "bookDate" : "2022년"
+        },
+        {
+            "writer" : "멜 로빈스",
+            "title" : "굿모닝 해빗",
+            "bookDate" : "2019년"
+        },
+        {
+            "writer" : "김수진",
+            "title" : "그런 나날들",
+            "bookDate" : "2020년"
+        },
+        {
+            "writer" : "하림",
+            "title" : "사랑이 또 다른 사랑으로 잊혀지네",
+            "bookDate" : "2021년"
+        },
+        {
+            "writer" : "박준",
+            "title" : "우리가 함께 장마를 볼 수도 있겠습니다.",
+            "bookDate" : "2019년"
+        },
+        {
+            "writer" : "하연",
+            "title" : "나는 오늘 죽겠지",
+            "bookDate" : "2022년"
+        },
+        {
+            "writer" : "청명",
+            "title" : "내게 남은 게 오직 그것뿐이라면",
+            "bookDate" : "2021년"
+        },
+        {
+            "writer" : "백순",
+            "title" : "나는 괜찮아. 네가 문제지",
+            "bookDate" : "2019년"
+        },
+        {
+            "writer" : "유상아",
+            "title" : "출퇴근 30분, 스페인어를 보도록 하자.",
+            "bookDate" : "2022년"
+        },
+        {
+            "writer" : "리러하",
+            "title" : "악마의 계약서는 만기되지 않는다.",
+            "bookDate" : "2020년"
+        },
+        {
+            "writer" : "비가",
+            "title" : "화산귀환",
+            "bookDate" : "2020년"
+        },
+        {
+            "writer" : "싱숑",
+            "title" : "전지적 독자 시점",
+            "bookDate" : "2021년"
+        }
+    ]
+}
