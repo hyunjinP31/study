@@ -1,0 +1,90 @@
+﻿의사 요소
+
+::before(:before)
+- 선택한 요소의 첫 자식으로 요소를 하나 생성합니다.
+-기본값은 인라인 입니다.
+-content  속성과 함께 사용하며 장식용 콘텐츠를 추가할 때 사용합니다.
+div::before {
+	content: "그린";
+}
+<div>before 컴퓨터 after</div>
+
+::after(:after)
+
+text-align
+left/ right/ center
+margin: 0 auto
+
+display : block/ inline/ inline-block/ none
+
+div, ul, ol, li, h1.... => bolck : 너비와 높이지정가능, 아래쪽으로 배치됨
+a, span, select.... => inline : 너비와 높이 지정안됨, 옆으로 배치됨
+inline-block : 너비와 높이 지정가능, 옆으로 배치됨
+*요소사이 공간이 생김
+
+block요소의 중앙정렬 - 해당요소 스타일 추가 margin: 0 auto;
+inline요소의 중앙정렬 - 해당요소의 부모요소에게 스타일 추가 text-align: center;
+
+
+
+:hover 요소를 마우스에 올렸을 때 스타일을 지정
+1)선택한 요소
+2)선택한 요소의 하위요소
+
+
+position 속성 : html문서 상에서 요소가 배치되는 방식을 결정
+static : html문서상에서 원래 있어야 하는 위치에 배치하는 방식 (default값)
+relative : 원래위치를 기준으로 상대적으로 배치하는 방식
+absolute : 원래위치 기준이 아닌 브라우저를 기준으로 배치하는 방식
+fixed : 스크롤시 고정된 위치에 배치하는 방식
+stycky : 
+
+top : 위쪽에서 요소의 위치를 지정
+left : 왼쪽에서 요소의 위치를 지정
+right : 오른쪽에서 요소의 위치를 지정
+bottom : 아래쪽에서 요소의 위치를 지정
+
+z-index 
+
+
+
+
+
+
+
+transition
+transition-property 트렌지션을 적용해야 하는 css속성명을 지정
+transirion-duration 트렌지션이 일어나는 지속시간을 지정
+transition-timing-function 트렌지션이 일어나는 시간함수를 지정
+
+transform: translate(x, y)
+transform: scale(x, y)
+transform: rotate(45deg)
+transform: skewX(45deg)
+
+
+
+position을 이용해 요소의 중앙에 배치하기
+1) top: 50% / left:50% / transform:translate(-50%, -50%)
+2) top: 50% / left: 50%
+margin-left: -50px
+margin-top:-100px
+3) calc()함수를 사용 explore 사용 안 됨
+calc(50% - 100px) 뒤에 빼는 놈이 중앙에 올 놈 너비or높이 반절
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

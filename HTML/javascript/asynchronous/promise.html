@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.프로미스 프로듀서
+        const promise = new Promise((resolve, reject)=>{
+            console.log('수행중...');
+            setTimeout(()=>{
+                resolve('결과');
+            },2000)
+        });
+        console.log(promise)
+        //2. 프로미스 컨슈머 then, carch, finally
+        // promise.then(
+        //     a=>console.log(a), //결과를 다룹니다. 
+        //     e=>console.log(e) //에러를 다룹니다.
+        // ) 
+
+        //성공한 결과는 than이 처리 실패하면 catch가 처리 실패하든 하지 않든 처리가 다 되면 finally 실행
+        promise.then(value=>console.log(value))
+        .catch(error=>console.log(error))
+        .finally(()=>console.log('끝났어요')) //잘 쓰지 않음
+    </script>
+</body>
+</html>

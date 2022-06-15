@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        body > div {
+            width: 1200px;
+            height: 900px;
+            background: tomato;
+        }
+        .score {
+            width: 100%;
+            height: 60%;
+            background: coral;
+            border: 3px double #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .score > div {
+            width: 200px;
+            height: 170px;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .score > div:nth-child(1){
+            margin-right: 150px;
+        }
+        .shoot {
+            width: 100%;
+            height: 30%;
+            border: 3px double #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            margin-top: 60px;
+        }
+        .shoot div:nth-child(1) {
+            padding-right: 150px;
+        }
+        .box {
+            margin-top: 30px;
+            width: 70%;
+            height: 50px;
+            background: #222;
+            line-height: 50px;
+        }
+        .count {
+            padding: 20px 0;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background: #222;
+            line-height: 50px;
+        }
+        p {
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="count">
+            남은 슛 횟수
+            <span>0</span>
+        </div>
+        <div class="score">
+            <div>
+                <div>컴퓨터</div>
+                <div class="box">0</div>
+            </div>
+            <div>
+                <div>사람</div>
+                <div class="box">0</div>
+            </div>
+            <p></p>
+        </div>
+        <div class="shoot">
+            <div>
+                컴퓨터<br>
+                <button>슛하기</button>
+            </div>
+            <div>
+                사람<br>
+                <button>2점슛</button>
+                <button>3점슛</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let com_btn = document.querySelector('.shoot div:nth-child(1) button');
+        let my_btn = document.querySelectorAll('.shoot div:nth-child(2) button');
+        let com_score = document.querySelector('.score div:nth-child(1) .box').innerHTML;
+        let my_score = document.querySelector('.score div:nth-child(2) .box').innerHTML;
+        let com_turn = true;
+        my_btn[0].disabled = true;
+        my_btn[1].disabled = true;
+        //버튼 활성/비활성화
+        function com_btnOff(){
+            com_btn.addEventListener('click', function(){
+            com_btn.disabled = true;
+            my_btn[0].disabled = false;
+            my_btn[1].disabled =  false;
+            })
+        }
+        function my_btnOff() {
+            for (let i = 0; i<2; i++){
+                my_btn[i].addEventListener('click', function(){
+                com_btn.disabled = false;
+                my_btn[0].disabled = true;
+                my_btn[1].disabled = true;
+                })
+            }
+        }
+        //턴마다 버튼 활성 비활성 바꾸기
+        if (com_turn == true){
+            com_btnOff();
+        }else {
+            my_btnOff();
+        }
+        com_turn = true;
+        // 2점슛 확률
+        function point2(who, name) {
+            if (Math.floor(Math.random()*2) == 0){
+                who = +2;
+                document.querySelector('p').innerHTML = `${name}(이)가 2점슛에 성공했습니다.`;
+            }else {
+                document.querySelector('p').innerHTML = `${name}(이)가 2점슛에 실패했습니다.`;
+            }
+        }
+        //3점슛 확률
+        function point3(who,name) {
+            if (Math.floor(Math.random() * 3) == 0){
+                who = +3;
+                document.querySelector('p').innerHTML = `${name}(이)가 3점슛에 성공했습니다.`;
+            }else {
+                document.querySelector('p').innerHTML = `${name}(이)가 3점슛에 실패했습니다.`;
+            }
+        }
+
+
+        //작동
+        if(com_turn == true){
+            if (Math.floor(Math.random())*2 == 0){
+                point2(com_score, '컴퓨터');
+            }else {
+            point3(com_score, '컴퓨터');
+            }
+        }else{
+            point2(my_score, '당신')
+            
+        }
+    </script>
+</body>
+</html>

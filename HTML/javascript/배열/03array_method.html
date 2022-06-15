@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열메서드
+        //01 splice 배열에서 선택한 요소를 제거, 새로운 요소를 추가
+        //arr.splice(start,num,ele...) 시작위치에서 몇번째까지 지울거냐
+        //제거하지 않고 원하는 위치에 원하는 값을 추가만 하고 싶다면 두번째 자릿값을 0으로.
+        let arr = ['green','blue','red','yellow','pink']
+        //delete는 요소 값은 삭제되어도 그 자리는 삭제되지 않고 빈 요소로 남아있음
+        arr.splice(1,0,'tomato'); //1번 인덱스에서부터 한 개만 제거 후 그자리에 tomato 추가
+        console.log(arr);
+
+        //02 slice 배열에서 시작 인덱스부터 마지막 인덱스(마지막 인덱스는 제외)까지 반환
+        //[1,2,3,4,5] 라는 배열이 있고 slice를 (1,2)까지 했다면 '2' 값만 반환함
+        //구문 aarr.slice(start, end)
+        let arr2 = [1,2,3,4,5,6,7]
+        let result = arr2.slice(1,4);
+        console.log(result);
+        console.log(arr2);
+
+        //03 indexOf 배열에서 item가 있는지 탐색.
+        //구문 arr.indexOf(item)
+        //item이 인덱스 중에 있으면 해당 인덱스 넘버를 반환. 만약 해당 값이 2개 이상이라면 첫 번째 item의 넘버를 반환.
+        //item이 인덱스 중에 없으면 -1을 반환함.
+        let result2 = arr2.indexOf(11);
+        console.log(result2);
+
+        //04 includes 배열에서 item이 있는지 탐색 후 있으면 true
+        //없으면 false를 반환함
+        //구문 arr.includes(item)
+        let result3 = arr2.includes(2);
+        console.log(result3)
+
+        //05 join 배열 요소를 모두 합친 후 하나의 문자열을 만들어
+        //join() 안에 item을 넣으면 각 요소 사이에 그 item이 들어가고, ''으로 빈문자를 넣으면 중간에 아무것도 들어가지 않게 된다.
+        let result4 = arr2.join(';');
+        console.log(result4);
+
+        //06 concat 배열을 합쳐서 새로운 배열을 반환
+        let arr3 = ['🍰','🎂','🍪','🍩','🧁'];
+        let arr4 = arr3.concat(['🥮','🍮','🍫']);
+        console.log(arr4)
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #999;
+        }
+        div {
+            width: 500px;
+            height: 500px;
+            background: #fff;
+            text-align: center;
+        }
+        h3 {
+            padding: 50px 0 30px;
+            border-bottom: 3px double #ccc;
+        }
+        p:nth-child(2) {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>화면</h3>
+        <p>A음료수 : 500원</p>
+        <p>B음료수 : 700원</p>
+        <p>C음료수 : 1000원</p>
+        <div id="btns">
+            <button class="btn100">100</button>
+            <button class="btn500">500</button>
+            <button class="btn1000">1000</button>
+        </div>
+    </div>
+
+    <script>
+        let money = 0;
+        let add100 = document.querySelector('.btn100');
+        let add500 = document.querySelector('.btn500');
+        let add1000 = document.querySelector('.btn1000');
+        let btns = document.querySelector('#btns')
+        console.log(money);
+
+        function add(){
+            if(add100.addEventListener('click', function(){
+                money = +100;
+            })){
+                money = +100;
+            }else if (add500 == true) {
+            money = +500;
+            }else if (add1000 == true) {
+            money = +1000;
+            }
+        }
+        if (money > 500) {
+            alert('돈이 부족합니다.')
+        }else if(money >= 500) {
+            alert('A음료수 하나를 살 수 있습니다.')
+        }else if(money >= 700) {
+            alert('A음료수, B음료수 중 하나를 살 수 있습니다.')
+        }else if(money >= 1000) {
+            alert('A음료수, B음료수, C음료수 중 하나를 살 수 있습니다.')
+        }
+    </script>
+</body>
+</html>

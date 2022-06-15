@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //동물 클래스
+        class Animal {
+            constructor(name){
+                this.speed = 0;
+                this.name = name;
+            }
+            run(speed) {
+                this.speed = speed;
+                console.log(`${this.name}은 속도 ${this.speed}로 달립니다.`);
+            }
+            stop() {
+                this.speed = 0;
+                console.log(`${this.name}이 멈췄습니다.`);
+            }
+        }
+        //토끼는 동물이므로 동물관련 메소드가 담긴 Animal을 상속받아서 만들기
+        class Rabbit extends Animal {
+            //생성자 오버라이딩
+            constructor(name, earLength){
+                super(name);
+                this.earLength = earLength;
+            }
+            hide(){
+                console.log(`${this.name}이 숨었습니다.`)
+            }
+            //오버라이딩: 상속받은 부모요소의 메서드와 같은 이름으로 재정의
+            stop() {
+                super.stop(); //super를 이용하여 부모요소의 메소드도 실행
+                this.hide();
+            }
+        }
+        let animal = new Animal('동물');
+        animal.run(10);
+        animal.stop();
+        let rabbit = new Rabbit('흰토끼');
+        console.log(rabbit.name);
+        console.log(rabbit.earLength);
+        rabbit.run(5);
+        rabbit.stop();
+        console.log(rabbit);
+    </script>
+</body>
+</html>

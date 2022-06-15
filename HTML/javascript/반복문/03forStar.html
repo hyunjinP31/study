@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //이게 뭐지...?
+        let inner= "";
+        for(let i=0; i<5; i++){
+            inner = inner + '<p>';
+                for (let j=0; j<5 - i; j++){
+                    inner = inner + '*';
+                }
+            inner = inner + '</p>';
+        }
+        document.querySelector('div').innerHTML = inner;
+
+        //i가 1일 때는 5,4,3,2 까지 반복
+        //i가 2일 때 5,4,3 까지 반복 ...
+
+        
+
+        // let inner= "";
+        // for(let i=0; i<5; i++){
+        //     inner = inner + '<p>';
+        //         for (let j=5; j>i; j--){
+        //             inner = inner + '*';
+        //         }
+        //     inner = inner + '</p>';
+        // }
+        // document.querySelector('div').innerHTML = inner;
+    </script>
+</body>
+</html>

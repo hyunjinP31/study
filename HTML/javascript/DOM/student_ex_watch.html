@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img {vertical-align: top;}
+        .logo {
+            width: 200px;
+            position: fixed;
+            top: 80px;
+            left: 60px;
+            z-index: 10;
+        }
+        .logo img { width: 100%;}
+        .bg {
+            width: 100%;
+            height: 100vh;
+            background: left top/cover no-repeat fixed;
+            position: relative;
+        }
+        .bg:nth-child(2){
+            background-image: url('../img/bg1.jpg');
+        }
+        .bg:nth-child(3){
+            background-image: url('../img/bg2.jpg');
+        }
+        .bg:nth-child(4){
+            background-image: url('../img/bg3.jpg');
+        }
+        .bg:nth-child(5){
+            background-image: url('../img/bg4.jpg');
+        }
+        span {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 350px;
+            font-size: 48px;
+            font-weight: bold;
+            color: crimson;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        span.on {
+            opacity: 1;
+        }
+        .four_season {
+            position: fixed;
+            width: 300px;
+            color: #333;
+            font-size: 14px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            text-align: right;
+        }
+        .four_season li {
+            border-top: 1px solid #333;
+            height: 50px;
+            line-height: 50px;
+            transition: 0.5s;
+        }
+        .four_season li.on {
+            border-top: 3px solid crimson;
+            color: crimson;
+            font-size: 24px;
+        }
+        .move1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .move2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .move2{
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="../img/logo.png" alt="logo">
+    </div>
+    <div class="bg">
+        <span>Full Blossom</span>
+        <div class="move1"><img src="../img/obj11.png" alt="꽃잎1"></div>
+        <div class="move2"><img src="../img/obj12.png" alt=""></div>
+    </div>
+    <div class="bg">
+        <span>Be colorful</span>
+        <div class="move1"><img src="../img/obj21.png" alt=""></div>
+        <div class="move2"><img src="../img/obj22.png" alt=""></div>
+    </div>
+    <div class="bg">
+        <span>Time on Board</span>
+    </div>
+    <div class="bg">
+        <span>Shiny Addict</span>
+    </div>
+    <ul class="four_season">
+        <li>Full Blossom</li>
+        <li>Be colorful</li>
+        <li>Time on Board</li>
+        <li>Shiny Addict</li>
+    </ul>
+
+    <script>
+        let wh = window.innerHeight;
+        let lis = document.querySelectorAll('li');
+        let spans = document.querySelectorAll('span');
+
+        //li클릭 시 해당 스크롤 위치로 이동
+        lis.forEach((li,index)=>{
+            li.addEventListener('click', function(){
+                window.scrollTo({top:index*wh, behavior: 'smooth'})
+            })
+        })
+        //첫 번째 화면은 항상 on으로 해놓기
+        lis[0].classList.add('on');
+        spans[0].classList.add('on')
+        //스크롤 시 이벤트 발생
+        document.addEventListener('scroll', function(){
+            let sct = document.documentElement.scrollTop //HTML DOM의 현재 스크롤 위치
+            for (let i = 0; i < lis.length ; i++){
+                if (sct >= wh*i && sct < wh*(i+1)) { //스크롤이 일정 높이 이상 이동될 때 마다
+                    spans.forEach(span=>span.classList.remove('on'))
+                    lis.forEach(li=>li.classList.remove('on'))//일단 모든 li한테서 on을 제거하고
+                    spans[i].classList.add('on');
+                    lis[i].classList.add('on');//요 조건에 맞는 애한테만 on을 붙여줘라
+                }
+            }
+        })
+        let object = document.querySelectorAll('.move1');
+        let movingDiv = document.querySelectorAll('.bg');
+
+        movingDiv[0].addEventListener('mousemove',function(e){
+        object[0].style.right = `${e.pageX/50}px`;
+        object[1].style.right = `${-e.pageX/50}px`;
+        })
+       
+    </script>
+</body>
+</html>

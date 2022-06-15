@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체는 연관된 속성과 메소드를 묶어서 관리
+        //객체 리터럴
+        let person1 = {
+            name: '민영',
+            age: 32,
+            address: '삼산동',
+            // speak: function(){}
+            speak() { //위에 걸 축약한 것
+                console.log('금요일이에요!!!')
+            }
+        }
+        console.log(person1.name);
+        console.log(person1['age']);
+        person1.speak();
+
+        //생성자 함수
+
+        function Person(name,age, address) {
+            // this = {}
+            this.name = name,
+            this.age = age,
+            this.address = address,
+            this.speak = function(){
+                console.log('곧 있으면 점심');
+            }
+            // return this;
+        }
+        let person2 = new Person('green', 20, '일산동');
+        let person3 = new Person('blue', 22, '일산동');
+        console.log(person1);
+        console.log(person2);
+
+        let person4 = {}; //생성자 함수가 하는 일과 똑같은 거
+        person4.name = 'abc';
+        person4.age = 20;
+        person4.address = '달동'
+        person4.speak = function(){
+            console.log('졸려');
+        }
+        console.log(person4)
+
+        //클래스를 선언
+        class User {
+            //생성자 함수
+            constructor(name, age, address){
+                //fields
+                this.name = name;
+                this.age = age;
+                this.address = address;
+            }
+            //method 메소드
+            speak(){
+                console.log('쉬는 시간까지 3분!');
+            }
+        }
+        let user1 = new User('Me',20, 'whatever')
+        console.log(user1)
+        user1.speak();
+    </script>
+</body>
+</html>

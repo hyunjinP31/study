@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'green';
+        console.log(str.length);//총 글자수가 나옴
+        console.log(str[0]);//글자 하나하나에 인덱스를 매겨서 해당 위치 글자를 출력
+        for(let i = 0; i<str.length; i++){ //배열 하나하나 찍는 것 처럼 글자 하나하나 찍힘
+            console.log(str[i]);
+        }
+        //💜외워라💜
+        // 💜indexOf()💜 문자열.indexOf(찾을 값) 없는 값을 넣으면 -1을 반환하고, 있으면 해당 값이 있는 인덱스 넘버를 반환하는데 같은 값이 여러개일 경우 가장 첫번째 있는 값의 인덱스 넘버를 반환함
+        console.log(str.indexOf('a'));
+
+        //💜includes()💜 문자열.includes(찾을 값) 있으면 true, 없으면 false반환
+        console.log(str.includes('n'));
+
+        //문자열 추출
+        //slice() substring() substr() --> 새로운 문자열을 반환
+        //문자열.slice(start, end) start는 가져올 첫 값의 인덱스 넘버이고 end는 마지막으로 가져올 인덱스 넘버의 +1 이다.
+        //let strrr = '슬라이스 너무 어려운데'
+        // strrr.slice(1, 11); --> '라이스 너무 어려운'
+        //let str2 = "안녕하세요"
+        //str2.slice(0,2) --> "안녕"
+        let str2 = "안녕하세요"
+        console.log(str2.slice(0,2)); // end를 안 적어주면 마지막까지 전부 반환함
+        console.log(str2.substring(0,2)); //위에랑 같은 값
+        console.log(str2.substr(0,2)); //(시작 인덱스 넘버, 시작 인덱스 넘버부터 몇개를 가져올 건지)
+
+        //문자열을 배열로 반환
+        //💜split(구분자)💜
+        //구분자가 없으면 문자열 통으로 배열 값 하나가 들어감
+        //구분자가 있을 땐 해당 문자열에서 구분자를 기준으로 배열 값을 나눠 넣어줌
+        let str3 = '오늘은즐거운목요일'
+        console.log(str3.split(",")); //해당 구분자가 없으므로 여전히 통으로 들어감
+        let str33 = '오늘은,즐거운,목요일'
+        console.log(str33.split(","))//구분자 ,를 기준으로 배열 값이 각각 들어감
+
+        //문자열 결합
+        //💜문자열.concat('결합할 문자열')💜 --> 합쳐진 문자열 반환
+        console.log(str3.concat(' 곧 점심시간'));
+
+        //대소문자 변환
+        //toUpperCase() -> 대문자로 변환
+        //toLowerCase() -> 소문자로 변환
+        let str4 = 'Javascript';
+        console.log(str4.toUpperCase(),'전부 대문자로');
+        console.log(str4.toLowerCase(), '전부 소문자로');
+
+        //문자열 양끝에 공백을 제거
+        //trim();
+        let str5 = '            안녕하세요        '
+        console.log(str5.length);//공백도 길이에 포함됨
+        console.log(str5.trim(),'양쪽 공백 제거한 값');
+
+        //문자열로 변환
+        //💜toString(진법)💜
+        //괄호 안에 바꾸고 싶은 진수를 넣으면 해당 진수법으로 변환해줌 변환된 값은 '문자열'이기 때문에 진법을 숫자로 쓰고 싶다면 다시 형변환을 거쳐주어야 함
+        //변수.toString(2) --> 2진수로 바꿔줌
+        //괄호 안에 아무것도 넣지 않으면 문자열로 형 변환만 해줌.
+        
+        //해당 문자열을 숫자만큼 반복해서 새로운 문자를 반환
+        //문자열.repeat(n)
+        let str6 = '안녕';
+        console.log(str6.repeat(3),'문자열반복');
+    </script>
+</body>
+</html>

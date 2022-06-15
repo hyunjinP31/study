@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 리셋 */
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        a { text-decoration: none; color: inherit;}
+        li { list-style: none;}
+        /* 리셋// */
+        #wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            padding: 30px 0;
+        }
+        #header h1 {
+            float: left;
+        }
+        #header ul {
+            float: right;
+            padding-top: 8px;
+        }
+        #header li {
+            float: left;
+            padding: 0 20px;
+            line-height: 0.6;
+        }
+        #header li:not(last-child) {
+            border-right: 1px solid #ccc;
+        }
+        .clearBoth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #main h2 {
+            text-align: center;
+            padding: 30px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        #content li {
+            float: left;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            width: 30%;
+        }
+        #content li:not(:last-of-type) {
+            margin-right: 5%;
+        }
+        #notice li {
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+        #footer {
+            padding: 30px 0;
+        }
+        #footer p {
+            float: left;
+            width: 70%;
+        }
+        #footer h1 {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header" class="clearboth">
+            <h1><a href="#">Green</a></h1>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <div id="content">
+                <h2>메인컨텐츠01</h2>
+                <ul class="clearboth">
+                    <li>
+                        <h3>작은제목 입니다.</h3>
+                        <p> 내용적는 부분입니다.</p>
+                        <span> 2020.12.17</span>
+                    </li>
+                    <li>
+                        <h3>작은제목 입니다.</h3>
+                        <p> 내용적는 부분입니다.</p>
+                        <span> 2020.12.17</span>
+                    </li>
+                    <li>
+                        <h3>작은제목 입니다.</h3>
+                        <p> 내용적는 부분입니다.</p>
+                        <span> 2020.12.17</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="notice">
+                <h2>공지사항</h2>
+                <ul>
+                    <li>2020 그린컴퓨터 아카데미 소식<span>2020.12.17</span></li>
+                    <li>2020 그린컴퓨터 아카데미 소식<span>2020.12.17</span></li>
+                    <li>2020 그린컴퓨터 아카데미 소식<span>2020.12.17</span></li>
+                    <li>2020 그린컴퓨터 아카데미 소식<span>2020.12.17</span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer" class="clearboth">
+            <p>주소 : 서울특별시 용산구 한강대로 대표이사: 그린 사업자등록번호 : 110-12-12345 통신판매신고 : 제 2020-서울용산-000호</p>
+            <h1>Green</h1>
+        </div>
+    </div>
+</body>
+</html>

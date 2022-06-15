@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li {
+            width: 100px;
+            height: 100px;
+            background: cornflowerblue;
+            border-radius: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>로또 번호 출력하기</h1>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        //1~45 까지 값을 가진 배열 만들기
+        //랜덤한 숫자를 뽑고 나면 그 숫자는 나머지 자리에 오지 않도록 제거하기
+
+        let nums = {
+            till45: Math.floor(Math.random()*45),
+        };
+        document.querySelectorAll('li')[0].innerHTML = nums.till45;
+    </script>
+</body>
+</html>

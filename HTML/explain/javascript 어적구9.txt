@@ -1,0 +1,138 @@
+﻿객체 object
+서로 연관된 변수와 함수를 그룸화하여 정리정돈하기 위한 것이다.
+key와 value의 집합체이다
+object = { key:value };
+
+
+let name = "green";
+let age = 30;
+
+let user = {
+	name = 'green',
+	age = 30,
+	isJob = true,
+}
+
+function print(user){
+	console.log(user.name);
+	console.log(user.age);
+}
+print(name, age)
+
+
+01. 리터럴 방식과 객체생성방식
+let obj1 = {};
+let obj2 = new Object();
+
+let obj1 = {
+	name: 'green',
+	age: 4,
+}
+-새로운 키와 벨류를 추가할 수 있다.
+obj1.hasJob = true;
+하지만 잘 쓰지 않음 유지보수가 어렵고 나중에 동작이 꼬일 수 있음
+- 프로퍼티 삭제(잘 쓰지 않는다 괜히 욕먹지 말고 하지말자)
+delete obj1.name;
+
+02. 계산된 속성 . ['']
+. 을 사용할 때는 코딩하는 순간 그 값을 받아오고 싶을 때
+[] 를 사용할 때는 런타임에서 결정하거나 실시간으로 원하는 키값을 받아오고 싶을 때
+
+function printValue(obj, key){
+	console.log(obj.key);
+	console.log(obj[key]);
+}
+
+03. 단축 프로퍼티
+let person1 = { name: 'bob', age: 2, };
+let person2 = { name: 'steve', age: 5,};
+let person3 = { name: dave, age: 4,};
+let person4 = { name: 'min', age: 4,};
+
+//함수에 매개변수를 정해두고 return값으로 변수가 출력하도록 함수 만들기
+//키와 변수에 들어가는 이름이 같을 때 키는 생략이 가능하다. 걍 name, age, <<이렇게만 적어도 됨
+function makePerson(name,age) {
+	return {
+	//name
+	//age 이름이 같으면 이렇게만 적어도 알아듣는다.
+	name: name,
+	age: age,
+	}
+}
+makePerson('blue',5);
+
+04. 생성자 함수
+function Person(name, age){
+	// this = {} 생략하는 부분
+	this.name = name;
+	this.age = age;
+	// return this; 생략하는 부분
+}
+let person6 = new Person('abc', 30);
+
+05. in 연산자: 오브젝트에 키가 있는지 없는지 확인
+'name' in obj 
+
+06. 객체의 순환
+for ...in문
+let user = {
+	name: 'min',
+	age: 30,
+}
+for (let a in user){
+	console.log(user[a])
+}
+
+forEach(() =>{
+
+})
+let array = [1,2,3,4,5,6]
+for (let li of array){
+
+}
+
+
+
+07. 객체 복사
+
+let user = {
+	name:'a',
+	age: 30,
+}
+let user2 = {};
+for(let key in user){
+	user2[key] = user[key]
+}
+let user3 = {};
+Object.assign(user3, user);
+
+let user4 = Object.assign({}, user)  !!!중요!!!
+
+Object.assign({}, obj1) 오브젝트 복사 메소드
+Object.keys(obj) 객체의 키 항목을 배열로 반환해줌
+Object.values(obj) 객체의 값 항목을 배열로 반환해줌
+Object.entries(obj) 객체의 키/값을 배열로 반환해줌
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

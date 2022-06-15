@@ -1,0 +1,40 @@
+﻿DOM
+document.
+html --> document.documentElement
+body --> document.body
+head --> document.head
+document.querySelector('')
+document.querySelectorAll('')
+
+선택한 요소의 자식 요소노드 접근 children
+선택한 요소의 자식 요소노드 중 마자막 요소노드 접근 lastElementChild
+선택한 요소의 자식 요소노드 중 첫 번째 요소노드 접근 firstElementChild
+선택한 요소의 부모 요소노드 접근 parentElement
+선택한 요소의 이전 요소노드 접근 perviousElementSibling
+선택한 요소의 다음 요소노드 접근 nextElementSibling
+
+새로운 요소 추가하기
+node.append(추가할 요소) node 마지막에 추가
+node.prepend(추가할 요소) node 첫 번째에 추가
+node.before(추가할 요소) node 이전에 추가
+node.after(추가할 요소) node 이후에 추가
+
+- 예전에 썼던 요소 추가하기 메서드
+node.appendChild(추가할 요소) 마지막 자식으로 추가
+node.insertBefore(추가할 요소, nextSibling) nextSibling 자리에 있는 요소의 앞에 추가됨
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

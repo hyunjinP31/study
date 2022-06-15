@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //01 원본배열을 변경하는 메소드
+        //💜push() / pop() / shift() / unshift()💜
+        //💜splice()💜 / reverse()
+        let dogs = ['콩이','흰둥이','크림','구름','검둥이'];
+        dogs[dogs.length] = '사랑이';
+        dogs.push('초코');
+        dogs.unshift('두부');
+        dogs.shift();
+        dogs.pop();
+        dogs.pop(); //반복하면 계속해서 마지막 값을 없애줌
+        console.log(dogs);
+        dogs.reverse();
+        console.log(dogs);
+        //splice() 내가 원하는 위치의 값부터 제거 가능, 추가도 가능
+        //splice(start, num, '추가할 값') (시작 인덱스 넘버, 시작부터 몇 개를 지울건지, 시작 인덱스 위치에 무엇을 넣을 건지) 
+        dogs.splice(1,2,'누렁이');
+        console.log(dogs)
+
+        //02. 원본배열을 변경하지 않고 참조만 하는 메소드
+        //💜join()💜 문자열로 반환
+        //💜slice()💜 배열의 일부분을 배열로 반환
+        //💜concat()💜 배열을 합쳐서 새로운 배열 반환
+        //toString() 문자열로 반환
+        //💜indexOf()💜 전달받은 값과 동일한 값이 배열요소에 있으면 그 요소의 인덱스 반환, 없으면 -1 반환
+        //💜includes()💜 전달받은 값과 동일한 값이 배열요소에 있으면 true 없으면 false를 반환
+
+        //💜join()💜 배열을 문자열로 반환. ()안에 값을 넣어주면 배열을 문자열로 반환할 때 값의 구분자로 해당 문자가 들어간다. 안 주면 쉼표가 디폴트로 들어간다.
+        let arr = ['hi', '안녕','그린','목요일'];
+        let str = arr.join('💜');
+        console.log(arr);
+        console.log(str);
+
+        //💜slice()💜 (start, end) 설명하기 귀찮다 string참고
+        let nArr = arr.slice(1,2);
+        console.log(nArr);
+
+        //💜concat()💜 배열을 합쳐서 새로운 배열 생성
+        let nArr2 = arr.concat([1,2,3]) //concat써서 합치기 💜💜💜
+        let nArr3 = [...arr,1,2,3] //스프레드 써서 합치기 💜💜💜
+        console.log(nArr3)
+
+        //toString() 배열을 문자열로 바꿔줌 괄호 안에 진수법을 넣으면 해당 진수법으로 바꿔줌
+        let str2 = arr.toString()
+        console.log(str2);
+
+        //3. 원본배열을 반복적으로 참조하는 메소드
+        //💜forEach()💜
+        //💜map()💜 // 값을 바꿔서 반환해주는 애
+        //💜filter()💜 //조건안의 값들을 다 찾아주는 애
+        //💜reduce()💜
+        //sum()
+        //💜find()💜 // 조건의 맞는 값을 하나 찾으면 멈추는 애
+        //every()
+
+        let numArr = [10,20,30,40,50];
+        //for문을 사용해서 배열돌기
+        for(let i = 0; i < numArr.length; i++){
+            console.log(numArr[i]+'  for문');
+        }
+        //💜forof💜 사용해서 배열돌기
+        for(let i of numArr){
+            console.log(i,'  for of문')
+        }
+        //💜forEach💜 사용해서 배열돌기
+        let newNumArr = [];
+        numArr.forEach((val, index, arr)=>{
+            newNumArr.push(val);
+            console.log(val, '  forEach 메소드');
+        })
+        console.log(newNumArr,'  forEach문으로 새로 만든 배열')
+
+        //💜map💜 사용해서 배열 값을 변경해 반환
+        let newNumArr2 = numArr.map(val=>{
+            return val+5
+        })
+        console.log(newNumArr2, '  map 메소드');
+
+        //💜filter💜 사용해서 조건에 맞는 모든 값들을 반환
+        let newNumArr3 = numArr.filter(a => a > 20);
+        console.log(newNumArr3, '  filter 메소드');
+
+        //💜find💜 사용해서 제일 처음 조건에 걸린 값 반환
+        let newNumArr4 = numArr.find(a => a > 20)
+        console.log(newNumArr4, '  find 메소드')
+
+        //some 조건에 맞는 값이 있으면 true 반환
+        let booleanVal = numArr.some(val => val > 30);
+        console.log(booleanVal, '  some 메소드')
+
+        //every 모든 값이 조건에 맞아야 true 반환
+        let booleanVal2 = numArr.every(val => val > 30);
+        console.log(booleanVal2, '  every 메소드');
+
+        // 배열.filter((각 배열요소의 값, 각 배열요소의 인덱스, 원본배열)=>{})
+        // 배열.reduce((누적값, 현재값,인덱스,원본배열)=>{}, 초깃값)
+        let numArr2 = [1,2,3,4,5,6]
+        //forEach문을 이용해 배열의 모든 값 더해주기
+        let sum=0;
+        numArr2.forEach(val=>{
+            sum = sum + val
+        })
+
+        let result = sum;
+        numArr2.reduce((pre,cur)=>pre+cur);
+        console.log(result);
+        let result2 = numArr.reduce((pre,cur)=>{
+            pre.push(cur+5);
+            return pre;
+        },[])
+    </script>
+</body>
+</html>

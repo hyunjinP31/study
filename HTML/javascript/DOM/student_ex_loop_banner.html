@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                * {margin: 0; padding: 0; box-sizing: border-box;}
+        #divView {
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+        #divs{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+        }
+        .imgdiv {
+            position: absolute;
+
+        }
+        button {
+            border: none;
+            outline: none;
+            background: none;
+            color: #fff;
+            font-size: 30px;
+            display: none;
+        }
+        button:nth-of-type(1){
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            z-index: 5;
+        }
+        button:nth-of-type(2){
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            z-index: 5;
+        }
+        .btn {
+            width: 60px;
+            height: 60px;
+            background: tan;
+            color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 60px;
+        }
+        #prev {
+            margin-left: -250px;
+        }
+        #next {
+            margin-left: 250px;
+        }
+        #indi {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        #indi span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: crimson;
+            border-radius: 50%;
+            margin: 0 6px;
+            font-size: 0;
+        }
+        #indi span.on {
+            background: teal;
+        }
+    </style>
+</head>
+<body>
+    <!-- 전체 크기 설정&오버플로우 히든 넣어줄 div -->
+    <div id="divView">
+        <button>왼쪽</button>
+        <button>오른쪽</button>
+        <!-- 하위 div들을 움직여 줄 부모 div -->
+        <div id="divs">
+            <div class="imgdiv"><img src="../images/img_lights1.jpg" alt=""></div>
+            <div class="imgdiv"><img src="../images/img_lights2.jpg" alt=""></div>
+            <div class="imgdiv"><img src="../images/img_lights3.jpg" alt=""></div>
+            <div class="imgdiv"><img src="../images/img_lights4.jpg" alt=""></div>
+        </div>
+        <div id="prev" class="btn">이전</div>
+        <div id="next" class="btn">다음</div>
+        <div id="indi"></div>
+    </div>
+
+    <script>
+        const imgDivs = document.querySelectorAll('.imgdiv');
+        console.log(imgDivs);
+        const next = document.querySelector('#next')
+        const prev = document.querySelector('#prev');
+        const indiDiv = document.querySelector('#indi');
+        let divLeft = 0;
+        let current = 0;
+        let currentIndi = 0;
+        let timer; //setInterval을 담을 변수
+        let indiStr = "";
+        let movingDiv = document.querySelector('#divs');
+        let cloneFirst = movingDiv.firstElementChild.cloneNode(true);
+        let cloneLast = movingDiv.lastElementChild.cloneNode(true);
+
+        //복사한 엘리먼트 넣어주기
+        movingDiv.insertAdjacentElement('afterbegin', cloneLast);
+        movingDiv.insertAdjacentElement('beforeend', cloneFirst);
+
+        //forEach의 함수 자릿값을 이용해서 순번을 불러오고 그 순번을 이용해서 각각 이미지의 위치값을 줌
+        imgDivs.forEach((imgdiv,index)=>{
+            imgdiv.style.left = `${index*100}%`
+            indiStr = indiStr + `<span>${index}</span>`
+        })
+        indiDiv.innerHTML = indiStr; //span 태그를 div에 넣어주는 할당연산
+        let indi =  document.querySelectorAll('#indi span')
+
+        // setInterval(함수,시간) 해당 함수를 지정 시간마다 반복해줌
+        function startIt() {
+            timer = setInterval(function(){
+            divLeft = current === imgDivs.length - 1? 0 : divLeft + 1;
+            moveDiv(divLeft);
+            },3000)
+        }
+        //무한루프 속임수
+        
+        
+        //자동이미지 전환 멈춤함수()
+        function stopIt(){
+            clearInterval(timer);
+        }
+        startIt();
+        
+        //인디케이터 이벤트 연결
+        indiDiv.addEventListener('click',function(e){
+            let targetNum = Number(e.target.innerHTML); //현재 찍고 있는 타겟의 innerHTML값을 받아오고 있는 거. 받아온 값은 Number로 변경. 값들은 0,1,2,3 이 됨
+            moveDiv(targetNum); // 받아온 값들로 moveDiv에 새로운 이동값을 넣어줌. 즉 찍고 있는 span의 innerHTML값이 2라면 인덱스 넘버 2를 가진 페이지 3으로 이동할 수 있게 된 거임
+        })
+
+        //이전, 다음 버튼 이벤트 연결
+        prev.addEventListener('mouseenter', function(){
+            stopIt();
+        })
+        prev.addEventListener('mouseleave', function(){
+            startIt();
+        })
+
+        prev.addEventListener('click',function(){
+            //현재의 이전값을 구함
+            let prevNum = current == 0 ? imgDivs.length-1 : current -1;
+            moveDiv(prevNum);
+        })
+        next.addEventListener('mouseenter', function(){
+            stopIt()
+        })
+        next.addEventListener('mouseleave', function(){
+            startIt()
+        })
+        next.addEventListener('click',function(){
+            //현재의 다음값을 구함
+            let nextNum = current == imgDivs.length -1 ? 0 : current +1;
+            //다음 값으로 이동
+            moveDiv(nextNum);
+        })
+        //div를 이동시키는 함수
+        function moveDiv (left){
+            //변수 left 값에 따라 스타일 레프트의 값이 달라지고 있음
+            movingDiv.style.left = `${-(left * 100)}%` //#divs의 스타일 left를 * 100해줌 
+            current = left;
+            indi.forEach(ind=>{
+                ind.classList.remove('on') //값을 forEach로 불러와서 온이라는 클래스를 전부 떼주겠다.
+            })
+            indi[current].classList.add('on') //커런트라는 현재 div의 위치를 이용해서 인덱스 값으로 넣어줌 indi라는 변수는 모든 스판을 불러온 노드리스트임
+        }
+        indi[0].classList.add('on');
+        // let leftBtn = document.querySelector('button:nth-of-type(1)')
+        // leftBtn.addEventListener('click', function(){
+        //         divLeft = divLeft == 0? -3 : divLeft + 1;
+        //         moveDiv(divLeft);
+        //     })
+        // let rightBtn = document.querySelector('button:nth-of-type(2)')
+        // rightBtn.addEventListener('click', function(){
+        //         divLeft = divLeft == -3? 0 : divLeft - 1;
+        //         moveDiv(divLeft);
+        // })
+        //자동 이미지 전환 실행함수(setInterval)
+    </script>
+</body>
+</html>

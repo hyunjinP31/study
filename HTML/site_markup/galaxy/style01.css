@@ -1,0 +1,372 @@
+/* 리셋 */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li { list-style: none;}
+a { text-decoration: none; color: inherit;}
+img { border: 0; vertical-align: top;}
+body { color: #333; font-family: '맑은 고딕', sans-serif; font-size: 14px; background: #ccc; line-height: 1.5;}
+.inner { max-width: 1200px; width: 100%; margin: 0 auto;}
+/* 상단 */
+header {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .three_line {
+    display: none;
+}
+header .reservation {
+    display: none;
+}
+header > ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 0;
+}
+header > ul li {
+    padding: 0 20px;
+} 
+header > div {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 80px;
+}
+ul.nav {
+    display: flex;
+    font-size: 16px;
+}
+ul.nav li{
+    padding: 0 20px;
+}
+ul.sns {
+    display: flex;
+}
+ul.sns li {
+    width: 90px;
+    height: 45px;
+    margin: 0 5px;
+    padding-top: 13px;
+    background: blueviolet;
+}
+header div h1 {
+    width: 20%;
+}
+header div img {
+    width: 70%;
+}
+/* 본문 */
+/* visual */
+section.visual {
+    background: url(./img/main_visual.jpg) center center;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 250px;
+    height: 700px;
+}
+.visual > h2 {
+    text-align: center;
+    padding-bottom: 100px;
+}
+.visual ul {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+/* visual_hover */
+.visual ul li {
+    height: 300px;
+    width: 25%;
+    overflow: hidden;
+    position: relative;
+}
+.visual ul li div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: #fff;
+}
+.rollout {
+    height: 120px;
+    transition: 0.5s;
+    bottom: 0;
+    padding: 30px 20px;
+    line-height: 1.7;
+}
+.rollout h3 {
+    font-size: 20px;
+}
+.rollout p {
+    font-size: 12px;
+}
+.visual ul li:nth-child(1) .rollout {
+    background: #7b70ac;
+}
+.visual ul li:nth-child(2) .rollout{
+    background: #ba70a5;
+}
+.visual ul li:nth-child(3) .rollout{
+    background: #c19596;
+}
+.visual ul li:nth-child(4) .rollout{
+    background: #c2b497;
+}
+.rollover {
+    height: 300px;
+    top: 100%;
+    transition: 0.5s;
+    padding: 40px 20px;
+}
+.rollover h3 {
+    font-size: 20px;
+    font-weight: normal;
+}
+.rollover span {
+    color: yellow;
+}
+.rollover p {
+    padding: 15px 0;
+}
+.rollover a {
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    background: url(./img/main_tab_btn_view.png) left top no-repeat;
+    text-align: center;
+}
+.visual ul li:nth-child(1) .rollover {
+    background:  rgba(123, 112, 172, 0.7);
+}
+.visual ul li:nth-child(2) .rollover {
+    background: rgba(186, 112, 165, 0.7);
+}
+.visual ul li:nth-child(3) .rollover {
+    background: rgba(193, 149, 150, 0.7);
+}
+.visual ul li:nth-child(4) .rollover {
+    background: rgba(194, 180, 151, 0.7);
+}
+.visual ul li:hover .rollout {
+    bottom: -120px;
+}
+.visual ul li:hover .rollover {
+    top: 0;
+}
+.visual ul li .go:hover {
+    background: url(./img/main_tab_btn_view.png) left bottom no-repeat;
+}
+/* open */
+.open {
+    text-align: center;
+}
+.open > div {
+    margin: 50px 0;
+    line-height: 1.5;
+}
+.open > div h2 {
+    font-size: 26px;
+    font-weight: normal;
+}
+.open > div p {
+    font-size: 16px;
+}
+.open ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.open ul li {
+    width: 25%;
+}
+.open ul li img{
+    width: 100%;
+}
+/* review */
+.review {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.review .realres {
+    width: 50%;
+    background: url(./img/main_real_res_visual.jpg) left top no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 100px;
+}
+.review .realres h3 {
+    padding: 40px 0;
+}
+.review .realres a {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    background: blueviolet;
+    color: #fff;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-top: 60px;
+}
+.review .bestre {
+    width: 50%;
+}
+.review .bestre ul {
+    display: flex;
+    flex-flow: wrap;
+    height: 100%;
+}
+.review .bestre ul li {
+    width: 50%;
+    background: #fff;
+    position: relative;
+}
+.review .bestre ul li div {
+    padding: 15px;
+}
+.review .bestre ul li div h3 {
+    font-size: 16px;
+}
+.review .bestre ul li div p {
+    font-size: 13px;
+}
+.review .bestre ul li img {
+    width: 100%;
+}
+.review .bestre ul li .besticon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 40px;
+    background: blueviolet;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 8px;
+}
+/* quickmenu */
+.quickmenu {
+    margin-top: 30px;
+}
+.quickmenu ul{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.quickmenu ul li {
+    width: 25%;
+    padding: 30px 40px;
+    color: #fff;
+}
+.quickmenu ul li img {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.quickmenu ul li span {
+    display: block;
+}
+.quickmenu ul li:nth-child(1) {
+    background: #7b70ac;
+}
+.quickmenu ul li:nth-child(2) {
+    background: #ba70a5;
+}
+.quickmenu ul li:nth-child(3) {
+    background: #c19596;
+}
+.quickmenu ul li:nth-child(4) {
+    background: #c2b497;
+}
+footer.inner {
+    background: url(./img/footer_visual.jpg) center top no-repeat;
+    height: 400px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    padding: 30px 100px;
+}
+footer.inner address{
+    color: #fff;
+    padding: 40px 0;
+}
+/* 1024이하 */
+@media screen and (max-width:1024px){
+    body {
+        background: red;
+    }
+    header > div {
+        height: 110px;
+    }
+    header > ul {
+        display: none;
+    }
+    ul.nav {
+        display: none;
+    }
+    ul.sns {
+        display: none;
+    }
+    header .three_line {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 5px;
+        left: 10px;
+    }
+    header .three_line span {
+        width: 50%;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 10px;
+    }
+    header div h1 {
+        width: 100%;
+    }
+    header div img {
+        width: 30%;
+    }
+    header .reservation {
+        display: flex;
+        flex-flow: column wrap;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    }
+    header .reservation img {
+        width: 60%;
+    }
+    /* visual */
+    .visual ul {
+        display: none;
+    }
+    .open ul li {
+        width: 50%;
+    }
+    .review .realres {
+        width: 100%;
+    }
+    .review .bestre {
+        width: 100%;
+    }
+    .quickmenu ul li {
+        width: 50%;
+    }
+}
+@media screen and (max-width:768px) {
+    .open ul li {
+        width: 100%;
+    }
+}

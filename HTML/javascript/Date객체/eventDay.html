@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body > div {
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 20px;
+            border: 3px solid thistle;
+            overflow: hidden;
+        }
+        #title {
+            padding: 30px;
+            color: #fff;
+            background: thistle;
+        }
+        #input {
+            text-align: center;
+            padding: 20px;
+            line-height: 40px;
+        }
+        input {
+            outline: none;
+            border: none;
+            border-bottom: 1px dotted thistle;
+            margin: 0 10px;
+        }
+        #buttons {
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            border-radius: 5px;
+            background-color: thistle;
+            padding: 10px 40px;
+            margin: 0 6px;
+            outline: none;
+            border: none;
+        }
+        #text {
+            padding: 40px;
+            text-align: center;
+            font-size: 40px;
+            color: thistle;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="title">
+            <h2>기념일</h2>
+            <p>사귄 날짜를 입력하세요~</p>
+        </div>
+        <div>
+            <div id="input">
+                <input type="text" id="year" name="year">
+                <input type="text" id="month" name="month">
+                <input type="text" id="date" name="date0">
+            </div>
+            <div id="buttons">
+                <button data-key="date" data-value="50">50일은?</button>
+                <button data-key="date" data-value="100">100일은?</button>
+                <button data-key="date" data-value="today">오늘은 며칠째?</button>
+            </div>
+        </div>
+        <div id="text"></div>
+    </div>
+
+    <script>
+        //인풋에 사용자로부터 입력을 받는다.
+        //년, 월, 일 을 인풋에 입력받고 버튼을 누르면 결과를 text에 보여준다
+        // - 버튼을 클릭했을 때 년,월, 일이 빈칸이면 날짜를 입력해주세요 경고창을 띄운다.
+        // 년, 월, 일이 빈칸이 아니면 숫자가 맞는지 확인. 숫자가 아닌 문자가 있을 경우 '숫자만 입력해 주세요' 경고창을 띄운다
+        //입력된 값으로 데이트 객체를 생성
+        //50일은 버튼을 클릭했을 때는 입력된 값으로 만든 데이트 객체에서 50일 더해진 데이트 객체를 생성
+        //100일은 버튼을 클릭했을 때는 입력된 값으로 만든 데이트 객체에서 100일 더해진 데이트 객체를 생성
+        //오늘은 며칠째 버튼을 클릭하면 현재날짜 객체를 생성, 현재 날짜 객체의 밀리초를 반환해 입력한 데이트 객체의 밀리초를 빼줌
+        // --> 그 값을 일자로 변환
+        //사귄지 며칠 되었습니다. 를 화면에 출력
+
+        let yearInput = document.querySelector('#year');
+        let monthInput = document.querySelector('#month');
+        let dateInput = document.querySelector('#date');
+        let btns = document.querySelector('#buttons');
+        let text = document.querySelector('#text');
+        btns.addEventListener('click',function(e){
+            let getDate = getInputValue(); //firstDay라는 객체를 firstDate라는 변수에 담음
+            //클릭한 노드의 dataset객체의 value키에 접근
+            let value = e.target.dataset.value;
+            //입력한 날짜로 데이트 객체를 생성
+            let firstDate = new Date(getDate.year, getDate.month, getDate.date);
+            console.log(firstDate.getFullYear(),firstDate.getMonth()+1, firstDate.getDate());
+            //오늘 버튼을 클릭했다면
+            if(value ==='today'){
+                let toDay = new Date();
+                //입력한 데이트 객체를 밀리초로 받아서 startTime에 할당
+                let startTime = firstDate.getTime();
+                //현재 시간을 밀리초로 받아서 todayTime에 할당
+                let todayTime = toDay.getTime();
+                let re = Math.floor((todayTime-startTime)/(1000*60*60*24));
+                text.innerHTML = `우리가 만난지 ${re}일 입니다.`;
+            }else{
+                firstDate.setDate(firstDate.getDate()+Number(value));
+                text.innerHTML = `${value}일은 ${firstDate.getFullYear()}년 ${firstDate.getMonth()+1}월 ${firstDate.getDate()}일 입니다.`;
+            }
+        })
+
+        //input의 값이 빈칸이면 return
+        function getInputValue(){
+            if(!yearInput.value || !monthInput.value || !dateInput.value) {
+                console.log(yearInput.value,monthInput.value,dateInput.value)
+                alert('날짜를 입력해 주세요');
+                return;
+            }
+            if(isNaN(Number(yearInput.value)) || isNaN(Number(monthInput.value)) || isNaN(Number(dateInput.value))){
+                alert('숫자만 입력해 주세요.');
+                return;
+            }
+            const firstDay = {
+                year:Number(yearInput.value),
+                month:Number(monthInput.value)-1,
+                date:Number(dateInput.value),
+            }
+            return firstDay;
+        }
+    </script>
+</body>
+</html>

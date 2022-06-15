@@ -1,0 +1,92 @@
+﻿쿠키 / 세션
+사용자의 브라우저와 서버간의 가산의 논리적인 연결
+http 프로토콜
+- 상태(연결의 지속성)가 없는 프로토콜
+- 브라우저와 서버간의 상태에 대한 보존 없이 매 순간 새로운 연결을 하고, 요청에 대한 응답을 서버가 전송하고 나면 연결이 끊어짐
+
+session_start()
+세션 사용 시작
+$_SESSION --> 세션을 관리하는 php의 슈퍼글로벌 변수
+$_SESSION['city'] = "부산";
+
+세션 삭제 반법
+1) unset($_SESSION['city']) sity라는 이름의 세션 해지
+2) session_unset() 모든 세션 변수의 등록 해지
+3) session_destroy() 세션 아이디 삭제
+
+쿠키 생성하기
+setcookie(키, 값, 시간)
+ex> setcookie("cookie1","abc",time()+20) //20초간 지속되는 쿠키를 만듦(초단위)
+
+쿠키 삭제하기
+1) unset($_COOKIE['cookie1'])
+2) setcookie("cookie1",'',time()-3600)
+
+
+실습 - 회원가입
+1) members 테이블 생성
+no in primary key auto_increment
+id varchar(16)
+pw varchar(20)
+date datetime
+name varchar(20)
+
+
+
+
+
+
+create table members(
+	no int primary key auto_increment,
+	id varchar(16) not null,
+	pw varchar(20) not null,
+	date datetime not null,
+	name varchar(20) not null
+);
+
+2) member 폴더
+-> join.php 회원가입 화면
+-> join_process.php 회원가입 처리
+-> login.php 로그인 화면
+-> login_process.php 로그인 처리
+
+create table movies (
+	no int primary key auto_increment,
+	title varchar(60) not null,
+	director varchar(20) not null,
+	releasedate varchar(30) not null,
+	genre varchar(30) not null,
+	grade varchar(20) not null
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

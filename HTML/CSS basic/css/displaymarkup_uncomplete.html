@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none; color: inherit;
+        }
+        li { list-style: none; }
+        /* reset/ */
+        #wrap { padding: 16px;}
+        body {
+            background-color: #f1f1f1;
+            font-size: 14px;
+            color: #3d3d3d;
+            line-height: 1.5;
+        }
+        #header {
+            background-color: #fff;
+            height: 150px;
+        }
+        .front_head {
+            text-align: center;
+            display: block;
+        }
+        .bottom_head {
+            background-color: #333;
+            color: #fff;
+            padding-top: 5px;
+            font-size: 0;
+            height: 30px;
+        }
+        .bottom_head ul {
+            display: inline-block;
+            width: 20%;
+            margin-right: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 머리부분 -->
+        <div id="header">
+            <div class="front_head">
+                <h1>My Website</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bottom_head">
+                <div>
+                    <ul>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#">link</a>
+                </div>
+            </div>
+        </div>
+        <!-- 머리부분// -->
+        <!-- 몸통부분 -->
+        <div id="containal">
+            <!-- 왼쪽부분 -->
+            <div id="left">
+                <div class="card">
+                    <h1>TITLE HEADING</h1>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div class="bg">image</div>
+                    <h3>Title text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="card">
+                    <h1>TITLE HEADING</h1>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div class="bg">image</div>
+                    <h3>Title text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <!-- 왼쪽부분// -->
+            <!-- 오른쪽부분 -->
+            <div id="right">
+                <div class="card">
+                    <p>About Me</p>
+                    <div class="bg">image</div>
+                    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                </div>
+                <div class="card">
+                    <h1>Popular Post</h1>
+                    <ul class="bg">
+                        <li>image</li>
+                        <li>image</li>
+                        <li>image</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h1>Follow Me</h1>
+                    <p>Some text..</p>
+                </div>
+            </div>
+            <!-- 오른쪽부분// -->
+        </div>
+        <!-- 몸통부분 //-->
+        <!-- 마지막부분 -->
+        <div id="footer">
+            <div class="footer">Footer</div>
+        </div>
+        <!-- 마지막부분// -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let book = {
+            name: 'Nature of Code',
+            cost: '30000원',
+            writer: 'Deniel Shifman',
+            ISBM: 9788968481901,
+            page: 620,
+        };
+        
+        //객체 배열로 만들어라 [{객체 1}, {객체 2}, {객체 3}...] 이래 하라는 거겠지..?
+        function stuff(name, mineral, gas, supplies){
+            this.name = name;
+            this.mineral = mineral;
+            this.gas = gas
+            this.supplies =supplies;
+        }
+        let stuff1 = new stuff('일벌레',50,0,1);
+        let stuff2= new stuff('여왕',150,0,2);
+        let stuff3= new stuff('바퀴', 75,25,2);
+        let stuff4= new stuff('히드라리스크',100,50,2);
+        let stuff5 = new stuff('타락귀', 150, 100, 2);
+
+        let things = [stuff1, stuff2, stuff3, stuff4, stuff5];
+        console.log(things);
+    </script>
+</body>
+</html>

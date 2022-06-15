@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution (data){
+            let arr = data.split(" ");
+            const a = arr[0];
+            const b = arr[1];
+            for(let i = 0; i < b; i++){
+                let star ="";
+                for (let j=0; j<a; j++){
+                    star += "*";
+                }
+                console.log(star);
+            }
+        }
+        solution("3 2")
+    </script>
+</body>
+</html>

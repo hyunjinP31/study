@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li { list-style: none;}
+        div {
+            width: 70%;
+            margin: 100px auto;
+        }
+        h2 {
+            background: salmon;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+        li {
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-left: 31px;
+        }
+        li span {
+            display: inline-block;
+            width: 30%;
+        }
+        li input {
+            border: none;
+            width: 300px;
+            height: 30px;
+            background: salmon;
+            outline: none;
+            color: #fff;
+        }
+        li button {
+            background: salmon;
+            color: #fff;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            padding: 7px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>회원가입</h2>
+        <ul>
+            <li><span>아이디</span><input type="text" id="userId"></li>
+            <li><span> 비밀번호</span><input type="password" id="userPass"></li>
+            <li><span>비밀번호확인</span><input type="password" id="userPassCh"></li>
+            <li><span>전화번호</span><input type="text" id="userPhone"></li>
+            <li><span>이메일</span><input type="email" id="userEmail"></li>
+            <li><span><button onclick="joinProcess()">회원가입</button></li>
+        </ul>
+    </div>
+
+    <script>
+        function joinProcess() {
+        let id = document.querySelector('#userId').value;
+        let pass = document.querySelector('#userPass').value;
+        let pwCh = document.querySelector('#userPassCh').value;
+        //아이디를 입력했는지 체크
+        if (!id){
+            alert('아이디를 입력하세요.')
+        }
+        //비밀번호가 8자 이상인지
+        if(pass.length < 8) {
+            alert('비밀번호는 8자리 이상 입력하세요.')
+        }
+        //비밀번호와 비밀번호 체크가 일치하는지 체크
+        if(pwCh !== pass) {
+            alert('패스워드가 일치하지 않습니다.')
+        }
+    }
+    </script>
+</body>
+</html>

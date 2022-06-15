@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body > div {
+            background: #eee;
+            height: 700px;
+            width: 700px;
+            text-align: center;
+            padding: 100px;
+        }
+        #bgcolor {
+            width: 500px;
+            height: 500px;
+            background: #fff;
+            border: 2px solid #444;
+        }
+        p {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="bgcolor"></div>
+        <p>
+            <input type="text" id="name">
+            <button id="btn">선택</button>
+        </p>
+    </div>
+    
+    <script>
+        //변수
+        let bg = document.querySelector('#bgcolor');
+        let input = document.querySelector('#name').value;
+        let btn = document.querySelector('#bth');
+
+        //1. 인풋에 색상명을 넣고
+        //2. 버튼을 클릭하면
+        //3. .bg의 색이 해당 색상으로 바뀜
+        btn.addEventListener('click', function(){
+            bg.style.background = 'red'
+        })
+
+        //니는 왜 안 되냐 빡치게
+        function color() {
+            if(input === 'red') {
+                bg.style.background = 'red';
+            }else if(input === 'green') {
+                bg.style.background = 'green';
+            }else if(input === 'blue') {
+                bg.style.background = 'blue';
+            }else {
+                bg.style.background = 'white';
+                alert('UNABLE');
+            }
+            
+        }
+    </script>
+</body>
+</html>

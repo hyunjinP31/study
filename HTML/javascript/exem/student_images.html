@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none; width: 25%;}
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            background: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="../images/img_lights1.jpg" alt="오로라사진" onclick="imgSrc('첫번째', this, 1)"></li>
+        <li><img src="../images/img_lights2.jpg" alt="밝은 강 사진" onclick="imgSrc('두번째', this, 2)"></li>
+        <li><img src="../images/img_lights3.jpg" alt="잔잔힌 강 사진" onclick="imgSrc('세번째', this, 3)"></li>
+        <li><img src="../images/img_lights4.jpg" alt="다리 사진" onclick="imgSrc('네번째', this, 4)"></li>
+    </ul>
+    <div><img src="" alt=""></div>
+    <div><img src="" alt=""></div>
+    <div><img src="" alt=""></div>
+    <div><img src="" alt=""></div>
+    <span>X</span>
+
+    <script>
+        function imgSrc(msg, img, n) {
+            alert(`${msg} 이미지 입니다.`);
+            //이렇게 혼자 댕하게 값만 있는 애매한 애들은 다 변수로 담아주자. 자바스크립트 예민허네...
+            let imgView = img.src;
+            document.querySelector(`div:nth-of-type(${n})`).style.display = "flex";
+            document.querySelector(`div:nth-of-type(${n}) > img`).src = imgView;
+        }
+    </script>
+</body>
+</html>

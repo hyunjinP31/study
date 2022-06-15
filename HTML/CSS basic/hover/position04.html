@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        #parent1 {
+            width: 1200px;
+            margin: 0 auto;
+            height: 1300px;
+            background-color: yellow;
+            position: relative;
+        }
+        #parent2 {
+            width: 1200px;
+            margin: 0 auto;
+            height: 1300px;
+            background-color: yellowgreen;
+        }
+        #child {
+            width: 200px;
+            height: 200px;
+            top: 200px;
+            background-color: tomato;
+            position: sticky;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent1">
+        첫번째 div
+        <div id="child">자식div</div>
+    </div>
+    <div id="parent2">
+        두번째 div
+    </div>
+</body>
+</html>

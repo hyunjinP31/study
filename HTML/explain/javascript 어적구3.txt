@@ -1,0 +1,56 @@
+if(표현식1) {
+	표현식1이 true일 때 실행하는 코드
+} else if (표현식2) {
+	표현식1이 false이고 표현식 2가 true일 때 실행되는 코드
+}else {
+	표현식1과 표현식2가 둘다 false일 때 실행되는 코드
+}
+let num = 10
+if( num >10) {
+	console.log("num은 10보다 큽니다.")
+}else if(num === 10){
+	console.log("num은 10이랑 같습니다.")
+}else {
+	console.log("num은 10보다 작습니다.")
+}
+
+
+
+
+
+
+if(5>1) {
+	console.log("5는 1보다 큽니다.")
+}else {
+	console.log("5는 1보다 크지않습니다.")
+}
+
+
+
+value
+
+<input name="" id="">
+
+let str = "안녕하세요"
+str.length
+-> 5
+
+if문의 조건은 값이 true일 때만 실행이 된다 false값은 else로 넣어야 함.
+= boolean 값이 true가 나오도록 해야함!!! 존아 중요 기억하기 강조강조
+
+
+
+function 안에서 let을 선언해야 작동을 함 왜지웨지 웨지뭐지외지 스코프??때문?에?
+
+
+
+
+
+
+
+
+
+
+
+
+

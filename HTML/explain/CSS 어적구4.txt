@@ -1,0 +1,10 @@
+﻿html5 시멘틱 태그
+
+많이 쓰는 아이디를 태그 만든 것
+
+<header>
+<footer>
+<section>
+<nav>
+<article>
+<main>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 리터럴 방식
+        // 다음 프로퍼티로 옮겨갈 땐 쉼표로 구분. 마지막은 안 찍어도 되는데 걍 찍자. 그게 편하다.
+        //객체의 종류
+        //배열
+        //함수
+        //날짜
+        //수학
+        //Boolean은 객체일 수 있음(new 키워드로 정의된 경우)
+        //숫자도 객체일 수 있음(new 키워드로 정의된 경우)
+        //문자열도 객체일 수 있음(new 키워드로 정의된 경우)
+        
+        let num = new String('abc');
+        console.log(typeof num);
+        let str = 'abc';
+        console.log(typeof str);
+        let user = {
+            name: 'green',
+            age: 32
+        }
+        user['hobby'] = '독서'
+        console.log(user.name);
+        console.log(user['age']);
+        console.log(user);
+        //delete로 해당 항목을 삭제할 수 있음
+        delete user.age;
+        console.log(user);
+        //이름이 key, 값이 value
+        for(let key in user){
+            console.log(key);
+        }
+    </script>
+</body>
+</html>

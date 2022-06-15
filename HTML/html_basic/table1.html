@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<title>테이블 실습</title>
+	<style>
+		table {text-align: center; border-collapse: collapse; width: 1000px; margin: auto; }
+		td, th { border: 1px solid #ccc; padding: 15px;}
+		.table1 { font-weight: bolder; border-top: 3px solid #444}
+		.table2 { border-top: 3px solid #444; }
+		.tableTop1 { background-color: rgba(238, 238, 238 , 0.5);}
+		.tableTop_left1 { background-color: rgba(238, 238, 238 , 0.5); border-left: none;}
+		.left_none { border-left: none; }
+		.right_none { border-right: none;}
+		.tableTop_right1 { background-color: rgba(238, 238, 238 , 0.5); border-right: none;}
+		span { color: red;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+			<table class="table1">
+				<h2>교내장학 - 주요장학</h2>
+						<tr>
+							<th class="tableTop_left1">장학명</th>
+							<th class="tableTop1">선발대상</th>
+							<th class="tableTop_right1">비고</th>
+						</tr>
+				<tr>
+					<td class="left_none">희망장학<br/>(구,가사장학)</td>
+					<td colspan="2" class="right_none">국가장학금을 신청하여 결정된 학자금지원구간0~3구간 학생</td>
+				</tr>
+				<tr>
+					<td class="left_none">우수장학<br/>(구,성적우수<br/>역량강화장학)</td>
+					<td>-학기당 1회 이상지도교수 상담 필수(직전학기)<br/>-직전학기 <span>12학점 이수,3.5이상</span><br/>-학부(과)별 지표에 따라 선발</td>
+					<td class="right_none">*성적 이외의 학부(과)별 지표는 학과 홈페이지 참고<br/>*선발결과 관련 <span>학과사무실로 문의</span></td>
+				</tr>
+			</table>
+			<H2>테이블 예제2</H2>
+			<table class="table2">
+				<tr>
+					<th class="tableTop_left1">장학명</th>
+					<th class="tableTop1">신청시기</th>
+					<th class="tableTop1">신청방법</th>
+					<th class="tableTop_right1">제출서류</th>
+				</tr>
+				<tr>
+					<td class="left_none">복지장학</td>
+					<td rowspan="4">12월/6월</td>
+					<td rowspan="5">uwins - 장학신청<br/>(매학기 신청)</td>
+					<td class="right_none">장애인증명서/가족관계증명서</td>
+				</tr>
+				<tr>
+					<td class="left_none">공무원본인장학</td>
+					<td class="right_none">재직증명서</td>
+				</tr>
+				<tr>
+					<td class="left_none">행복나눔명예장학</td>
+					<td class="right_none">신청서</td>
+				</tr>
+				<tr>
+					<td class="left_none">행복나눔장학</td>
+					<td class="right_none">신청서</td>
+				</tr>
+				<tr>
+					<td class="left_none">가족장학</td>
+					<td>5월/11월</td>
+					<td class="right_none"e>가족관계증명서</td>
+				</tr>
+				<tr>
+					<td class="left_none">국가유공자본인장학</td>
+					<td rowspan="3">입학금<br/>납부 전</td>
+					<td rowspan="2">학생복지팀 제출</td>
+					<td class="right_none">교육지원대상자증명서</td>
+				</tr>
+				<tr>
+					<td class="left_none">국가유공자자녀장학</td>
+					<td class="right_none">대학수업료등 면제대상자증명서</td>
+				</tr>
+				<tr>
+					<td class="left_none">교직원자녀장학 (교직원이 신청)</td>
+					<td>UWIN-윈스탑</td>
+					<td class="right_none">신청서, 재직증명서, 가족관계증명서</td>
+				</tr>
+			</table>
+		<h2>테이블에서 콘텐츠를 하나의 그룹으로 묶을 때 사용<'thead'><'tbody'><'tfoot'></h2>
+		<table border="1" cellspacing="0" cellpadding="10">
+			<caption>출장비 내역</caption>
+			<thead>
+			<tr>
+				<th>출장비 내역</th>
+				<th>금액</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>교통비</td>
+				<td>93,000원</td>
+			</tr>
+			<tr>
+				<td>식대비</td>
+				<td>6,000원</td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td>총합계</td>
+				<td>99,000</td>
+			</tr>
+			</tfoot>
+		</table>
+		<table border="1" cellspacing="0" cellpadding="10">
+		<h1>테이블 전체의 마크업</h1>
+		<caption>본사 부서별 연락처</caption>
+			<tr>
+				<th colspan="2">부서명</th>
+				<th>전화번호(02+)</th>
+				<th>팩스번호(02+)</th>
+			</tr>
+			<tr>
+				<th colspan="2">종합상황실</th>
+				<td>310-1300~1304</td>
+				<td>310-3100~1304</td>
+			</tr>
+			<tr>
+				<th rowspan="2">비서실</th>
+				<th>비서실장</th>
+				<td>310-1110</td>
+				<td rowspan="2">314-8184(사장)<br/>312-7894(감사)</td>
+			</tr>
+			<tr>
+				<th>비서실</th>
+				<td>314-8184(사장)<br/>312-7894(감사)</td>
+			</tr>
+			<tr>
+				<th rowspan="3">홍보실</th>
+				<th>홍보실장</th>
+				<td>310-1110</td>
+				<td rowspan="3">314-8184</td>
+			</tr>
+			<tr>
+				<th>홍보부</th>
+				<td>314-1112</td>
+			</tr>
+			<tr>
+				<th>국제협력부</th>
+				<td>314-1113</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿media 쿼리 <주석임>
+1.
+@media all<디바이스 정보> and (min-width:320px) and (max-width:768px){
+		스타일 작성
+} 
+2. <link rel="stylesheet" href="style.css" media="screen and (min-width:768px)">
+
+0~768px (모바일)
+769px~1024px (탭)
+1025px~ (웹)

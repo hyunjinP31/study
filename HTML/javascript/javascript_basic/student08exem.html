@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a { text-decoration: none; color: inherit;}
+
+        #wrap > ul {
+            display: flex;
+            align-items: flex-start;
+            height: 100vh;
+            width: 100%;
+        }
+        #wrap > ul > li {
+            padding-top: 100px;
+            padding-left: 40px;
+            width: 25%;
+            height: 100%;
+            border-right: 1px solid #aaa;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            padding-bottom: 30px;
+        }
+        h1 + ul > li {
+            padding: 14px 0;
+        }
+        li + a {
+            width: 100px;
+            height: 100vh;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 100px;
+            padding-left: 30px;
+        }
+        .wall {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: teal;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            transition: 0.5s;
+        }
+        a + a {
+            position: relative;
+            top: 110px;
+            right: 30px;
+            text-align: center;
+            display: none;
+        }
+        span {
+            display: block;
+            width: 50px;
+            height: 14px;
+            position: relative;
+        }
+        span::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 2px;
+            background: #444;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .on {
+            display: block;
+        }
+        .off {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li>
+                <h1>회사소개</h1>
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+                <div class="wall"></div>
+            </li>
+            <li>
+                <h1>사업분야</h1>
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+                <div class="wall"></div>
+            </li>
+            <li>
+                <h1>투자정보</h1>
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+                <div class="wall"></div>
+            </li>
+            <li>
+                <h1>인재경영</h1>
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+                <div class="wall"></div>
+            </li>
+            <li>
+                <h1>미디어센터</h1>
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+                <div class="wall"></div>
+            </li>
+            <a href="#" onclick="moveWall(0), addOn(), addOff()">X</a>
+            <a href="#" onclick="removeWall('-100%')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </ul>
+    </div>
+
+    <script>
+        let div1 = document.querySelectorAll('.wall')[0];
+        let div2 = document.querySelectorAll('.wall')[1];
+        let div3 = document.querySelectorAll('.wall')[2];
+        let div4 = document.querySelectorAll('.wall')[3];
+        let div5 = document.querySelectorAll('.wall')[4];
+        function moveWall(rightValue) {
+            div1.style.right = rightValue;
+            div2.style.right = rightValue;
+            div3.style.right = rightValue;
+            div4.style.right = rightValue;
+            div5.style.right = rightValue;
+        }
+        function removeWall(rightValue) {
+            div1.style.right = rightValue;
+            div2.style.right = rightValue;
+            div3.style.right = rightValue;
+            div4.style.right = rightValue;
+            div5.style.right = rightValue;
+        }
+        function addOn() {
+            document.querySelector('a + a').classList.add('on')
+        }
+        function addOff() {
+            document.querySelector('li + a').classList.add('off')
+        }
+    </script>
+</body>
+</html>

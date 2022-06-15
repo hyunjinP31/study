@@ -1,0 +1,770 @@
+body {
+  font-size: 14px;
+}
+
+.inner_wrap {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#header .inner_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .logo_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .logo_area h1 {
+  padding-right: 32px;
+}
+
+#header .inner_wrap .logo_area ul {
+  border: 1px solid #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .logo_area ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  width: 35px;
+  font-size: 11px;
+}
+
+#header .inner_wrap .logo_area ul li:nth-child(2) {
+  background: #ccc;
+}
+
+#header .inner_wrap .logo_area ul li a {
+  padding: 0;
+}
+
+#header .inner_wrap .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .inner_wrap .nav button {
+  margin-right: 16px;
+}
+
+#header a {
+  padding-right: 32px;
+}
+
+#main_content #visual {
+  padding: 70px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#main_content #visual > div:nth-child(1) {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #visual > div:nth-child(1) #login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background: #eaf4fe;
+  border-radius: 10px;
+  width: 100%;
+  height: 170px;
+  padding: 16px;
+}
+
+#main_content #visual > div:nth-child(1) #login > a {
+  background: #007aff;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  padding-top: 17px;
+  font-size: 18px;
+}
+
+#main_content #visual > div:nth-child(1) #login ul {
+  width: 100%;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 1px solid #007aff;
+  border-radius: 10px;
+  background: #fff;
+  color: #007aff;
+}
+
+#main_content #visual > div:nth-child(1) #login ul li {
+  width: 100%;
+  padding: 16px;
+}
+
+#main_content #visual > div:nth-child(1) #login ul li:first-child {
+  border-right: 1px solid #007aff;
+}
+
+#main_content #visual > div:nth-child(1) #iconul {
+  margin-top: 16px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#main_content #visual > div:nth-child(1) #iconul li {
+  font-size: 13px;
+  margin-bottom: 21px;
+  width: 25%;
+}
+
+#main_content #visual > div:nth-child(1) #iconul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #visual > div:nth-child(1) #iconul li img {
+  width: 60%;
+}
+
+#main_content #visual > div:nth-child(2) {
+  text-align: center;
+  width: 70%;
+  padding-left: 60px;
+}
+
+#main_content #visual > div:nth-child(2) > div {
+  background: #f9f9f9;
+  border-radius: 30px;
+}
+
+#main_content #visual > div:nth-child(2) img {
+  width: 80%;
+}
+
+#main_content #visual > div:nth-child(2) h2 {
+  padding: 20px 0 10px;
+  font-size: 18px;
+}
+
+#main_content img {
+  width: 100%;
+}
+
+#main_content #insurance_story {
+  position: relative;
+  background: #dfe6f9;
+  height: 450px;
+  text-align: center;
+}
+
+#main_content #insurance_story div:nth-child(1) {
+  padding-top: 70px;
+  position: relative;
+}
+
+#main_content #insurance_story div:nth-child(1) .main_tit {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 28px;
+}
+
+#main_content #insurance_story div:nth-child(1) .main_tit span {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+#main_content #insurance_story div:nth-child(1) ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #insurance_story div:nth-child(1) ul li {
+  text-align: left;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 30px;
+  border-end-end-radius: 0;
+  -webkit-box-shadow: 2px 2px 5px #999;
+          box-shadow: 2px 2px 5px #999;
+  width: 270px;
+  height: 100px;
+  padding: 30px;
+}
+
+#main_content #insurance_story div:nth-child(1) ul li:nth-child(even) {
+  margin-top: 150px;
+}
+
+#main_content #insurance_story div.link_div {
+  background: #fff;
+  height: 130px;
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 1px 1px 3px #999;
+          box-shadow: 1px 1px 3px #999;
+  border-radius: 30px;
+}
+
+#main_content #insurance_story div.link_div ul {
+  padding: 35px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #insurance_story div.link_div ul li {
+  width: 20%;
+}
+
+#main_content #insurance_story div.link_div ul li span {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+#main_content #insurance_story div.link_div ul li span i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#main_content #insurance_story div.link_div ul li:nth-child(1) span {
+  background-color: #6175ba;
+}
+
+#main_content #insurance_story div.link_div ul li:nth-child(2) span {
+  background-color: #439f88;
+}
+
+#main_content #insurance_story div.link_div ul li:nth-child(3) span {
+  background-color: #8a6eb8;
+}
+
+#main_content #insurance_story div.link_div ul li:nth-child(4) span {
+  background-color: #6f9c47;
+}
+
+#main_content #insurance_story div.link_div ul li:nth-child(5) span {
+  background-color: #508ed9;
+}
+
+#main_content #life {
+  padding: 200px 0 60px;
+}
+
+#main_content #life > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #life > ul li {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 22%;
+  height: 270px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#main_content #life > ul li p {
+  padding: 30px 45px;
+  font-size: 13px;
+}
+
+#main_content #main_banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f2f8ff;
+  height: 270px;
+}
+
+#main_content #main_banner ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #main_banner ul li {
+  padding: 20px;
+  width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #main_banner ul li h3 {
+  font-size: 22px;
+  padding-bottom: 30px;
+}
+
+#main_content #main_banner ul span {
+  background: #fff;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #main_banner ul span img {
+  width: 80%;
+}
+
+#main_content #main_community {
+  padding: 60px 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 630px;
+}
+
+#main_content #main_community > div {
+  width: 45%;
+}
+
+#main_content #main_community > div:nth-child(1) li {
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 16px 20px;
+  background: #eee;
+}
+
+#main_content #main_community > div:nth-child(1) li span {
+  font-size: 13px;
+}
+
+#main_content #main_community > div:nth-child(1) li strong {
+  padding: 0 5px;
+  color: #007aff;
+}
+
+#main_content #main_community > div h2 {
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+#main_content #main_community > div:nth-child(2) {
+  height: 100%;
+}
+
+#main_content #main_community > div:nth-child(2) .event {
+  width: 100%;
+}
+
+#main_content #main_community > div:nth-child(2) .event > div {
+  padding: 30px;
+  height: 200px;
+  border-radius: 30px;
+  background: #e0e3f1 url(../images/banner01.png) right top/contain no-repeat;
+}
+
+#main_content #main_community > div:nth-child(2) .event > div h3 {
+  width: 40%;
+  font-size: 24px;
+  padding-bottom: 30px;
+}
+
+#main_content #main_community > div:nth-child(2) .event > div p {
+  font-size: 12px;
+}
+
+#main_content #main_community > div .notice li {
+  padding: 5px 0;
+}
+
+#main_content #main_community > div .notice li span {
+  padding-right: 30px;
+}
+
+#main_content #recommand {
+  padding-bottom: 70px;
+}
+
+#main_content #recommand h2 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+#main_content #recommand > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main_content #recommand > ul li {
+  width: 23%;
+  background: #508ed9;
+  color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  height: 150px;
+}
+
+#main_content #recommand > ul li p {
+  font-size: 13px;
+}
+
+#main_content #recommand > ul li strong {
+  display: block;
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+#footer #footer_menu {
+  background: #eee;
+}
+
+#footer #footer_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  margin-bottom: 50px;
+}
+
+#footer #footer_menu ul li {
+  width: 25%;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  padding-left: 20px;
+  padding-top: 22px;
+}
+
+#footer #footer_menu ul li:first-child {
+  border-left: 1px solid #ccc;
+}
+
+#footer #footer_copy > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer #footer_copy > div ul {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#footer #footer_copy > div ul li {
+  padding: 0 20px;
+}
+
+#footer #footer_copy address {
+  padding: 40px 0;
+  text-align: center;
+}

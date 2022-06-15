@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li { list-style: none;}
+        a { text-decoration: none; color: inherit;}
+        /* 상단 */
+        body{
+            background-color: #ddd;
+        }
+        #wrap {
+            width: 95%;
+            margin: 0 auto;
+        }
+        #header {
+            background-color: #fff;
+            margin-top: 20px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .front_head {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .bottom_head {
+            display: flex;
+            justify-content: space-between;
+            background: #2d2d2d;
+            color: #fff;
+            height: 30px;
+            align-items: center;
+        }
+        .bottom_head ul {
+            display: flex;
+        }
+        .bottom_head li {
+            padding: 0 20px;
+        }
+        .bottom_head a {
+            padding-right: 40px;
+        }
+        /* 본문 왼쪽 1번 */
+        .card {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+        }
+        #containal {
+            display: flex;
+            justify-content: space-between;
+        }
+        #left {
+            width: 100%;
+            margin-right: 20px;
+        }
+        .bg {
+            background: #2d2d2d;
+            height: 150px;
+            padding: 20px;
+            color: #fff;
+        }
+        .card p {
+            line-height: 2;
+        }
+        .card h3 {
+            padding: 10px 0;
+        }
+        h1+ul {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        ul.bg li {
+            padding: 14px 0;
+        }
+        #footer {
+            background: lemonchiffon;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 머리부분 -->
+        <div id="header">
+            <div class="front_head">
+                <h1>My Website</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bottom_head">
+                <div>
+                    <ul>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <!-- 머리부분// -->
+        <!-- 몸통부분 -->
+        <div id="containal">
+            <!-- 왼쪽부분 -->
+            <div id="left">
+                <div class="card">
+                    <h1>TITLE HEADING</h1>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div class="bg">image</div>
+                    <h3>Title text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="card">
+                    <h1>TITLE HEADING</h1>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <div class="bg">image</div>
+                    <h3>Title text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <!-- 왼쪽부분// -->
+            <!-- 오른쪽부분 -->
+            <div id="right">
+                <div class="card">
+                    <p>About Me</p>
+                    <div class="bg">image</div>
+                    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                </div>
+                <div class="card">
+                    <h1>Popular Post</h1>
+                    <ul class="bg">
+                        <li>image</li>
+                        <li>image</li>
+                        <li>image</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h1>Follow Me</h1>
+                    <p>Some text..</p>
+                </div>
+            </div>
+            <!-- 오른쪽부분// -->
+        </div>
+        <!-- 몸통부분 //-->
+        <!-- 마지막부분 -->
+        <div id="footer">
+            <div class="footer">Footer</div>
+        </div>
+        <!-- 마지막부분// -->
+    </div>
+</body>
+</html>

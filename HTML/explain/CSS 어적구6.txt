@@ -1,0 +1,96 @@
+﻿CSS 변수
+
+:root {
+	--main-bg-color: red;
+	--big-font : 24px;
+	--middle-font: 18px
+	--small-font: 14px;
+}
+div {
+	background:var(--main-bg-color);
+	font-size: var(--big-font);
+}
+
+
+
+
+
+Scss - css preprocessor css 전처리기
+
+css
+div ul{
+	width:600px;
+}
+
+scss 중첩 구문 : {}
+div{
+	ul {
+		width:600px
+		li {
+			padding: 0 20px;
+		}
+	}
+}
+2. scss 상위 선택자 참조 : &
+ul {
+	li {
+		width: 120px
+		&:last-child {
+				margin-right: 50px;
+		}
+	}
+}
+3. 변수(Variable) - 반복적으로 사용되는 값을 변수로 지정
+변수 이름 앞에 항상 $ 를 붙입니다.
+$변수이름: 속성값
+
+변수가 {} 안에서 선언 된 경우 {} 밖을 벗어나면 적용되지 않음 {} 안에 있는 변수를 사용하고 싶지만
+{} 부모의 안에 포함되지 않는 요소의 경우 @at-root 를 쓰고 띄어쓰기 해주면 해당 부모를 벗어나게 할 수 있다.
+* 변수 유효범위 (Scope)
+변수는 사용가능한 유효범위가 있다.
+선언된 블록({}) 내에서만 유효범위를 가진다.
+
+*전역설정 !global
+!global 플래그를 사용하면 변수의 유효범위를 전역(Global)로 설정할 수 있다.(잘 쓰지 않음. 보기 불편하니까)
+
+4. 재활용 (mixins) !중요!
+스타일시트 전체에서 재사용 할 css선언 그룹을 정의해줌
+1) 선언하기(@mixin)
+@mixin 믹스인 이름 {
+	스타일;
+}
+@mixin믹스인이름($매개변수) {
+	스타일;
+}
+@mixin large-text {
+	font-size: 22px;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: tomato;
+	&::after {
+		content:"여러분";
+	}
+}
+div {
+	@include large-text;
+}
+2) 사용(포함)하기(!include)
+@include 믹스인 이름;
+@include 믹스인이름(인수);
+
+@mixin dash-line($width: 1px, $color: black) {
+    border: $width dashed $color
+}
+
+
+https://www.sassmeister.com/
+scss에서 적은 것들이 css로 적용되는 걸 바로 보여줌
+
+
+body, html {
+    height: 100%;
+}
+최상위 부모인 html에 높이 100%을 줘야 나머지 애들 높이를 차례로 주면 적용됨
+단위가 vh면 브라우저의 높이가 적용됨 100vh < 브라우저의 높이 100%, 50vh< 브라우저의 높이 50%
+
+min-width (최소 width를 잡아줌 잡아놓은 이하로 줄어들지 않음)

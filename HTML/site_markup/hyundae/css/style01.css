@@ -1,0 +1,802 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: top;
+  border: 0;
+  width: 100%;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@-webkit-keyframes up_down {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes up_down {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.inner {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background: #fff;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+header h1 {
+  width: 20%;
+}
+
+header nav {
+  height: 100%;
+}
+
+header nav ul.menu {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul.menu li {
+  font-size: 16px;
+  line-height: 110px;
+}
+
+header nav ul.menu li a {
+  padding: 0 16px;
+}
+
+header nav ul.menu li::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #0053a5;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header nav ul.menu li:hover {
+  color: #0053a5;
+}
+
+header nav ul.menu li:hover a {
+  color: inherit;
+}
+
+header nav ul.menu li:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+header .gnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  margin-right: 30px;
+}
+
+header .gnb > li {
+  padding: 0 10px;
+}
+
+header .gnb > li:first-of-type {
+  border-right: 1px solid #ccc;
+  line-height: 1.2;
+}
+
+header .gnb > li:first-of-type a {
+  padding-top: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header .gnb > li:first-of-type a i {
+  padding-right: 8px;
+  font-size: 20px;
+}
+
+header .gnb div ul {
+  background: #0053a5;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+}
+
+header .gnb div ul li {
+  padding: 8px;
+  color: #fff;
+}
+
+header .gnb button {
+  border: 0;
+}
+
+header .gnb button:hover + div ul {
+  display: inline-block;
+}
+
+header .toggle {
+  margin: 0 16px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .toggle span {
+  width: 70%;
+  height: 2px;
+  margin: 4px;
+  background: #666;
+}
+
+#content span.blind {
+  font-size: 0;
+  background: url(../images/btn_arr.png) center center/contain no-repeat;
+  display: block;
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  z-index: 10;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content span.blind::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -15px;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: rgba(0, 186, 255, 0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content .tit {
+  line-height: 1.2;
+  color: #fff;
+  font-size: 34px;
+}
+
+#content .tit p {
+  padding: 40px 0;
+  font-size: 16px;
+}
+
+#content .tit a {
+  font-size: 16px;
+}
+
+#content .bk {
+  display: block;
+}
+
+#content section {
+  position: relative;
+}
+
+#content #visual {
+  position: relative;
+  height: 100vh;
+  background: url(../images/main_visual_new1.jpg) center center/cover no-repeat;
+}
+
+#content #visual .tit {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#content #visual .scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  font-size: 16px;
+  -webkit-animation: up_down 2s infinite;
+          animation: up_down 2s infinite;
+}
+
+#content #visual .visual_btn {
+  width: 200px;
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content #visual .visual_btn::before {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 180px;
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#content #visual .visual_btn::after {
+  content: "";
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  z-index: 11;
+  background: url(../images/btn_arr.png) center center/contain no-repeat;
+}
+
+#content #visual .visual_btn span {
+  width: 80%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 10px;
+  display: none;
+}
+
+#content #visual .visual_btn:hover::before {
+  right: 0px;
+  background: #00baff;
+}
+
+#content #business {
+  background: url(../images/bg_sct2_1.jpg) center top/cover no-repeat;
+  height: 100vh;
+}
+
+#content #business > div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content #business > div > div.txbox {
+  position: relative;
+  width: 30%;
+  height: 100%;
+}
+
+#content #business > div > div.txbox .tit {
+  padding-top: 60%;
+  padding-left: 10%;
+}
+
+#content #business > div > div.txbox a {
+  position: absolute;
+  left: 10%;
+  top: 62%;
+  color: #fff;
+}
+
+#content #business > div > div.txbox a * {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content #business > div > div.txbox a span {
+  right: -40px;
+  top: -10px;
+}
+
+#content #business > div > div.txbox a:hover span {
+  right: -45px;
+}
+
+#content #business > div > div.txbox a:hover span::after {
+  border: 0;
+  background: rgba(0, 186, 255, 0.7);
+}
+
+#content #business > div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 70%;
+  height: 100%;
+}
+
+#content #business > div ul li {
+  height: 100%;
+  padding-top: 300px;
+  position: relative;
+  width: 33.3333%;
+  color: #fff;
+}
+
+#content #business > div ul li::before {
+  content: "";
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  background: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content #business > div ul li::after {
+  content: "";
+  height: 50%;
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content #business > div ul li:hover::before {
+  height: 25%;
+}
+
+#content #business > div ul li:hover::after {
+  height: 25%;
+}
+
+#content #business > div ul li:hover em {
+  font-size: 50px;
+  font-style: normal;
+  color: #00baff;
+  font-weight: bold;
+}
+
+#content #business > div ul li:hover em + span {
+  color: #00baff;
+  font-size: 24px;
+}
+
+#content #business > div ul li:hover strong {
+  padding-bottom: 16px;
+  font-size: 30px;
+}
+
+#content #business > div ul li:hover p, #content #business > div ul li:hover i {
+  opacity: 1;
+  font-size: 14px;
+}
+
+#content #business > div ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 24px;
+  color: #fff;
+}
+
+#content #business > div ul li a * {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#content #business > div ul li a em {
+  font-style: normal;
+}
+
+#content #business > div ul li a p, #content #business > div ul li a i {
+  opacity: 0;
+  font-size: 14px;
+  -webkit-transition-property: opacity, font-size;
+  transition-property: opacity, font-size;
+  -webkit-transition-duration: 0.5s, 0.5s;
+          transition-duration: 0.5s, 0.5s;
+  -webkit-transition-delay: 1s, 1s;
+          transition-delay: 1s, 1s;
+}
+
+#content #business > div ul li.on a em {
+  font-size: 50px;
+  font-style: normal;
+  color: #00baff;
+  font-weight: bold;
+}
+
+#content #business > div ul li.on a em + span {
+  color: #00baff;
+  font-size: 24px;
+}
+
+#content #business > div ul li.on a strong {
+  padding-bottom: 16px;
+  font-size: 30px;
+}
+
+#content #business > div ul li.on a p, #content #business > div ul li.on a i {
+  display: block;
+  font-size: 14px;
+  opacity: 1;
+}
+
+#content #business > div ul li.on::before {
+  height: 25%;
+}
+
+#content #business > div ul li.on::after {
+  height: 25%;
+}
+
+#content #susta {
+  background: url(../images/bg_sct3.jpg);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content #susta ul {
+  height: 420px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content #susta ul li {
+  width: 23.5%;
+  height: 50%;
+  padding: 24px;
+  color: #fff;
+  position: relative;
+}
+
+#content #susta ul li span.blind {
+  right: 30px;
+  top: 140px;
+}
+
+#content #susta ul li:hover span {
+  right: 25px;
+}
+
+#content #susta ul li:hover span::after {
+  border: 0;
+  background: rgba(0, 186, 255, 0.7);
+}
+
+#content #susta ul li a > p {
+  padding: 20px 0;
+}
+
+#content #susta ul li:nth-child(1) {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+#content #susta ul li:nth-child(1) .tit {
+  color: #333;
+}
+
+#content #susta ul li:nth-child(1) .tit p {
+  padding-top: 10px;
+}
+
+#content #susta ul li:nth-child(2) {
+  width: 49%;
+  margin-bottom: 3%;
+  background: url(../images/bg_sct3_1.jpg);
+}
+
+#content #susta ul li:nth-child(3) {
+  background: #2489ca;
+}
+
+#content #susta ul li:nth-child(4) {
+  background: #5d7081;
+}
+
+#content #susta ul li:nth-child(5) {
+  background: url(../images/bg_sct3_2.jpg);
+}
+
+#content #susta ul li:nth-child(6) {
+  background: #0053a5;
+}
+
+#content #media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f0f0f0;
+  height: 100vh;
+  width: 100%;
+}
+
+#content #media > div.inner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#content #media > div.inner > div {
+  width: 20%;
+}
+
+#content #media > div.inner > div .tit {
+  color: #333;
+}
+
+#content #media > div.inner > div ul li {
+  padding: 10px 0;
+  line-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#content #media > div.inner > div ul li:nth-child(1)::before {
+  background: url(../images/ico_sct3.png) left top no-repeat;
+  background-size: 360px;
+}
+
+#content #media > div.inner > div ul li:nth-child(2)::before {
+  background: url(../images/ico_sct3.png) -50px top no-repeat;
+  background-size: 360px;
+}
+
+#content #media > div.inner > div ul li:nth-child(3)::before {
+  background: url(../images/ico_sct3.png) -100px top no-repeat;
+  background-size: 360px;
+}
+
+#content #media > div.inner > div ul li::before {
+  margin-right: 20px;
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 50px;
+}
+
+#content #media > div.inner > ul {
+  width: 75%;
+  position: relative;
+}
+
+#content #media > div.inner > ul > li {
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+#content #media > div.inner > ul > li ul {
+  width: 80%;
+  padding-left: 40px;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+
+#content #media > div.inner > ul > li ul li {
+  background: #fff;
+  margin-bottom: 20px;
+}

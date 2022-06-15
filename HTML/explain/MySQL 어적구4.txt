@@ -1,0 +1,75 @@
+﻿조인
+두 개 이상의 테이블을 서로 묶어서 하나의 결과집합으로 만들어 내는 것
+
+create table userTable(
+	아이디 varchar(3) primary key,
+	이름 varchar(20) not null,
+	생년 varchar(20) not null,
+	지역 varchar(20) not null,
+	모바일1 varchar(3) not null,
+	모바일2 varchar(8) not null
+);
+
+create table buyTable(
+	순번 int primary key auto_increment,
+	아이디 varchar(3) not null,
+	물품명 varchar(4),
+	단가 int not null,
+	수량 int not null,
+	foreign key (아이디) references userTable(아이디)
+);
+
+foreign key (컬럼명) references usertable(컬럼명)
+
+
+inner join - 조인에서 가장 많이 사용하는 join.
+형식
+select <열 목록>
+from <첫 번째 테이블>
+inner join <두 번째 테이블>
+on <조인될 조건>
+[where 검색조건]
+
+select * from userTable
+inner join buyTable
+on buyTable.아이디 = userTable.아이디
+where userTable.아이디 = 'BBK';
+
+select * from members
+inner join booklist
+on members.no = booklist.no
+where booklist.no = 1;
+
+select userTable.아이디, 물품명, 지역, concat(모바일1, 모바일2) as '연락처'
+from userTable
+inner join buyTable
+on buyTable.아이디 = userTable.아이디
+
+
+
+
+
+
+
+select * from members
+inner join basket
+on members.id= basket.id
+where basket.id = '1234';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

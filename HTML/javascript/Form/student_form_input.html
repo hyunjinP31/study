@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="myForm">
+        주민번호 <input type="text" name="firstNum"> - <input type="text" name="lastNum">
+    </form>
+
+    <script>
+        let firstIn = myForm.firstNum;
+        let lastIn = myForm.lastNum;
+        
+        firstIn.addEventListener('input', function(){
+            if (firstIn.value.length == 6) lastIn.focus();
+        })
+        
+        lastIn.addEventListener('input', function(){
+            if (lastIn.value.length == 7) alert('complete!')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <!-- 이벤트가 있으면 window를 바라보고 있던 this를 해당 이벤트 발생시킨 요소를 바라보도록 바뀐다. -->
+        <li onclick="liView(this)">menu1</li>
+        <li onclick="liView(this)">menu2</li>
+        <li onclick="liView(this)">menu3</li>
+        <li onclick="liView(this)">menu4</li>
+        <div><img src="../images/img_lights1.jpg" alt="오로라사진" onclick="imgSrc(this)"></div>
+    </ul>
+    <script>
+        function imgSrc(img) {
+            //해당 변수의 src 요소만을 갖고 옴. 
+            console.log(img.src)
+        }
+        function liView(a){
+            console.log(a);
+        }
+        
+        let user =  {
+            name: 'green',
+            age: 30,
+            //얘는 함수 단축 안 한거
+            say: function() {
+                //메소드에서 this를 쓰면 자기 객체의 이름을 부른 거랑 똑같음
+                console.log(this.name);
+            },
+        }
+        let user2 =  {
+            name: 'blue',
+            age: 30,
+            //얘는 함수 단축한거
+            say() {
+                //user2 자리에 this 쓸 수 있음
+                console.log(user2.name);
+            },
+        }
+
+
+        let obj = {
+            print() {
+                console.log(this);
+            }
+        }
+        function printThis() {
+            console.log(this);
+        }
+
+        
+        user.say()
+        user2.say()
+        //this는 기본적으로 전역객체인 window를 말하고 window는 많은 프로퍼티들을 가지고 있는데 alert같은 애도 그중 하나이다.
+        //우리가 선언한 어떤 객체 안에서 메소드를 작성할 때 this를 쓰면 해당 this는 해당 객체를 말하는 this가 된다.
+        //메소드가 아닌 그냥 함수 안에서 this가 사용되면 해당 this는 여전히 window를 바라본다.
+        console.log(this);
+        obj.print();
+    </script>
+</body>
+</html>

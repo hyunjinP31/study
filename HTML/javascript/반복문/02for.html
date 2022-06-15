@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="num">
+
+        </ul>
+    </div>
+
+    <script>
+        // for(let i=1; i<10; i++){
+        //     console.log(`2 * ${i} = ${2*i}`)
+        // }
+        // for(let i=1; i<10; i++){
+        //     for(let j=0; j<10; j++){
+        //         console.log(`j는 ${j}이고 i는 ${i}이다.`);
+        //     }
+        // }
+        //2단~9단까지 구구단을 콘솔에 출력
+        //밖의 구문이 1번 반복할 때마다 안의 구문을 반복시켜줘야 하기 때문에 num1이 한 번 반복해 2일 동안 안의 구문은 9번 반복해 1~9까지 출력됨
+        //그 과정을 밖의 반복문이 끝날 때까지 반복하기 때문에 이런 구구단을 완성시킬 수 있는 것.
+        //즉, '어떤 작업을 한 번 할 때마다 안에 이런 과정을 담아라' 라고 하는 것과 같음
+        //초콜릿 포장이라는 과정 자체는 한 번이지만 그 과정을 한 번 반복 할 때마다 빼빼로 하나, 페페로로쉐 둘, 허쉬 넷 을 담는 일련의 과정은 계속 반복해주어야 함
+        //초콜릿 포장 10번을 하려면 밖의 반복문을 10번 박복해줘야 하는 것도 맞지만 알맞은 종류의 초콜릿을 알맞는 수만큼 넣는 작업또한 반복해줘야 하기 때문에
+        //안의 반복문은 밖의 반복문이 1번을 반복하는 동안 자신의 반복을 끝내야 함.
+        let li = "";
+        for(let num1=2; num1<10; num1++){
+            li = li+ `<li><h3>${num1}단 입니다.</h3><ul>`
+            for(let num2=1; num2<10; num2++){
+                li = li+ `<li>${num1} * ${num2} = ${num1*num2}</li>`;
+            }
+            li = li+ `</ul></li>`;
+        }
+        document.querySelector('#num').innerHTML = li;
+        let str = "";
+        for(let i=0; i<10; i++){
+            str = str+ `안녕${i}`;
+            console.log(str)
+        }
+    </script>
+</body>
+</html>

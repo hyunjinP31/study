@@ -1,0 +1,119 @@
+﻿let today = new Date()
+new Date(년, 월, 일, 시간, 분, 초, 밀리초)
+new Date(밀리초)
+1970년 1월 1일 0시 0분 0초
+new Date("2022-05-02")
+
+html 커스텀 속성
+data-로 시작하는 속성을 정의
+-> 자바스크립트에서는 dataset이라는 객체로 만듦
+ex> <div data-color="red"></div>
+dataset = {
+	color:'red',
+	size: 'big',
+}
+접근 방식 --> div.dataset.color
+
+<div>
+	<button data-key = 'data' data-value = '50'>50일</button>
+	<button data-value = '100'>100일</button>
+	<button data-value = 'today'>오늘은</button>
+</div>
+button.dataset
+{
+	key: data,
+	value: 50
+}
+NaN은 비교 연산자로 쓰지 못 함
+isNaN 으로 확인
+
+클래스 - es6
+클래스
+class 클래스명 {
+	//생성자
+	constructor(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	speak(){
+		console.log('hello')
+	}
+}
+let min = new 클래스명('min',30)
+
+
+
+오브젝트
+user1 = {
+	name:'green',
+	age:'32',
+	isjop: true,
+}
+
+
+
+생성자 함수
+function User(name,age,isjob){
+	this.name: name,
+	this.age: age,
+	this.isjob = isjob,
+}
+let user1 = new User('green',32,true)
+let user2 = new User('blue',32,true)
+let user3 = new User('green',32,true)
+
+
+*extends 키워드
+- 클래스 상속을 사용하면 클래스를 다른 클래스로 확장을 할 수 있습니다.
+- 기존에 존재하던 기능을 토대로 새로운 기능을 만들 수 있습니다.
+
+*메소드 오버라이딩
+- 상속받은 클래스의 메소드를 새로운 기능으로 재정의
+- 키워드 super를 사용하면 부모클래스의 정의된 메소드도 호출가능
+- super는 부모생성자를 호출하는 데, 자식 생성자 내에서만 사용할 수 있음.
+
+*생성자 오버라이딩
+-상속 클래스의 생성자에겐 반드시 super()를 호출해야 합니다.
+class Animal {
+	constructor(name){
+		this.speed = 0;
+		this.name = name;
+	}
+}
+class Rabbit extends Animal {
+	constructor(name, earLength){
+		super.name; // 부모클래스의 constructor를 불러줌
+		this.earLength = earLength;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

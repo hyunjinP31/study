@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>가격 <input type="text" name="cost" id="cost"></p>
+    <select name="num" id="num">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+    </select>
+    <p>총가격 <input type="text" name="all" id="all"></p>
+
+    <script>
+        let cost = document.querySelector('#cost');
+        let all = document.querySelector('#all')
+        let num = document.querySelector('#num')
+
+        cost.addEventListener('input', function(){
+            all.value = cost.value*num.value
+        })
+        num.addEventListener('change', function(){
+            all.value = cost.value * this.value;
+        })
+        
+    </script>
+</body>
+</html>

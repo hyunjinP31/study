@@ -1,0 +1,439 @@
+* {margin: 0; padding: 0; box-sizing: border-box; font-style: normal;}
+li { list-style: none;}
+a { text-decoration: none; color: inherit;}
+img { vertical-align: top; border: 0;}
+body { font-size: 14px; line-height: 1.5;}
+h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+//reset//
+
+$blue_color: #00baff;
+$dark_blue_color: #114c9f;
+$font_color: #3d3d3d;
+$padding: 16px;
+$font_size: 14px;
+
+body { font-family: 'Roboto', 'Noto sans KR', sans-serif;
+    color: $font_color; font-size: $font_size;
+    line-height: 1.6;
+}
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@mixin flexlayout($dir:row, $wrap:nowrap, $just:space-between, $align: center) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+@keyframes move {
+    0% {
+        bottom: 50px;
+    }
+    50% {
+        bottom: 40px;
+    }
+    100% {
+        bottom: 50px;
+    }
+}
+@keyframes imgscale {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 0 $padding;
+    height: 80px;
+    background: #fff;
+    @include flexlayout();
+    z-index: 1;
+    h1 {
+        width: 15%;
+        min-width: 200px;
+        img{ width: 100%;}
+    }
+    nav {
+        ul {
+            @include flexlayout();
+            li {
+                font-size: $font_size * 1.2;
+                padding: 0 $padding;
+                position: relative;
+                line-height: 80px;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0%;
+                    height: 3px;
+                    background: $dark_blue_color;
+                    transition: 0.5s;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    > div {
+        @include flexlayout();
+        ul.gnb {
+            @include flexlayout();
+            padding-right: $padding * 3;
+            > li {
+                padding: 0 $padding;
+                &:nth-child(1) {
+                    border-right: 1px solid #ccc;
+                    background: url(../images/ico_gb.png) left center/15px no-repeat;
+                    &:hover {
+                        background-image: url(../images/ico_gb_color.png);
+                    }
+                }
+                button {
+                    border: none;
+                    background: transparent;
+                    color: $font_color;
+                }
+                &:hover {
+                    div {
+                        display: block;
+                    }
+                }
+            }
+            div {
+                position: absolute;
+                background: $dark_blue_color;
+                color: #fff;
+                padding: $padding;
+                display: none;
+            }
+        }
+        .toggle {
+            width: 50px;
+            height: 50px;
+            @include flexlayout($dir:column, $just:center);
+            span {
+                width: 60%;
+                height: 3px;
+                background: $font_color;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+// 메인
+#content {
+    section {
+        height: 100vh;
+        position: relative;
+    }
+}
+// 메인 비주얼 부분
+.tit {
+    line-height: 1.2;
+    h2 {
+        font-size: $font_size * 3;
+        padding-bottom: $padding;
+        strong {
+            font-weight: bold;
+        }
+    }
+    p {
+        padding: $padding 0;
+    }
+}
+a {
+    position: relative;
+    .btn_more {
+        &::before {
+            content: "";
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            position: absolute;
+            right: -40px;
+            top: -5px;
+            transition: 0.5s;
+            
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 20px;
+            position: absolute;
+            right: -30px;
+            top: 3px;
+            background: url(../images/btn_arr.png) left top / 32px no-repeat;
+            transition: 0.5s;
+        }
+    }
+    &:hover {
+        .btn_more {
+            &::before {
+                right: -45px;
+                background: $blue_color;
+                border: 0;
+            }
+            &::after {
+                right: -35px;
+            }
+        }
+    }
+    .blind {
+        font-size: 0;
+    }
+}
+#visual {
+    background: url(../images/main_visual_new1.jpg) center center no-repeat;
+    background-size: cover;
+    padding-top: 20%;
+    animation: imgscale 3s forwards;
+    .tit {
+        color: #fff;
+        width: 40%;
+        .visual_btn {
+            position: relative;
+            line-height: 30px;
+            padding-left: 10px;
+            padding-right: 40px;
+            &::before {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background: rgba($color: #fff, $alpha: 0.5);
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: 0.5s;
+            }
+            span {
+                display: block;
+                width: 30px;
+                height: 8px;
+                background: url(../images/btn_arr.png) left top / 25px no-repeat;
+                position: absolute;
+                top: 5px;
+                right: 0;
+                z-index: 1;
+                transition: 0.5s;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 30px;
+                border-radius: 15px;
+                background: $blue_color;
+                position: absolute;
+                top: 50%;
+                right: -20px;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: 0.5s;
+            }
+            &:hover {
+                &::before {
+                    width: 100%;
+                    opacity: 0;
+                }
+                &::after {
+                    width: 30px;
+                    opacity: 1;
+                }
+                span {
+                    right: -10px;
+                }
+            }
+        }
+    }
+    .scroll {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 50px;
+        color: #fff;
+        animation: move 2s infinite;
+    }
+}
+// 비즈니스 부분
+#business {
+    color: #fff;
+    background: url(../images/bg_sct2_1.jpg) center center/cover no-repeat;
+    > div {
+        position: absolute;
+        left: 0;
+        right: 80px;
+        top: 0;
+        bottom: 0;
+        @include flexlayout();
+        .txbox {
+            width: 30%;
+            height: 100%;
+            padding-top: 16%;
+            padding-left: 8%;
+            div {
+                width: 70%;
+                p {
+                    width: 70%;
+                }
+            }
+        }
+        ul {
+            width: 70%;
+            @include flexlayout();
+            height: 100%;
+            padding-top: 16%;
+            position: relative;
+            li {
+                width: 33.3333%;
+                height: 100%;
+                > a{
+                    @include flexlayout($dir:column, $just:flex-start, $align:flex-start);
+                    * { transition: 0.5s;}
+                    em {
+                        font-weight: bold;
+                    }
+                    strong {
+                        font-size: $font_size * 1.3;
+                        font-weight: bold;
+                        padding-bottom: $padding;
+                    }
+                    p {
+                        width: 70%;
+                        padding-bottom: $padding;
+                        opacity: 0;
+                        transition-delay: 0.5s;
+                    }
+                    i {
+                        padding-right: 40px;
+                        background: url('../images/btn_arr.png') right 6px / 32px no-repeat;
+                        opacity: 0;
+                        transition-delay: 0.5s;
+                    }
+                }
+            &.on {
+                em {
+                    font-size: $font_size * 3;
+                    color: $blue_color;}
+                span {color: $blue_color;}
+                strong {font-size: $font_size * 2.4;}
+                p {
+                    opacity: 1;
+                    span {color: #fff;}
+                }
+                i {opacity: 1;}
+                &::before {height: 20%;}
+                &::after {height: 20%;}
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #fff;
+                transition: 0.5s;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 50%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: #fff;
+                transition: 0.5s;
+            }
+            &:nth-child(2) {
+                &::before {
+                    left: 33.3333%;
+                }
+                &::after {
+                    left: 33.3333%;
+                }
+            }
+            &:nth-child(3) {
+                &::before {
+                    left: 66.6666%;
+                }
+                &::after {
+                    left: 66.6666%;
+                }
+            }
+            &:hover {
+                &::before { height: 20%;}
+                &::after { height: 20%;}
+                em {
+                    font-size: $font_size * 3;
+                    color: $blue_color;}
+                span {color: $blue_color;}
+                strong {font-size: $font_size * 2.4;}
+                p {
+                    opacity: 1;
+                    span {color: #fff;}
+                }
+                i {opacity: 1;}
+            }
+            }
+        }
+    } 
+}
+//지속 가능성 부분
+#susta {
+    background: url('../images/bg_sct3.jpg') center center/cover no-repeat;
+    @include flexlayout($just:center);
+    ul {
+        @include flexlayout($wrap:wrap);
+        align-content: center;
+        li {
+            width: 100%;
+            height: 200px;
+            padding: $padding *2;
+            color: #fff;
+            &:nth-child(1) { width: 49%; color: $font_color; margin-bottom: 2%;}
+            &:nth-child(2) {
+                width: 49%;
+                background: url('../images/bg_sct3_1.jpg') right top/cover no-repeat;
+                margin-bottom: 2%;
+            }
+            &:nth-child(3) { width: 23.5%; background: darkolivegreen;}
+            &:nth-child(4) { width: 23.5%; background: $dark_blue_color;}
+            &:nth-child(5) { width: 23.5%; background: url('../images/bg_sct3_2.jpg') center center / cover no-repeat;}
+            &:nth-child(6) { width: 23.5%; background: lightseagreen;}
+            a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                .btn_more {
+                    position: absolute;
+                    right: 30px;
+                    bottom: 0px;
+                }
+            }
+        }
+    }
+}

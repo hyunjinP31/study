@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <ol id="ol">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <div id="insert" style="background:cornflowerblue">
+    </div>
+    <script>
+        let newDiv = document.createElement('div')
+        newDiv.innerHTML = '<h1>안녕하세요</h1>'
+        wrap.append(newDiv);
+        wrap.innerHTML = '<div><h1>안녕하세요요요</h1></div>'
+        let nP = document.createElement('p')
+        let nLi = document.createElement('li');
+        let nLi2 = document.createElement('li');
+        nP.innerHTML = '이전이전이전'
+        nLi.innerHTML = '추가한 li'
+        nLi2.innerHTML = '추가한 li'
+        ol.before('이전'); //ol 밖에 생김
+        ol.after('이후')
+        ol.append(nLi); //ol 안에 생김
+        ol.prepend(nLi2)
+        insert.insertAdjacentHTML('beforebegin', '<p>beforebegin입니다.</p>');
+        insert.insertAdjacentHTML('afterbegin', '<h2>afterbegin입니다.</h2>');
+        insert.insertAdjacentHTML('beforeend','<h3>beforeend입니다.</h3>')
+        insert.insertAdjacentHTML('afterend','<h3>afterend입니다.</h3>')
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5];
+        console.log(arr);
+        //배열의 반복문
+        for(let i=0; i<arr.length; i++){
+            console.log(arr[i]);
+        }
+        //가장 기본적인 방법 좀 귀찮다
+        arr.forEach(a=>{
+            console.log(a);
+        })
+        //forEach를 이용해 길이 배열 가장 자주 씀
+        for(let list of arr){
+            console.log(list);
+        }
+        //배열의 길이만큼 차례차례 출력해줌
+        let fruits = ['🥥','🍑','🍐','🍈','🥭','🥑']
+        for(let a of fruits){
+            console.log(a);
+        }
+        //가장 마지막에 해당 요소를 추가시킴
+        fruits.push('🍇');
+        console.log(fruits);
+        //가장 마지막 요소를 제거함(완전제거)
+        fruits.pop();
+        console.log(fruits);
+        //가장 앞 요소를 제거함(완전제거)
+        fruits.shift();
+        console.log(fruits);
+        //가장 앞에 해당 요소를 추가함
+        fruits.unshift('🍍');
+        console.log(fruits);
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+body {
+  font-family: '맑은 고딕', sans-serif;
+  color: #3d3d3d;
+  line-height: 1.5;
+}
+
+img {
+  vertical-align: top;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+
+#header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px;
+  height: 80px;
+  width: 100%;
+  position: relative;
+}
+
+#header > div h1 {
+  width: 10%;
+}
+
+#header > div > ul {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 30px;
+}
+
+#header > div > ul > li {
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: bold;
+  line-height: 80px;
+  position: relative;
+}
+
+#header > div > ul > li * {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#header > div > ul > li > a {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#header > div > ul > li .down {
+  font-weight: normal;
+  position: relative;
+}
+
+#header > div > ul > li .down ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100vh;
+  line-height: 80px;
+  top: 0px;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#header > div > ul > li .down ul li {
+  padding: 0 16px;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+#header > div > ul > li .down ul li:hover {
+  font-weight: bold;
+}
+
+#header > div > ul > li:nth-child(1) ul {
+  left: -240px;
+}
+
+#header > div > ul > li:nth-child(2) ul {
+  left: -60px;
+}
+
+#header > div > ul > li:nth-child(3) ul {
+  left: -50px;
+}
+
+#header > div > ul > li:nth-child(4) ul {
+  left: -90px;
+}
+
+#header > div > ul > li:hover > a {
+  color: aquamarine;
+}
+
+#header > div > ul > li:hover ul {
+  opacity: 1;
+}
+
+#header > div > ul > li:hover::after {
+  width: 100%;
+}
+
+#header > div > ul > li::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 3px;
+  background: aquamarine;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#header > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+  line-height: 80px;
+}
+
+#header > div > div > div {
+  text-align: center;
+  position: relative;
+}
+
+#header > div > div > div:nth-child(1) {
+  width: 50%;
+}
+
+#header > div > div > div:nth-child(1) img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#header > div > div > div:nth-child(2) {
+  width: 50%;
+  position: relative;
+}
+
+#header > div > div > div div.down div {
+  position: absolute;
+  line-height: 80px;
+  top: 0px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#header > div > div > div div.down ul {
+  position: absolute;
+  height: 80px;
+  top: 0px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  line-height: 0;
+}
+
+#header > div .white_box {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#header > div:hover .white_box {
+  bottom: -100%;
+}
+
+.txt h2 {
+  font-size: 80px;
+  font-weight: bolder;
+  padding: 30px 0 50px;
+}
+
+.txt p {
+  font-size: 13px;
+}
+
+.txt p span {
+  font-weight: bold;
+}
+
+.txt p span::after {
+  content: "__________________________";
+  padding: 0 10px;
+}
+
+#visual .img {
+  height: 100vh;
+  background: url("../images/visual.jpg") center center/cover no-repeat;
+  position: relative;
+}
+
+#visual .title {
+  position: absolute;
+  z-index: 1;
+  top: 400px;
+  left: 250px;
+}
+
+#visual::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+}
+
+.outline {
+  text-align: center;
+  width: 152px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.outline ul li {
+  padding: 30px 0;
+}
+
+.outline ul li:last-child {
+  margin-bottom: 30px;
+}
+
+.outline div {
+  padding: 40px 0;
+  background: #333;
+  width: 100%;
+}
+
+#main_mentor {
+  position: relative;
+  height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 100px;
+}
+
+#main_mentor > div .txt {
+  padding: 50px;
+  background: url("../images/main-mentor-bg.png") bottom right no-repeat;
+  background-size: 400px;
+}
+
+#main_mentor > div .txt h2 {
+  font-size: 60px;
+}
+
+#main_mentor > div .txt p:nth-of-type(2) {
+  font-size: 17px;
+}
+
+#main_mentor > div:nth-child(1) {
+  padding-right: 50px;
+}
+
+#main_mentor > div .img_div > div {
+  position: relative;
+}
+
+#main_mentor > div .img_div > div img {
+  position: relative;
+}
+
+#main_mentor > div a {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #333;
+}

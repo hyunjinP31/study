@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        li {
+            list-style: none;
+            float: left;
+            padding: 40px;
+        }
+        #wrap {
+            color: #fff;
+            text-align: center;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .bg {
+            background: rgba(0,0,0,0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+        }
+        .bg+div {
+            font-weight: bolder;
+            font-size: 60px;
+            position: absolute;
+            z-index: 10;
+        }
+        img:hover { }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>
+            <h1>hover effect</h1>
+            <ul>
+                <li>
+                    <img src="./images/1.jpg" alt="">
+                    <div class="bg"></div>
+                    <div>hover effect</div>
+                </li>
+                <li>
+                    <img src="./images/2.jpg" alt="">
+                    <div class="bg"></div>
+                    <div>hover effect</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

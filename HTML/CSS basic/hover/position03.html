@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        #parent { 
+            width: 1000px;
+            height: 400px;
+            background-color: lightblue;
+            position: relative
+        }
+        .children {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            border: 3px solid #333;
+        }
+        .children:nth-child(1) {
+            z-index: 10;
+            position: relative;
+        }
+        .children:nth-child(2) {
+            position: absolute;
+            top: 50px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="children">자식div01</div>
+        <div class="children">자식div02</div>
+    </div>
+</body>
+</html>

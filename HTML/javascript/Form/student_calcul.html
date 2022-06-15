@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1. 연산</h1>
+    <p><input type="text" class="firstNum"> + <input type="text" class="secondNum"> = <input type="text" class="answer"><button class="calc">연산</button></p>
+    <h1>2. 총합 구하기</h1>
+    <p>가격 <input type="text" class="cost"> x 수량
+        <select name="count" class="count">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <span>총합 : <span class="add"></span></span>
+    </p>
+    <h1>3. 총합 구하기2(선택된 값만)</h1>
+    <p>바나나 (1000원) <input type="checkbox" class="fruits" value="1000"></p>
+    <p>사과 (500원) <input type="checkbox" class="fruits" value="500"></p>
+    <p>배 (1500원) <input type="checkbox" class="fruits" value="1500"></p>
+    <p><button class="chadd">총합구하기</button></p>
+    <p>선택한 총 가격 : <span class="price"></span></p>
+
+    <script>
+        //1. 덧셈 연산
+        let inFirst = document.querySelector('.firstNum');
+        let inSecond = document.querySelector('.secondNum');
+        let answer = document.querySelector('.answer');
+        let calcBtn = document.querySelector('.calc');
+        calcBtn.addEventListener('click',function(){
+            answer.value = Number(inFirst.value)+Number(inSecond.value);
+        })
+        
+
+        //2. 총합 구하기
+        let cost = document.querySelector('.cost');
+        let countNum = document.querySelector('.count');
+        let add = document.querySelector('.add')
+        cost.addEventListener('input', function(){
+            add.innerHTML = cost.value * countNum.value;
+        })
+        countNum.addEventListener('change', function(){
+            add.innerHTML = Number(cost.value) * countNum.value;
+        })
+        
+        //3. 총합 구하기2(선택된 값만)
+        let inputs = document.querySelectorAll('.fruits');
+        let chadd = document.querySelector('.chadd');
+        let price = document.querySelector('.price');
+
+        chadd.addEventListener('click', function(){
+            let num = 0;
+            inputs.forEach(input=>{
+                num = input.checked ? num + Number(input.value) : num;
+            })
+            price.innerHTML = num;
+        })
+    </script>
+</body>
+</html>

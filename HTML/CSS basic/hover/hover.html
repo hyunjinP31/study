@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a { text-decoration: none; color: inherit;}
+        body { color: #222;}
+        #header {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            float: left;
+        }
+        ul { float: right;}
+        li { float: left; padding: 0 20px; list-style: none;}
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li:hover {
+            color: red;
+        }
+        li div {
+            display: none;
+        }
+        li:hover div {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>green</h1>
+        <ul>
+            <li>
+                <a href="#">menu1</a>
+                <div>서브메뉴영역</div>
+            </li>
+            <li><a href="#">menu2</a>
+                <div>서브메뉴영역</div>
+            </li>
+            <li><a href="#">menu3</a>
+                <div>서브메뉴영역</div>
+            </li>
+            <li><a href="#">menu4</a>
+                <div>서브메뉴영역</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

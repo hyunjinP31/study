@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>안녕하세요</p>
+    <p>아이디<input type="text" id="userId"></p>
+    <p>패스워드<input type="password" id="userPass"></p>
+    <button onclick="login()">확인</button>
+
+    <script>
+        let userId = 'bbbb';
+        let userPass = '1234';
+        let inputId = document.querySelector('#userId').value;
+        let inputPass = document.querySelector('#userPass').value;
+        // function login() {
+        //     if(userId === document.querySelector('#userId').value &&
+        //     userPass === document.querySelector('#userPass').value) {
+        //         alert('로그인 확인');
+        //     }else {
+        //         alert('로그인 불가');
+        //     }
+        // }
+        function login() {
+            if(userId === inputId) {
+                if(userPass === inputPass) {
+                    alert("로그인 되었습니다.");
+                }else {
+                    alert("비밀번호가 틀렸습니다.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

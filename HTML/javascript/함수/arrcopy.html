@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3];
+        let arr2 = []; //빈 배열을 하나 만듦
+        arr.forEach((val,index)=>{ //forEach로 값을 받아와서 받아온 값을 빈 배열에 넣어준 것이기 때문에 이 밑에서 기존 배열의 값을 바꿔줘도 복사된 배열의 값은 바뀌지 않음.
+            arr2.push(val)
+        })
+        arr2 = arr2.concat(arr); //concat 배열 합치기. 
+        let arr3 = [...arr]; //forEach로 값을 받아와서 다시 내가 원하는 배열에 넣어줬던 걸 스프레드로 배열 값을 빼서 뿌려준 것을 새로운 배열에 받아오는 것. 똑같은 효과를 낸다.
+        console.log(arr3,'어디여'); 
+        console.log(arr);
+        console.log(arr2);
+        arr[0] = 10;
+        console.log(arr);
+        console.log(arr2);
+
+        let arr10 = [1,2,3];
+        let arr20 = [...arr];
+        let arr30 = arr10;
+        console.log(arr10===arr30);
+        console.log(arr10===arr20);
+
+        let obj = {
+            name: 'green',
+            age: 30,
+        }
+        let objCopy = {...obj}; //스프레드는 좀 최신 기법임.
+        let objCopy2 = Object.assign({},obj); //첫번째가 목표 대상. 값을 받아올 애. 두번째가 값을 줄 애. 
+        console.log(objCopy);
+        console.log(obj === objCopy); //같지 않다고 나옴
+
+        obj.name = 'aaa'
+        console.log(obj,'바뀐 이름값');
+        console.log(objCopy, '여전히 같은 값');
+
+        let target = {
+            a: 10,
+            b: 20,
+        }
+        let source = {
+            b: 50,
+            c: 60,
+            e: 70,
+        }
+        // Object.assign(target, source); Object.assign으로 둘을 합쳐줌
+        target = {...target, ...source}; //스프레드로 뿌려준 값을 합쳐줌
+        console.log(target);
+    </script>
+</body>
+</html>

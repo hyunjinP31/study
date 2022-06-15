@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes scaleWidth {
+            0% {
+                top: 100px;
+                left: 0;
+            }
+            25% {
+                top: 100px;
+                left: 500px;
+            }
+            50% {
+                top: 500px;
+                left: 500px;
+            }
+            75% {
+                top: 500px;
+                left: 0px;
+            }
+            100% {
+                top: 100px;
+                left: 0px;
+            }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            animation-name: scaleWidth;
+            animation-duration: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

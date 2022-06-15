@@ -1,0 +1,74 @@
+﻿<html lang="ko"> 태그
+<head> 웹 페이지의 정보나 스타일시트 자바스크립트 파일 연결
+<meta> 웹페이지의 정보를 웹브라우저에게 명시함
+<title> 웹페이지 제목
+<style> html 문서 내에서 스타일 언어를 명시함
+<script> html 문서내에서 스크립트 언어를 명시함
+<body> 실제 웹페이지의 본문영역
+<h1>~<h6> 제목태그
+<p> 문단태그
+<ol>:순서형 목록 <ul>:비순서형 목록 <li> : list
+<dl><dt>:용어의 제목 <dd>: 용어 설명글
+<em> <strong><mark><ins><del><sup><sub><small> : 텍스트 서식
+<table><tr><td><th>
+<tbody><thead><tfoot><caption>
+<br><hr>
+<a>
+1)이미지요소
+<img>태그 : html문서안에 이미지를 넣을 수 있음 빈요소이다.
+src 속성 : 이미지경로를 지정함
+art 속성 : 이미지를 지워하지않는 환경에서 이미지를 대체하는 텍스트
+2) 비디오 요소
+<video>태그 : 비디오와 영화 등 비디오 파일을 명시함
+<source> 태그 : video 요소의 원본 파일에 대한 파일 형식 및 파일 주소를 명시함
+src 속성 : 비디오 파일의 경로를 명시함
+width 속성 : 비디오 파일의 너비를 명시함
+height 속성 : 비디오 파일의 높이를 명시함
+loop : 비디오 반복재생 여부를 명시함
+controls 속성 : 비디오의 기본적인 동작을 조절할 수 있는 패널을 명시함
+muted 속성 : 비디오의 음소거를 명시함
+autoplay 속성 : 비디오의 자동재생을 명시함
+
+인라인 태그
+블럭태그
+폼태그
+div, span : 해당 항목을 그룹핑 해주는 태그
+시멘틴 태그
+div#idname : id값이 idname인 div태그
+div.classname : class값이 classname인 div태그
+
+요소복제
+li*3  : <li></li><li></li><li></li>
+넘버링 - $ 위치에 값이 1부터 1씩 증가(1,2,3,4...)
+텍스트 {}
+p{text} : <p>text</p>
+그룹핑
+div>(div>h1+ul)+h2
+커스텀 속성
+a[href="http:naver.com"]
+
+label태그
+양식 입력 창의 요소들을 위한 캡션을 명시함
+
+1. 명시적 작성방법
+label의 for 속성과 input의 id속성을 명시함으로써 연결해주는 방식
+ex>
+<label for="userName"> 이름</label>
+<input type="text" id="userName" name="userName">
+2. 암시적 작성방법
+label태그 안에 input태그를 넣음으로써 for속성을 명시하지 않더라도 암묵적으로 연결하는 방식
+ex>
+<label>
+	이름
+	<input type="text" name="userName" id="userName">
+</label>
+
+1)카멜표기법
+myFirstVariable
+2)파스칼표기법
+MyFirstVariable
+3)팟홀표기법
+my_first_variable
+
+html 표준 공부 사이트 : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators (MDN)
+비공식 사이트 : https://www.w3schools.com/ (W3school)

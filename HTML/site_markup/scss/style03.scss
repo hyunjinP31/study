@@ -1,0 +1,85 @@
+// 변수선언
+$darkgray: #333;
+$lightgray: #f1f1f1;
+$gray: #555;
+$white: #fff;
+$dpadding: 16px;
+
+// reset
+* { margin: 0; padding: 0; box-sizing: border-box;}
+li {list-style: none;}
+a { text-decoration: none; color: inherit;}
+
+// mixin
+@mixin flexlayout($dir: row, $wrap:nowrap, $just:space-between, $align:center ) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    justify-content: $just;
+    align-items: $align;
+    
+}
+
+body {
+    background: $lightgray;
+    padding: $dpadding;
+}
+#header {
+    background: $white;
+    text-align: center;
+    height: 150px;
+    @include flexlayout($dir:column,$just:flex-end);
+    #top_title {
+        height: 120px;
+        @include flexlayout($dir:column, $just:center)
+    }
+    #top_menu {
+        background: $darkgray;
+        color: $white;
+        line-height: 30px;
+        width: 100%;
+        @include flexlayout();
+        ul {
+            @include flexlayout();
+        }
+        a {
+            padding: 0 $dpadding * 2;
+        }
+    }
+}
+#containal {
+    @include flexlayout($align:flex-start);
+    padding-top: $dpadding;
+    #left_content {
+        width: 75%;
+    }
+    #right_content {
+        width: 25%;
+        padding-left: $dpadding;
+    }
+    .white_box {
+        background: $white;
+        padding: $dpadding;
+        margin-bottom: $dpadding;
+        div.graybg {
+            background: $gray;
+            color: $white;
+            padding: $dpadding;
+            height: 150px;
+            margin: $dpadding 0;
+        }
+        li.graybg {
+            background: $gray;
+            color: $white;
+            padding: $dpadding;
+            &:nth-child(1) {
+                margin-top: $dpadding;
+            }
+        }
+    }
+}
+#footer {
+    background: $gray;
+    text-align: center;
+    padding: $dpadding * 2;
+    color: $white;
+}

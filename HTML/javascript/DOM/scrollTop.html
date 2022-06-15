@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        div {
+            width: 100%;
+            height: 100vh;
+        }
+        div:nth-child(2){
+            background: mediumturquoise;
+        }
+        div:nth-child(3){
+            background: cadetblue;
+        }
+        div:nth-child(4){
+            background: teal;
+        }
+        #menu {
+            position: fixed;
+            width: 200px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #menu li {
+            line-height: 40px;
+            color: #fff;
+            font-size: 20px;
+            padding-left: 30px;
+            transition: 0.5s;
+        }
+        #menu li.on {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+    <div>box01</div>
+    <div>box02</div>
+    <div>box03</div>
+
+    <script>
+        let lis = document.querySelectorAll('li');
+        let wh = window.innerHeight; //화면 100% 높이값 wh에 할당
+
+        // lis[0].addEventListener('click',function(){
+        //     window.scrollTo({top: 0*wh, behavior: 'smooth'}); //얘를 클릭하면 top 0으로 이동하는데 부드럽게 이동해.
+        // })
+        // lis[1].addEventListener('click',function(){
+        //     window.scrollTo({top: 1*wh, behavior: 'smooth'}); //얘를 클릭하면 top 0으로 이동하는데 부드럽게 이동해.
+        // })
+        // lis[2].addEventListener('click',function(){
+        //     window.scrollTo({top: 2*wh, behavior: 'smooth'}); //얘를 클릭하면 top 0으로 이동하는데 부드럽게 이동해.
+        // })
+        lis.forEach((li,index)=>{
+            li.addEventListener('click', function(){
+                window.scrollTo({ top:index*wh, behavior: 'smooth'});
+            })
+        })
+        document.addEventListener('scroll',function(){ //document 대신 window 써도 됨
+            let sct = document.documentElement.scrollTop;
+            console.log(sct)
+            //0과 같거나 크고 10vh보다는 작을 때
+            // if (sct >= 0 && sct < wh) {
+            //     lis.forEach(li=>li.classList.remove('on'));
+            //     lis[0].classList.add('on')
+            // };
+            // if (sct >= wh && sct < wh*2) {
+            //     lis.forEach(li=>li.classList.remove('on'));
+            //     lis[1].classList.add('on')
+            // };
+            // if (sct >= wh*2 && sct < wh*3) {
+            //     lis.forEach(li=>li.classList.remove('on'));
+            //     lis[2].classList.add('on')
+            // };
+
+            for(let i = 0; i < lis.length; i++){
+                if (sct >= wh*i && sct < wh*(i+1)) {
+                lis.forEach(li=>li.classList.remove('on'))
+                lis[i].classList.add('on')
+                };
+            }
+        })
+    </script>
+</body>
+</html>

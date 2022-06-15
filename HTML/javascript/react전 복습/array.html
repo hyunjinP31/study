@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열 선언
+        let arr = new Array();
+        let arr2 = [];
+        let arr3 = [1,2,3,4,5];
+        console.log(arr3[0]);
+        console.log(arr3[1]);
+        console.log(arr3);
+        let fruits = ['🥗','🥙','🥪','🌮','🌯','🍱'];
+        fruits.push('😍');
+        fruits.unshift('🤣');
+        console.log(fruits);
+        fruits.pop();
+        fruits.shift();
+        console.log(fruits);
+        fruits.forEach((item,index)=>{
+            console.log(item,index);
+        })
+        for(let i = 0; i < fruits.length ; i++){
+            console.log(fruits[i], i);
+        }
+        for(let value of fruits){
+            console.log(value);
+        }
+        //배열 메서드
+        //pop(), push(),shift(), unshift()
+        //join(), indexOf(), include(), splice(), slice()
+        //substr(), 💜map()💜, find(), 💜filter()💜, reduce()
+        let arrStr = fruits.join("💜"); //구분자 넣어서 문자열 반환
+        console.log(arrStr);
+        console.log(typeof arrStr);
+        console.log(fruits.indexOf('🌯')); //있으면 해당 아이템이 있는 인덱스, 없으면 -1
+        console.log(fruits.includes('🌮')); //해당 아이템이 있으면 true 없으면 false
+        let scores = [80,60,70,90,95];
+        let sc2 = scores.map(score=>{ //배열의 값을 다른 값으로 변경해서 반환 원래 있던 배열을 훼손하지 않고 새로운 배열로 반환한다.
+            return score+10;
+        })
+        console.log(sc2);
+        let sc3 = scores.filter(score=>{ //배열을 돌면서 조건에 맞는 모든 값들을 새로운 배열로 반환
+            return score>=70;
+        })
+        console.log(sc3);
+        let sc4 = scores.find(score=>{ //배열을 돌면서 조건에 맞는 값 하나를 찾으면 종료. 찾은 값을 반환
+            return score>=70;
+        })
+        console.log(sc4);
+        let sum = scores.reduce((pre,cur)=>{
+            return pre+cur;
+        },0)
+        console.log(sum);
+        let avg = sum/scores.length;
+        console.log(`점수배열의 평균은 ${avg} 입니다.`);
+        //2차원 배열
+        let multyArr = [[1,10],[2,20],[3,30],[4,40]];
+        multyArr.forEach(item=>{
+            item.forEach(i=>{
+                console.log(i);
+            })
+        })
+
+        //set 객체 형태의 컬렉션. 중복을 허용하지 않고 같은 값은 하나만 담는다. 키와 벨류로 구성되어 있다.
+        let set = new Set();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(4);
+        set.add(5);
+        set.add(2);
+        console.log(set);
+        let set2 = new Set();
+        let green = { name: 'green'};
+        let blue = { name: 'blue'};
+        let pink = { name: 'pink'};
+        set2.add(green);
+        set2.add(blue);
+        set2.add(pink);
+        console.log(set2);
+        set2.forEach((value,index)=>{
+            console.log(`value는 ${value} 이다.`);
+            console.log(`index는 ${index} 이다.`)
+        })
+        set.forEach((value,index)=>{
+            console.log(`value는 ${value} 이다.`);
+            console.log(`index는 ${index} 이다.`)
+        })
+        let numSet = new Set([1,2,3,4,5,5,6,2,3,4]);
+        console.log(numSet);
+        let newArr = [...numSet];
+        console.log(newArr);
+    </script>
+</body>
+</html>

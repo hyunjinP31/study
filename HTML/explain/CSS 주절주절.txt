@@ -1,0 +1,50 @@
+﻿position: absolute 로 주면 해당 요소는 위치를 잃어버리기 때문에 원래 요소 높이에 영향을 주지 않게됨
+
+background: transparent; - 배경없음. 디폴트로 들어간 배경을 빼준다
+
+&:nth-child(1) {
+                    border-right: 1px solid #ccc;
+                    background: url(../images/ico_gb.png) left center/15px no-repeat;
+                    &:hover {
+                        background-image: url(../images/ico_gb_color.png);
+                    }
+
+위에 백그라운드 속기법으로 이미지를 넣었을 때 특정 속성 하나만 바꾸고 싶으면 속기법 말고 따로 속성 빼서 사용
+
+
+.toggle {
+            width: 50px;
+            height: 50px;
+            @include flexlayout($dir:column, $just:center);
+            span {
+                width: 60%;
+                height: 3px;
+                background: $font_color;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+부모 속성에 flex를 줬기 때문에 span display를 inline에서 block으로 바꾸지 않아도 width값을 줄 수 있음
+
+
+border-radius: 15px;
+이걸 px 값으로 주면 width늘릴 때 네모 형태로 늘어남 %로 주면 동그라미 형태로 늘어남
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

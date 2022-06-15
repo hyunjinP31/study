@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 주석입니다. -->
+    <div id="header">상단</div>
+    <div>본문
+        <ul>
+            <li>항목1</li>
+            <li>항목2</li>
+        </ul>
+        <p>
+            <input type="text" id="input">
+            <button onclick="inputCh()">확인</button>
+        </p>
+    </div>
+    <div>하단</div>
+
+    <script>
+        //document.body
+        console.log(document.body.childNodes); //주석이나 enter까지 모든 노드를 출력하기 때문에 잘 쓰지 않음
+        console.log(document.body.children); //element 노드만 출력하기 때문에 얘로 접근을 많이 함
+        console.log(document.body.firstChild); //모든 자식노드 중 첫번째
+        console.log(document.body.firstElementChild); //모든 자식요소노드 중 첫 번째
+        console.log(document.body.childNodes[1].nodeName);
+        
+        header.hidden = true;
+
+        function inputCh(){
+            console.log(document.querySelector('input').value);
+        }
+    </script>
+</body>
+</html>

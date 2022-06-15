@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        #header {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            text-align: center;
+            color: #333;
+            width: 100%;
+            line-height: 80px;
+        }
+        .toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 5%;
+            background: #eee;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .toggle span {
+            display: block;
+            width: 50%;
+            height: 3px;
+            margin: 7px;
+            background: #333;
+        }
+        .logo  {
+            background: cadetblue;
+            width: 95%;
+            height: 100%;
+            font-size: 42px;
+        }
+        #submenu{
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            background: #fff;
+            height: 100vh;
+            z-index: 5;
+            transition: 0.5s;
+        }
+        .closing {
+            height: 80px;
+            width: 100%;
+            border-bottom: 1px solid #555;
+            position: relative;
+            text-align: center;
+        }
+        .closing .menu_close {
+            color: #fff;
+            line-height: 80px;
+            background: palevioletred;
+            height: 100%;
+            width: 80px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .main_menu {
+            font-size: 18px;
+        }
+        .main_menu > li {
+            height: 60px;
+            border-bottom: 1px solid #555;
+            line-height: 60px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        .main_menu > li.on {
+            height: 260px;
+        }
+        .black_bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            transition: 0.5s;
+        }
+        .hide_menu {
+            font-size: 14px;
+        }
+        .hide_menu li {
+            background: #eee;
+            line-height: 50px;
+            padding-left: 20px;
+            height: 50px;
+            border-bottom: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">LOGO</div>
+        </div>
+        <div id="submenu">
+            <div class="closing">
+                <div class="menu_close">메뉴닫기</div>
+            </div>
+            <ul class="main_menu">
+                <li>
+                    회사소개
+                    <ul class="hide_menu">
+                        <li>서브메뉴1</li>
+                        <li>서브메뉴2</li>
+                        <li>서브메뉴3</li>
+                        <li>서브메뉴4</li>
+                    </ul>
+                </li>
+                <li>
+                    투자정부
+                    <ul class="hide_menu">
+                        <li>서브메뉴1</li>
+                        <li>서브메뉴2</li>
+                        <li>서브메뉴3</li>
+                        <li>서브메뉴4</li>
+                    </ul>
+                </li>
+                <li>
+                    홍보센터
+                    <ul class="hide_menu">
+                        <li>서브메뉴1</li>
+                        <li>서브메뉴2</li>
+                        <li>서브메뉴3</li>
+                        <li>서브메뉴4</li>
+                    </ul>
+                </li>
+                <li>
+                    인재채용
+                    <ul class="hide_menu">
+                        <li>서브메뉴1</li>
+                        <li>서브메뉴2</li>
+                        <li>서브메뉴3</li>
+                        <li>서브메뉴4</li>
+                    </ul>
+                </li>
+                <li>
+                    교육신청
+                    <ul class="hide_menu">
+                        <li>서브메뉴1</li>
+                        <li>서브메뉴2</li>
+                        <li>서브메뉴3</li>
+                        <li>서브메뉴4</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="black_bg"></div>
+    </div>
+
+    <script>
+        let div_toggle = document.querySelector('.toggle');
+        let menu_bar = document.querySelector('#submenu');
+        let black = document.querySelector('.black_bg');
+        let main_menu = document.querySelectorAll('.main_menu > li');
+        console.log(main_menu)
+        let hide_menu = document.querySelector('.hide_menu');
+        let close_menu = document.querySelector('.menu_close');
+
+        div_toggle.addEventListener('click', function(){
+            menu_bar.style.left = 0;
+            black.style.background = 'rgba(0,0,0,0.5)'
+        })
+        close_menu.addEventListener('click', function(){
+            menu_bar.style.left = '-100%';
+            black.style.background = 'rgba(0,0,0,0)'
+        })
+        //forEach 활용한 index 부르기
+        main_menu.forEach((val,index)=>{
+            main_menu[index].addEventListener('click',function(){
+                main_menu[index].classList.toggle('on');
+            })
+        })
+        //for문 활용한 index 부르기
+        // for(let i = 0; i < main_menu.length; i++){
+        //     main_menu[i].addEventListener('click',function(){
+        //     main_menu[i].classList.toggle('on');
+        // })
+        // }
+        
+    </script>
+</body>
+</html>

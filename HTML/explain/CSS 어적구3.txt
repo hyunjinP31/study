@@ -1,0 +1,39 @@
+﻿flex-box 레이아웃
+
+containal에게 주는 속성
+
+1) display : flex
+2) flex-direction :배치방향을 지정
+'row'/ column / row-reverse/ column-reverse
+3) flex-wrap :아이템을 한줄로만 배치할건지 여러줄로 배치할건지 지정
+wrap /'no-wrap' / wrap-reverse
+('' = 디폴트)
+4) flex-flow : row wrap
+flex-flow : column no-wrap
+속기법
+5) justify-content : 주축방향 아이템 정렬 지정
+flex-start / flex-end / center / space-around / space-between
+6) align-items : 교차축 아이템 정렬 지정(한줄일때)
+flex-start/ flex-end / center / 'stretche'(부모요소만큼 길이가 늘어남)
+7) align-content : 교차축 아이템 정렬 지정 (여러줄일때)
+flex-start / flex-end / center / space-around / space-between / stretche
+
+
+
+item에 주는 속성
+
+1) order 아이템 배치 순서를 지정 (숫자가 작을 수록 앞에 옴, 안 주면 0, 음수값 가능)
+2) align-self
+flex-start / flex-end / center / stretch / baseline
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = prompt('어떤 과일을 좋아하세요?')
+        let fruitBag = {
+            [fruits]: 10,
+        }
+        console.log(fruitBag);
+
+        //단축 프로퍼티
+        function makeUser(name, age) {
+            return {
+            //key 값은 그냥 문자임 변수 뭐 이런게 아니라 걍 말그대로 name, age라는 문자열
+            //key값이랑 value값의 이름이 동일할 때 key값을 생략가능. 걍 한 번만 써도됨
+            name: name,
+            age: age,
+            }
+        }
+        let user = makeUser('green', 20);
+        console.log(user)
+
+        //in연산자
+        //"key" in object
+        let user2 = {
+            name: 'blue',
+            age: 30,
+        }
+        console.log('name' in user2)
+        console.log('hasJob' in user2)
+
+        //객체 반복
+        //for...in문
+        //모든 키의 값을 반환해줌
+        for(let key in user2) {
+            console.log(user2[key]);
+        }
+    </script>
+</body>
+</html>

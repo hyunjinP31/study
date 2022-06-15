@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.box {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.box::after {
+  content: "여러분";
+}
+
+.list {
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.list::after {
+  content: "여러분";
+}
+
+.box1 {
+  border: 1px dashed red;
+}
+
+.box2 {
+  border: 5px dashed blue;
+}
+
+.box3 {
+  border: 1px dashed black;
+}
+
+.ab_box {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.fixed_box {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+}
+
+.visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ulstyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

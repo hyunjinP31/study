@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let set = new Set();
+        let green = { name:"green"};
+        let blue = { name:"blue"};
+        let pink = { name:"pink"};
+        set.add(green);
+        set.add(blue);
+        set.add(pink);
+        set.add(green); // 같은 값은 한 번 밖에 들어가지 않는 중복불가 오브젝트이기 때문에 이 값은 추가로 더 들어가지 않음
+        
+        console.log(set)
+        set.forEach((value, index) => {
+            console.log(`value는 ${value}`)
+            console.log(`index는 ${index}`)
+
+        })
+
+        let numSet = new Set([1,2,3,4,5])
+        console.log(numSet[1]) //undefined
+        console.log([...numSet])
+        numSet.forEach((value, index) => {
+            console.log(`value는 ${value}`)
+            console.log(`index는 ${index}`)
+
+        })
+    </script>
+</body>
+</html>

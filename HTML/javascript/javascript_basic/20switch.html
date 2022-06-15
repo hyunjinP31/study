@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt('1~5까지 숫자를 입력해주세요.')
+        switch(num) {
+            case '1':
+                console.log('1입니다.');
+                break;
+            case '2':
+                console.log('2 입니다');
+                break;
+            case '3':
+                console.log('3 입니다');
+                break;
+            case '4':
+                console.log('4 입니다');
+                break;
+            case '5':
+                console.log('5 입니다');
+                break;
+            default:
+                console.log('해당하는 영역이 아닙니다.')
+        }
+        let today = new Date();
+        let year = today.getFullYear();
+        // 달은 항상 +1은 해줘야 현재 달이 된다. 아님 1 빼서 나옴! 4월이면 3 뜸
+        let month = today.getMonth()+1;
+        let to = today.getDate();
+        //요일은 일요일부터 시작하며 시작 숫자는 0이다.
+        let day = today.getDay();
+        // switch(day){
+        //     case 0:
+        //         day = '일요일';
+        //         break;
+        //     case 1:
+        //         day = '월요일';
+        //         break;
+        //     case 2:
+        //         day = '화요일';
+        //         break;
+        //     case 3:
+        //         day = '수요일';
+        //         break;
+        //     case 4:
+        //         day = '목요일';
+        //         break;
+        //     case 5:
+        //         day = '금요일';
+        //         break;
+        //     case 6:
+        //         day = '토요일';
+        //         break;
+        // }
+        if(day == 0) {
+            day = '일요일';
+        }else if(day == '1') {
+            day = '월요일'
+        }else if(day == '2') {
+            day = '화요일'
+        }else if(day == '3') {
+            day = '수요일'
+        }else if(day == '4') {
+            day = '목요일'
+        }else if(day == '5') {
+            day = '금요일'
+        }else if(day == '6') {
+            day = '토요일'
+        }
+        //백틱 방식 백틱 쓰고 안에 글자는 그냥 쓰고 변수는 ${} 안에 적는다. 그럼 이어쓰기 가능 커피이뇨작용 지려~~~~ 배존나 고파~~~ 근로장려금 언제 들어와~~~
+        console.log(`년도는 ${year}이고,
+            달은 ${month}이고,
+            일은 ${to}이고,
+            요일은 ${day}이다.`)
+        // console.log('년도는'+year+'이고 달은'+month+'이고 일은') 얘는 쫌 옛날 방식 지금은 백틱(위에꺼) 씀
+        //몬스터 마시면 카페인이 잠을 이겼는데 카누는 2개나 풀어도 잠을 이기지 못함..... 장난하세요?
+    </script>
+</body>
+</html>

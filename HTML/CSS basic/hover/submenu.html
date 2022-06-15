@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        li { list-style: none;}
+        a { text-decoration: none; color: inherit;}
+        /* reset */
+        #header {
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+        #header > ul {
+            height: 50px;
+            border-top: 4px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        #header > ul > li {
+            float: left;
+            width: 16.6666%;
+            line-height: 60px;
+        }
+        li li {
+            line-height: 1.6;
+        }
+        li ul {
+            display: none;
+        }
+        li:hover ul {
+            display: block;
+        }
+        #header > ul > li:hover > a {
+            color: tomato;
+        }
+        li li:hover {
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>GreenMall</h1>
+        <ul>
+            <li>
+                <a href="#">제품소개</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">구매안내</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">고객센터</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">서비스</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">홍보센터</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">기업소개</a>
+                <ul>
+                    <li><a href="#">submenu1</a></li>
+                    <li><a href="#">submenu2</a></li>
+                    <li><a href="#">submenu3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

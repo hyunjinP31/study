@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primeNumber(num){
+            let arr = [];
+            for (let i = 2; i <=num; i++){
+                //한번 돌 때 i에 모든 j를 비교하는데 2부터 시작하니까 i와 같은 값의 j가 오기 전에 나누기 해서 나머지가 0이 되면 소수인 거임
+                //뭔 말인지 알겠냐 나 지금 넘 졸려서 내가 무슨 말 하는지도 모르겠음
+                //그니까 i가 한 번 돌 때 j는 한 바퀴를 돌잖아 근데 2부터 시작하니까 작은 수 부터 나누기 시작한단 말임
+                //근데 만약 i가 4일 때 j는 또 2부터 다시 시작해. 근데 4는 2로 나눠지네? 그럼 반복 끊고 버려인거임
+                // 자기자신으로 나누기 전에 작은 숫자로 나눠져 버렸으니까 소수자격 박탈된거
+                //수포자야 어쩌다가 이런 이공계를 와서
+                for (let j =2; j<=i; j++){
+                    if (i%j == 0 && i > j){
+                        break;
+                    }else if (i == j){
+                        arr.push(j);
+                    }
+                }
+            }
+            return arr;
+        }
+        let result = primeNumber(10);
+        console.log(result)
+    </script>
+</body>
+</html>

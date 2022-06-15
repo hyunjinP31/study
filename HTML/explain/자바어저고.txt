@@ -1,0 +1,53 @@
+객체
+프로퍼티 (key: value)
+
+let cat = {
+	name: '나비',
+	age: 3,
+	weight: 4,
+	sleep: function(){
+		console.log('쿨쿨잔다')
+	}
+}
+cat.sleep();
+function print(){
+	console.log('출력했어요');
+}
+
+javascript 내장객체
+javascript 엔진이 구동되는 시점에 바로 제공되며 javascript 코드 어디에서든 사용이 가능한 객체
+-Global
+-Object
+-String
+-Number
+-Boolean
+-Date
+-Array
+-Math
+
+Math.random() 0 보다 크고 1보다 작은 무작위 숫자를 반환
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1은 안나옴 1보다 작은 수이기 때문에. 0<random의 범위>1
+Math.round() 인수로 전달받은 값을 소수점 첫번째 자리에서 반올림한 결과를 반환
+Math.floor() 인수로 전달받은 값을 소수점 첫번째 자리에서 내림한 결과를 반환
+Math.ceil() 인수로 전달받은 값을 소수점 첫번째 자리에서 올림한 결과를 반환
+
+
+
+
+
+
+
+
+
+
+
+

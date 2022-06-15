@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > p:nth-of-type(1){
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- form태그 안에 버튼이 있으면 자동으로 submit이 되어서 전송을 하려함. 그렇게 되면 리셋이 된다. -->
+    <form action="" name="fruitsForm">
+        <p>전체선택<input type="checkbox" name="checkAll" id="All"></p>
+        <p>사과<input type="checkbox"  name="fruits" value="사과"></p>
+        <p>수박<input type="checkbox" name="fruits" value="수박"></p>
+        <p>바나나<input type="checkbox" name="fruits" value="바나나"></p>
+        <p>오렌지<input type="checkbox" name="fruits" value="오렌지"></p>
+    </form>
+    <p><button id="btn">확인</button><span name="result"></span></p>
+
+    <script>
+        let form = document.forms.fruitsForm;
+        let allch = form.checkAll;
+        console.log(allch)
+        allch.addEventListener('click', function(){
+            let inputs = document.forms.fruitsForm.fruits;
+            if(this.checked){
+                inputs.forEach(input=>{
+                    input.checked = true;
+                })
+            }else {
+                inputs.forEach(input=>{
+                    input.checked = false;
+                })
+            }
+        })
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click',function(){
+            let inputs = document.forms.fruitsForm.fruits;
+            let str = '';
+            inputs.forEach(input=>{
+                str = input.checked ? str+input.value : str;
+            })
+            document.querySelector('span').innerHTML = str;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //선언한 것보다 위에서 적으면 referenceError 뜸 호이스팅 되지 않는 선언 방식이기 때문
+        // console.log(num)
+        //선언 자체는 호이스팅 됐지만, 값은 호이스팅 되지 않았기 때문에 값으로 undefined 가 뜸
+        console.log(num3);
+        var num3 = 10;
+        let num;
+        num = 10;
+        //선언하고 바로 할당하지 않으면 에러 발생
+        const num2 = 20;
+
+        //함수 스코프인 var는 함수만 기준으로 잡기 때문에 나머지에 영향을 받지 않음. 그래서 밖에서 불러도 불림
+        for (i= 0; i < 3; i++){
+            var varNum = i;
+            // console.log(varNum);
+        }
+        // console.log(varNum);
+
+        //let은 블럭 스코프이기 때문에 블럭 안에서 선언하면 밖에서 못 부름
+        for (i= 0; i < 3; i++){
+            let letNum = i;
+            // console.log(varNum);
+        } 
+        console.log(letNum);
+
+        //var는 함수만 기준이기 때문에 함수 안에서 선언하면 밖에서 못 부름
+        function myFunc() {
+            var varNum1 = 20;
+            console.log(varNum1);
+        }
+        myFunc();
+        console.log(varNum1);
+    </script>
+</body>
+</html>

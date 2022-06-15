@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background: darkolivegreen;
+        }
+        #a {
+            width: 50px;
+            height: 50px;
+            background: violet;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            /* transition: 0.3s; */
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click Me!</button>
+    <div id="box"></div>
+    <div id="a"></div>
+
+    <script>
+        // document.querySelector('#btn').onclick = eventOn;
+        document.querySelector('#btn').addEventListener('mouseleave', eventOn);
+        document.querySelector('#box').addEventListener('mousemove', function(E) {
+            document.querySelector('#a').style.left = `${E.pageX}px`;
+            document.querySelector('#a').style.top = `${E.pageY}px`;
+            // console.log(`x좌표는 ${E.pageX}이고, y좌표는 ${E.pageY} 이다.`)
+        })
+        function eventOn() {
+            console.log('이벤트가 발생했습니다.');
+        }
+        window.addEventListener('resize', function(e){
+            console.log(e)
+            let wwid = window.innerWidth;
+            let whei = window.innerHeight;
+            document.querySelector('#box').style.width = `${wwid}px`;
+            document.querySelector('#box').style.Height = `${whei}px`;
+        })
+    </script>
+</body>
+</html>

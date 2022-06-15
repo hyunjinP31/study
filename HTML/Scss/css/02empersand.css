@@ -1,0 +1,31 @@
+.btn {
+  position: absolute;
+}
+
+.btn.active {
+  color: rebeccapurple;
+}
+
+.list li {
+  width: 120px;
+}
+
+.list li:last-child {
+  margin-right: 50px;
+}
+
+.list li:last-child:hover {
+  background: red;
+}
+
+.fs-small {
+  font-size: 14;
+}
+
+.fs-medium {
+  font-size: 24px;
+}
+
+.fs-large {
+  font-size: 36px;
+}

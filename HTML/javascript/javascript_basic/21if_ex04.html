@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li { list-style: none;}
+         body > div {
+            width: 70%;
+            margin: 100px auto;
+            background: #eee;
+            border-radius: 10px;
+            text-align: center;
+            padding: 80px 0;
+            line-height: 1.6;
+         }
+         h2 {
+            padding: 30px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 30px;
+         }
+         #moneyView {
+             line-height: 50px;
+             font-weight: bold;
+         }
+         button {
+             border: 0;
+             outline: 0;
+             background: salmon;
+             color: #fff;
+             border-radius: 4px;
+             padding: 10px 20px;
+         }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>화면</h2>
+        <ul>
+            <li>A음료수 : 500원</li>
+            <li>B음료수 : 700원</li>
+            <li>C음료수 : 1000원</li>
+        </ul>
+        <div id="moneyView">현재금액: 0원</div>
+        <p>
+            <button id="btn100">100</button>
+            <button id="btn500">500</button>
+            <button id="btn1000">1000</button>
+        </p>
+    </div>
+
+    <script>
+        //버튼 변수 담기
+        let add100 = document.querySelector('#btn100');
+        let add500 = document.querySelector('#btn500');
+        let add1000 = document.querySelector('#btn1000');
+        let moneyView = document.querySelector('#moneyView');
+        let money = 0;
+
+        //1. 버튼을 클릭하면 돈 증가
+        //2. 잔액을 표시
+        //3. 살 수 있는 음료수를 경고창에 표시
+        add100.addEventListener('click', function() {
+            money += 100
+            moneyView.innerHTML = `현재금액: ${money}원`;
+            comparison()
+        })
+        add500.addEventListener('click', function() {
+            money += 500
+            moneyView.innerHTML = `현재금액: ${money}원`;
+            comparison()
+            
+        })
+        //버튼을 클릭하면 (addEventListener 'click') 머니가 지정한 만큼 증가하고 해당 내용이 변수와 함께 변경되는 함수를 실행.
+        //그 함수 안에 반복되는 if문 을 따로 빼 함수로 만들 걸 넣어 if문 실행
+        add1000.addEventListener('click', function() {
+            money += 1000
+            moneyView.innerHTML = `현재금액: ${money}원`;
+            comparison()
+        })
+
+        //if문 함수로 따로 빼서 만들기
+        function comparison() {
+            if (money >= 1000) {
+                alert('A,B,C 음료수 선택 가능!');
+            }else if (money >=700) {
+                alert('A,B 음료수 선택 가능!');
+            }else if (money >= 500) {
+                alert('A 음료수 선택 가능!');
+            }else {
+                alert('선택 가능한 음료수가 없음!');
+            }
+        }
+    </script>
+</body>
+</html>

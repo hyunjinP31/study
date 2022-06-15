@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box;}
+        table {
+            border-spacing: 0;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px solid cornflowerblue;
+        }
+        h2 {
+            text-align: center;
+            font-size: 20px;
+        }
+        td {
+            border: 1px solid cornflowerblue;
+            padding: 10px;
+        }
+        .basic_info, .persnal_info {
+            background: cornflowerblue;
+        }
+        input {
+            width: 200px;
+            height: 28px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 4px;
+        }
+        textarea{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100px;
+            height: 24px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .bottom {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .chbox input{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <form action="" name="join">
+            <table>
+                <tr class="basic_info">
+                    <td colspan="2"><h2>회원 개인 정보</h2></td>
+                </tr>
+                <tr>
+                    <td><h2>아이디:</h2></td>
+                    <td><input type="text" name="userId" class="input" required></td>
+                </tr>
+                <tr>
+                    <td><h2>비밀번호:</h2></td>
+                    <td><input type="password" name="userPass" class="input" required></td>
+                </tr>
+                <tr>
+                    <td><h2>비밀번호확인:</h2></td>
+                    <td class="passCh"><input type="password" name="userPassch" class="input" required></td>
+                </tr>
+                <tr>
+                    <td><h2>메일주소:</h2></td>
+                    <td><input type="email" name="userEmail" class="input" required> 예)id@domain.com</td>
+                </tr>
+                <tr>
+                    <td><h2>이름:</h2></td>
+                    <td><input type="text" name="userName" class="input" required></td>
+                </tr>
+                <tr class="persnal_info">
+                    <td colspan="2"><h2>개인 신상 정보</h2></td>
+                </tr>
+                <tr>
+                    <td><h2>주민등록번호:</h2></td>
+                    <td>
+                        <input type="text" name="userCode1" class="input">-<input type="text" name="userCode2" class="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>주소:</h2></td>
+                    <td>
+                        <input type="text" name="userMail" class="input" placeholder="우편번호"><button class="addressBtn">우편번호 찾기</button><br>
+                        <input type="text" name="userAddress1" class="input" placeholder="도로주소"><input type="text" name="userAddress2" class="input" placeholder="지번주소">
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>생일:</h2></td>
+                    <td>
+                        <input type="text" name="userYear" class="input">년 <input type="text" name="userMonth" class="input">월 <input type="text" name="userDay" class="input">일
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>관심분야:</h2></td>
+                    <td class="chbox">
+                        <input type="checkbox" name="computer" class="input">컴퓨터 
+                        <input type="checkbox" name="internet" class="input">인터넷 
+                        <input type="checkbox" name="traval" class="input">여행 
+                        <input type="checkbox" name="movie" class="input">영화감상 
+                        <input type="checkbox" name="music" class="input">음악감상
+                    </td>
+                </tr>
+                <tr>
+                    <td><h2>자기소개:</h2></td>
+                    <td><textarea name="introduce" class="introduce" cols="70" rows="10"></textarea></td>
+                </tr>
+            </table>
+            <div class="bottom">
+                <button class="join">회원가입</button><button class="reset">다시입력</button>
+            </div>
+        </form>
+        
+    </div>
+
+    <script>
+        //비밀번호와 비밀번호확인의 값이 같은가
+        let pass = join.userPass;
+        let passCh = join.userPassCh;
+        let al = document.querySelector('.passch').insertAdjacentHTML('beforeend',`<span>*비밀번호가 일치하지 않습니다.</span>`)
+        pass.addEventListener('input', function(){
+            if (pass != passCh) al;
+        })
+        
+        let addressBtn = document.querySelector('.addressBtn');
+        addressBtn.addEventListener('click',function(){
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    console.log(data);
+                    join.userMail.value = data.zonecode;
+                    join.userAddress1.value = data.roadAddress;
+                    join.userAddress2.value = data.jibunAddress;
+                }
+            }).open();
+        })
+    </script>
+</body>
+</html>

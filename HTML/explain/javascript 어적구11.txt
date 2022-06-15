@@ -1,0 +1,133 @@
+﻿함수
+1. 함수선언문 //호이스팅 됨. 밑에 적어놔도 위에서 부를 수 있음
+function myFunc(){
+	return; //리턴을 만나는 순간 함수가 끝나기 때문에 리턴 아래에 있는 구문들은 실행되지 않는다.
+	let num = 20;
+	return num;
+}
+myFunc();
+
+
+
+function myFunc2(num1, num2...){
+	return;
+}
+2.함수 표현식 //호이스팅 안 됨. 위에 적고 밑에서 불러야 함.
+let myFunc2 = function(num1, num2){
+	return num1 + num2;
+}
+
+3.화살표 함수
+무기명 함수는 화살표 함수로 변경할 수 있다. 
+function(num1, num2){
+	return num1 + num2;
+}
+
+1)function 대신 =>
+=>
+
+2)매개변수가 하나면 ()소괄호 생략가능
+두개 이상부터는 ()소괄호 생략불가.
+function(){} ---> () => {} //이런식으로 축약
+function(num){} ---> num => {} //매개변수 하나일 때 소괄호 생략
+function(num1, num2){} ---> (num1, num2) => {} 
+
+3)실행문이 한 줄일때는 {} 생략가능
+function(num1, num2){ console.log(num1+num2)}
+--->
+(num1, num2) => console.log(num1, num2); //실행문이 한 줄일 때 중괄호 생략
+
+4)실행문이 리턴을 포함한 한줄일때는 리턴도 생략가능
+function(num1,num2){ return num1+num2; }
+---> (num1, num2) => num1+num2; //실행문이 '리턴 포함 한 줄' 일 때 리턴 생략
+
+안경닦이
+1) arguments 객체
+function sum(num1,num2){
+	console.log(arguments[0]);
+	console.log(arguments[1]);
+	console.log(arguments[2]);
+	return num1+num2;
+}
+sum(10,20,30);
+2)나머지 매개변수
+:나머지 인수를 다 묶어서 배열로 넘겨줌. (남아있는 인수를 모아줌)
+매개변수가 여러개일 때 항상 마지막에 있어야 함.
+구문 --> ...매개변수명
+function sumAll(a,b,...c){
+
+}
+sumAll(10,20,30,40,50); //a = 10, b = 20, c = [30,40,50]
+
+스프레드 문법 ...배열변수명
+배열안에 있는 값들을 꺼내서 뿌려줌
+[1,2,3,4,5,6,7] ---> 1,2,3,4,5,6,7
+
+배열복사
+let arr1 = [1,2,3]
+let arr2 = arr1;
+
+
+기본형 데이터 타입
+Number, String, null, Boolean,, undefined
+
+
+참조형 데이터 타입
+Object, function
+
+
+
+
+UI :userInterface
+API :application programming interface
+
+문자열 ./String/javascript
+배열
+객체
+수학
+
+
+Math
+Math.random() 0~1 사이의 값들을 랜덤하게 출력
+Math.floor() 소수점 내림
+Math.ceil() 소수점 올림
+Math.round() 소수점 반올림
+Math.min() 안에 있는 숫자들 중 가장 작은 값 출력
+Math.max() 안에 있는 숫자들 중 가장 큰 값 출력
+Math.abs() 절댓값 (부호 다 떼줌)
+
+
+
+배열 메소드
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

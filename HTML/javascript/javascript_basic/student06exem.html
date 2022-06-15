@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = 'Admin';
+        let pass = 'TheMaster';
+        if(id === prompt('아이디를 입력하세요.')) {
+            if(pass === prompt('비밀번호를 입력하세요')) {
+                alert('환영합니다.');
+            }else{
+                alert('인증에 실패하였습니다.');
+            }
+        }else {
+            alert('아이디를 다시 확인해주세요.')
+        }
+    </script>
+</body>
+</html>

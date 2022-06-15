@@ -1,0 +1,40 @@
+﻿
+1. 백업 
+
+MySQLDump -u사용자 -p암호 DB이름 > DB백업.sql
+
+ex) mysqldump -uroot -p1234 test_db > test_db.sql-- ('test_db' 전체 내용을 백업)
+
+ 
+
+2. 테이블 백업
+
+MySQLDump -u사용자 -p암호 DB이름 TB이름 > TB백업.sql
+
+ex) mysqldump -uroot -p1234 test_db test_table > test_table.sql -- ('test_db' 의 'test_table' 내용을 백업)
+
+ 
+
+3. 데이터 백업
+
+MySQLDump -u사용자 -p암호 DB이름 TB이름 -w "조건" > 데이터백업.sql
+
+ex) mysqldump -uroot -p1234 test_db test_table -w "name='홍길동' > test_table.sql 
+
+ -- ('test_db' 의 'test_table' 에서 'name' 이 홍길동인 데이터만 백업) 
+
+ 
+
+4. 복원 (데이터 등록)
+
+MySQL -u사용자 -p암호 DB이름 < DB백업.sql -- DB가 존재 하지 않는 경우 미리 생성 후 진행 하여야 함.
+
+MySQL -u사용자 -p암호 DB이름 TB이름 < TB백업.sql
+
+MySQL -u사용자 -p암호 DB이름 TB이름 < 데이터백업.sql
+[출처] MySQL 데이터 백업 - 복구|작성자 손블리
+
+mysqldump -uroot -p1234 mall_db > mall_db.sql
+mysqldump -uroot -p1234 test_db test_table > test_table.sql
+mysql -uroot -p1234 mall < mall.sql
+

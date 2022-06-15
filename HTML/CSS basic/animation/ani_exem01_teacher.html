@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes around {
+            0% {
+                left: 0;
+                top: 0;
+                width: 100px;
+                height: 100px;
+            }
+            12.5%{
+                width: 300px;
+                top: 0;
+                left: 0;
+                height: 100px;
+                background-color: lightblue;
+            }
+            25%{
+                width: 100px;
+                left: 200px;
+                top: 0;
+                height: 100px;
+                background: lightblue;
+            }
+            37.5% {
+                height: 300px;
+                left: 200px;
+                top: 0;
+                background: lightblue;
+                width: 100px;
+            }
+            50% {
+                height: 100px;
+                left: 200px;
+                top: 200px;
+                background: lightblue;
+                width: 100px;
+            }
+            62.5% {
+                background: lightgreen;
+                left: 0;
+                top: 200px;
+                width: 300px;
+                height: 100px;
+            }
+            75% {
+                background: lightgreen;
+                left: 0;
+                top: 200px;
+                width: 100px;
+                height: 100px;
+            }
+            87.5% {
+                background: lightgreen;
+                left: 0;
+                top: 0px;
+                width: 100px;
+                height: 300px;
+            }
+            100% {
+                background: tomato;
+                left: 0;
+                top: 0px;
+                width: 100px;
+                height: 100px;
+            }
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: tomato;
+            animation-name: around;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

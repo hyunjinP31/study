@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let animal = {
+            eats : true,
+            say() {
+                console.log('eeee')
+            }
+        };
+        let rabbit = {
+            jumps: true
+        }
+        rabbit.__proto__ = animal;
+        console.log(rabbit.jumps);
+        console.log(rabbit.eats);
+        console.log(rabbit);
+        console.log(animal.eats);
+        rabbit.say();
+        animal.say();
+
+        const car = {
+            wheels: 4,
+            drive : function(){
+                console.log('drive...');
+            }
+        }
+        const bmw = {
+            color: "red",
+            navigator: 1,
+        }
+        bmw.__proto__ = car;
+        bmw.drive();
+        let keys = Object.keys(bmw);
+        console.log(keys);
+
+        //for in 문은 해당 객체의 키뿐 아니라 해당 객체의 프로토 타입의 키까지 포함
+        //Object.keys(obj)는 해당 객체의 키만 배열로 반환(프로토타입의 키는 포함하지 않음)
+        //hasOwnProperty(key) 해당 객체의 키만 true를 반환, 프로토타입의 키는 false 반환
+        for (let key in bmw){
+            if (bmw.hasOwnProperty(key)){
+                console.log('o', key);
+            }else {
+                console.log('x', key);
+            }
+        }
+
+        const Car2 = function(color){ //생성자 함수와 같음
+            this.color = color;
+            // this.wheels = 4;
+        }
+        const X1 = new Car2("pink");
+        const X2 = new Car2("blue");
+        console.log(X1, X2)
+        Car2.prototype.wheels = 4;
+        console.log(X1, X2)
+        console.log(X1 instanceof Car2)
+        //해당객체게 메소드가 있는지 보고 없다면 프로토타입으로 올라가서 찾는다.
+
+    </script>
+</body>
+</html>

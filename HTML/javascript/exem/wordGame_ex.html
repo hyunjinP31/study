@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        div {
+            text-align: center;
+        }
+        #header {
+            background: cornflowerblue;
+            color: #fff;
+            line-height: 80px;
+            font-size: 36px;
+        }
+        #text {
+            color: cornflowerblue;
+            font-size: 62px;
+            padding: 30px;
+        }
+        p {
+            padding: 10px;
+        }
+        input {
+            line-height: 40px;
+            width: 200px;
+        }
+        button {
+            line-height: 40px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        타자게임
+    </div>
+    <div>
+        <div id="text">
+            display
+        </div>
+        <p><input type="text" id="inputText"></p>
+        <p>남은 시간 : <span id="time">0</span>초  점수 : <span id="score">0</span> 점</p>
+        <p><button id="gameBtn">게임시작</button></p>
+    </div>
+
+    <script>
+        let displayText = document.querySelector('#text');
+        let inputWord = document.querySelector('#inputText');
+        let scoreDisplay = document.querySelector('#score');
+        let timeDisplay = document.querySelector('#time');
+        let btn = document.querySelector('#gameBtn');
+        let score = 0;
+        let time = 20;
+        let isPlaying;
+        let timeInterval;
+        //글자배열
+        let texts = ['display','float','background','position','color','clear','flex','textalign','fontweight','top']
+        let randomNum = Math.floor(Math.random()*10);
+        displayText.innerHTML = texts[randomNum];
+
+        //게임시작 버튼을 클릭하면
+        //isPlaying 값을 true로 할당
+        //버튼의 값을 게임중으로 변경
+        //time인터발을 실행
+        btn.addEventListener('click', function(){
+            if(isPlaying) return; //isPlaying이 true라면 게임중에는 버튼을 눌러도 중첩동작하지 않도록 하기.
+            btn.innerHTML = '게임중';
+            isPlaying = true; //게임진행중
+            timeDisplay.innerHTML = time; //초기 타입 지정
+            timeInterval = setInterval(timer, 1000) //1초마다 timer함수를 실행
+        })
+        //타임값이 1초마다 1씩 감소하고 0이되면 isPlaying을 false로 바꾼다.
+        function timer(){
+            time > 0 ? time-- : isPlaying = false;
+            timeDisplay.innerHTML = time;
+            if(!isPlaying){
+                btn.innerHTML = '게임종료';
+                clearInterval(timeInterval);
+            }
+        }
+        inputWord.addEventListener('input',function(){ //input이라는 이벤트는 input안에 값이 적힐 때마다 확인하는 이벤트
+            if(!isPlaying) return;
+            //input의 값과 화면의 글자가 일치할 때 점수를 1씩 증가
+            if(displayText.innerHTML == inputWord.value){ //디스플레이 텍스트와 인풋의 값이 일치할 때 아래의 실행문을 실행
+                score+= 1; // 스코어에 +1점을 해주고
+                let randomNum = Math.floor(Math.random()*10);
+                displayText.innerHTML = texts[randomNum]; //디스플레이의 값을 랜덤한 텍스트로 바꿔주며
+                inputWord.value = ""; //인풋 안에 적었던 값을 리셋시켜줌
+                scoreDisplay.innerHTML = score; // 올라간 스코어가 화면에 나타나도록 해줌
+            }
+        })
+    </script>
+</body>
+</html>

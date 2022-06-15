@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>개인정보입력</h1>
+        <form action="get" method="join.php">
+            <UL>
+                <li>
+                    이메일 : 
+                    <label>
+                        <span>이메일 아이디</span>
+                        <input type="text" name="userEmail1">
+                    </label>
+                        @
+                    <label>
+                        <span>이메일주소</span>
+                        <input type="text" name="userEmail2">
+                    </label>
+                    <select name="userEmail3">
+                        <option value="">직접입력</option>
+                        <option value="hanmail.co.kr">한메일</option>
+                        <option value="naver.com">네이버</option>
+                        <option value="gamil.com">지메일</option>
+                    </select>
+                    <input type="button" value="인증">
+                </li>
+                <li>
+                    <input type="text" name="userName" placeholder="이름">
+                </li>
+                <li><input type="password" name="userPass" placeholder="비밀번호"></li>
+                <li><input type="password" name="userPassch" placeholder="비밀번호확인"></li>
+            </UL>
+            <ul>
+                <li><select name="phoneNum1" id="phoneNum1">
+                        <option value="010">010</option>
+                        <option value="010">011</option>
+                        <option value="010">016</option>
+                </select>
+                -<input type="text" name="phoneNum2">-<input type="text" name="phoneNum3">
+            </li>
+            <li>
+                성별 남<input type="radio" name="gender" value="male"> 여<input type="radio" name="gender" value="female">
+            </li>
+            <li>
+                <input type="text" name="userYear">년<input type="text" name="userMonth">월<input type="text" name="userDay">일
+            </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>

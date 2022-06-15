@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //입력받은 두 수의 최대공약수와 최소 공배수를 차례로 배열에 담아 반환
+        function solution(n, m){
+            let min = Math.min(n,m); //둘 중 작은 수 구하기
+            let max = Math.max(n,m); //둘 중 큰 수 구하기
+            for (let i = min; i>0 ; i--){
+                if (max%i === 0 && min%i === 0) return [i , n*m/i];
+            }
+        }
+        // console.log(solution(2, 5));
+
+        function A (a) {
+            for (let i = 0; i<a; i++){
+                if (a%i == 0 && i != 1){
+                    return i;
+                }
+            }
+        }
+        // console.log(A(9)) // 3
+
+
+        //두 수의 최대공약수
+        //두 수의 최소공배수
+        //3, 12
+        function solution2(n, m){
+            let answer = [];
+            //최대공약수 구하기
+            //두 수중 작은 수만큼 반복하기
+            //두 수를 1부터 작은 수까지 나머지 연산을 했을 때 둘다 0이 되는 가장 큰 수 구하기
+            let min = Math.min(n,m)
+            for(let i = 1; i<=min ; i++){
+                if(n % i==0 && m % i==0) {
+                    answer[0] = i; //return을 적었으면 가장 처음에 0이 되는 수인 1이 나오겠지만 return을 해주지 않았기에 for문은 계속 돌고 결국 해당 조건을 만족하는 가장 큰 수가 i에 담긴다.
+                }
+            }
+            //최소공배수 구하기
+            //어떤 수를 n으로 나눴을 때 나머지가 0이 되고
+            //어떤 수를 m으로 나눴을 때 나머지가 0이 되는 수 중 가장 작은 수.
+            
+            let lcm = 1;
+            while(true){
+                if(lcm%n ===0 && lcm%m ===0){
+                    break;
+                }
+                lcm++;
+            }
+            answer[1] = lcm;
+            return answer;
+        }
+        console.log(solution2(3, 12));
+
+    </script>
+</body>
+</html>

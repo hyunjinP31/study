@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cat = {
+            name: '나비',
+            age : 3,
+            weight: 4,
+            sleep: function(){
+                console.log('잠을 잔다');
+            },
+            eat: function(){
+                console.log('밥을 먹는다');
+            }
+        }
+
+
+        //객체 복사
+        //원시적 데이터를 복사한 뒤 원본의 값을 바꿔도 복사된 값은 그대로 유지됨
+        //객체 복사는 원본 값을 복사하는 게 아니라 원본 데이터의 주소를 복사하기 때문에 원본 값이 바뀌면 복사된 값도 바뀌게 된다.
+        let student1 = {
+            name: 'green',
+        };
+        let student2 = student1;
+        student1.name = 'blue';
+        console.log(student2);
+        let num1 = 10;
+        let num2 = num1
+        num1 = 20;
+        console.log (num2);
+        console.log (student1 == student2);
+        console.log (student1 === student2);
+        let a = {};
+        let b = {};
+        console.log(a == b);
+
+        //빈 요소를 가진 객체를 하나 만들어 주고 그 안에 객체를 복사해주면 빈 요소는 독립적 요소이기 때문에 '값' 자체를 복사해옴
+        //for in문 을 사용해서 
+        let clone = {};
+        for (let key in student1){
+            clone[key] = student1[key];
+        }
+        console.log (clone === student1);
+    </script>
+</body>
+</html>

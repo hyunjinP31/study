@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let book = {
+            이름: 'NAture of Code',
+            가격: '30000원',
+            저자: 'Daniel Shifman',
+            ISBM: 9788968481901,
+            페이지: 620,
+        }
+        console.log(book);
+
+        //데이터를 객체 배열로 만들어라
+        let units = [];
+        function Unit(이름, 미네랄, 가스, 보급품){
+            this.이름 = 이름;
+            this.미네랄 = 미네랄;
+            this.가스 = 가스;
+            this.보급품 = 보급품;
+        }
+        units.push(new Unit('일벌레',50,0,1));
+        units.push(new Unit('여왕',150,0,2));
+        units.push(new Unit('바퀴',75,35,2));
+        units.push(new Unit('히드라리스크',100,50,2));
+        units.push(new Unit('타락귀',150,100, 2));
+        console.log(units);
+    </script>
+</body>
+</html>

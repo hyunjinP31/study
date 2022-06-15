@@ -1,0 +1,258 @@
+:root {
+    --font-middle-size: 14px;
+    --font-color: #444;
+    --point-color: #3f51b5;
+    --main-tit-size: 36px;
+    --light-gray: #ddd;
+    --dark-gray: #333;
+    --so-padding: 26px;
+    --mi-padding: 56px;
+}
+body {
+    font-family: '맑은고딕',Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-middle-size);
+    color: var(--font-color);   
+}
+.inner_con {  
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title {
+    padding: var(--so-padding) 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title h2 {
+    color: var(--point-color);
+    font-size:var(--main-tit-size);
+}
+img {
+    width: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding: 16px;
+}
+
+header ul {
+    display: flex;
+}
+header ul li {
+    padding: 0 16px;
+}
+
+#weare .title{
+    display: flex;
+    align-items: center;
+}
+#weare .title h2 {
+    width: 30%;
+    position:relative;
+}
+#weare .title h2::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 30px;
+    background-color: var(--light-gray);
+    position: absolute;
+    top: 10px;
+    left: 300px;
+}
+#weare .title p {
+    width: 70%;
+}
+#weare ul {
+    display: flex;
+    justify-content: space-between;
+}
+#weare ul li {
+    width: 20%;
+    text-align: center;
+    padding: var(--mi-padding) 0;
+}
+#weare ul li img {
+    height: 60px;
+    width: auto;
+}
+#weare ul li h3 {
+    color: var(--point-color);
+    padding: var(--so-padding);
+}
+#work ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+#work ul li {
+    width: 25%;
+    position: relative;
+}
+#work .bluebg {
+    background-color: rgba(63,81,171,0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#work .bluebg div {
+    position: absolute;
+    top: -100px;
+    left: 50px;
+    transition: 0.5s;
+}
+#work li:hover .bluebg div {
+    top: 50px;
+}
+#work li:hover .bluebg{
+    background-color: rgba(63,81,171,0.6);
+}
+#blog {
+    display: flex;
+}
+#blog div {
+    width: 35%;
+}
+#blog ul {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+#blog ul li {
+    width: 32%;
+}
+section:not(:first-child) {
+    padding:var(--mi-padding) 0;
+}
+#contact {
+    display: flex;
+}
+#contact .title {
+    width: 35%;
+}
+#contact #formdiv {
+    width: 65%;
+}
+#inputdiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+}
+#inputdiv input {
+    width: 45%;
+    line-height: 50px;
+    border:0;
+    border-bottom: 1px solid #ccc;
+}
+#inputdiv textarea {
+    width: 45%;
+    border:0;
+    border-bottom: 1px solid #ccc;
+}
+button {
+    background-color: var(--point-color);
+    color: #fff;
+    border: 0;
+    line-height: 50px;
+    padding: 0 30px;
+    float: right;
+}
+footer {
+    text-align: center;
+    padding: var(--so-padding);
+}
+.mobile {
+    display: none;
+}
+/* 디바이스 width의 크기가 0~1023px일때 스타일 */
+@media screen and (max-width: 1023px) {
+    .title {
+        text-align: center;
+    }
+    #weare ul {
+        flex-wrap: wrap;
+    }
+    #weare ul li {
+        width: 40%;
+    }
+    #work ul li {
+        width: 50%;
+        position: relative;
+    }
+    #blog {
+        flex-direction: column;
+    }
+    #blog div {
+        width: 100%;
+    }
+    #blog ul {
+        width: 100%;
+    }
+    #contact {
+        flex-direction: column;
+    }
+    #contact .title {
+        width: 100%;
+    }
+    #contact #formdiv {
+        width: 100%;
+    }
+    #weare .title{
+        flex-direction: column;
+    }
+    #weare .title h2, #weare .title p {
+        width: 100%;
+    }
+    #weare .title h2::after {
+        display: none;
+    }
+}
+/* 디바이스 width가 0~767px까지 스타일 */
+@media screen and (max-width:767px){
+    #weare ul li {
+        width: 100%;
+    }
+    #work ul li {
+        width: 100%;
+    }
+    #blog ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    #blog ul li {
+        width: 100%;
+    }
+    #inputdiv input,#inputdiv textarea {
+        width: 100%;
+    }
+    #inputdiv {
+        height: auto;
+    }
+    header nav {
+        display: none;
+    }
+    .mobile {
+        width: 60px;
+        height: 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile span {
+        width: 60%;
+        height: 5px;
+        background-color: var(--point-color);
+        margin: 3px;
+    }
+}

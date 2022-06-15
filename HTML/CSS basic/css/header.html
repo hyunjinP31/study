@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        #header h1 {
+            float: left;
+        }
+        #header #gnbmenu {
+            float: right;
+        }
+        #header #gnbmenu li {
+            float: left;
+            padding: 0 10px;
+        }
+        #header #menu {
+            display: inline-block;
+        }
+        #header #menu li {
+            float: left;
+            padding: 0 20px;
+        }
+        a { text-decoration: none; color: inherit;}
+        .clear_both::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li .material-icons {
+            font-size: 42px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header" class="clear_both">
+            <h1><a href="#"><img src="./images/logo.png" alt="씨큐아이"></a></h1>
+            <ul id="menu">
+                <li><a href="">menu1<i class="material-icons">cloud</i></a></li>
+                <li><a href="">menu2</a></li>
+                <li><a href="">menu3</a></li>
+                <li><a href="">menu4</a></li>
+                <li><a href="">menu5</a></li>
+            </ul>
+            <ul id="gnbmenu">
+                <li><img src="./images/language_icon.png" alt="언어선택아이콘"></li>
+                <li><img src="./images/search_icon.png" alt="검색아이콘"></li>
+                <li><img src="./images/sitemap_icon.png" alt="사이트맵아이콘"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

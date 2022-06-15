@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ['🥥','🍈','🍍','🍇','🍑'];
+        //01. 문자로 변경하기 join()
+        let fruitsStr = fruits.join('_');
+        console.log(fruitsStr);
+        //02. 문자를 배열로 변경하기 split(이 안에 있는 값을 기준으로 배열로 나누겠다.) arr = "1*2*3*4*5" 를 배열로 바꾸기 arr.split('*') = *를 기준으로 값을 나누겠다.
+        //뒤에 숫자를 쓰면 그 만큼만 배열로 만듦 
+        let str = "a,b,c,d,e";
+        let strarr = str.split(',');
+        console.log(strarr);
+        //03. 해당 조건에 맞는 하나의 값을 찾아서 반환 find()
+        let score = [60,70,80,90,95];
+        //find 첫 번째 자리는 값을 받아옴
+        //첫번째 값부터 비교해서 조건에 맞는 값을 찾는 순간 멈춤. 그리고 그 값을 반환함
+        let result = score.find(function(sc){
+            return sc > 70;
+        })
+        // 조건이 한 줄만 있을 때 ;로 구분할 게 하나뿐일 때 중괄호 생략가능, return만 있을 때 return도 생략가능 sc=> sc > 70 이렇게 쓸 수 있음
+        let result1 = score.find(sc=>{return sc > 70})
+        console.log(result)
+        //04. 해당 조건에 맞는 모든 값을 찾아서 배열로 반환 filter()
+        let result2 = score.filter(function(sc){
+            return sc > 60;
+        })
+        console.log(result2)
+        //05. 값을 수정 후 배열로 반환 map();
+        //사칙연산 가능. 문자열 추가 가능. 모든 값마다 한 번씩 적용됨
+        let result3 = score.map(function(sc){
+            return `점수는 ${sc}점 이다.`;
+        })
+        console.log(result3);
+    </script>
+</body>
+</html>

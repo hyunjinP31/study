@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        @keyframes scaleX {
+            0% {
+                width: 0;
+            }
+            100% { width: 100%; }
+        }
+        @keyframes scaleY {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+        @keyframes scale_center {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            100% {
+                height: 40%;
+                opacity: 1;
+            }
+        }
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #wrap {
+            width: 420px;
+            height: 280px;
+            position: relative;
+        }
+        #wrap div {
+            background: #000;
+            position: absolute;
+        }
+        #leftline { width: 10px; height: 100%; bottom: 0; left: 0; animation: scaleY 1s;}
+        #rightline {width: 10px; height: 100%; top: 0; right: 0; animation: scaleY 1s;}
+        #topline {width: 100%; height: 10px; top: 0; left: 0;
+            animation: scaleX 1s;
+        
+        }
+        #bottomline { width: 100%; height: 10px; bottom: 0; right: 0;
+            animation: scaleX 1s;
+        
+        }
+        #centerline {
+            width: 3px; height: 40%; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            opacity: 0; animation: scale_center 1s 1s; animation-fill-mode: forwards;
+        }
+        h2 {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: opacity 0.5s 2s;
+            animation-fill-mode: forwards;
+        }
+        p {
+            position: absolute;
+            left: 50%;
+            bottom: 16%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: opacity 0.5s 2s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="leftline"></div>
+        <div id="rightline"></div>
+        <div id="topline"></div>
+        <div id="bottomline"></div>
+        <div id="centerline"></div>
+        <h2>Green Academy</h2>
+        <p>green web</p>
+    </div>
+</body>
+</html>

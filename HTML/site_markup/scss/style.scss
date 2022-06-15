@@ -1,0 +1,119 @@
+*{ margin: 0; padding: 0; box-sizing: border-box; vertical-align: middle;}
+li { list-style: none; }
+a { text-decoration: none; color: inherit;}
+
+$black_bg: #000;
+$white_color: #fff;
+
+@mixin default-width($wid:1200px) {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@mixin flexlayout($dir:row, $wrap: nowrap, $just: space-between, $align: center){
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+#header {
+    background: $black_bg;
+    color: $white_color;
+    height: 80px;
+    div {
+        @include flexlayout();
+        ul {
+            @include flexlayout();
+            &:nth-child(1) li {
+                padding: 0 16px;
+            }
+            &:nth-child(3) li {
+                padding: 0 8px;
+            }
+        }
+    }
+}
+.inner_wrap {
+    @include default-width();
+}
+#visual {
+    background: $black_bg;
+    img {
+        width: 100%;
+    }
+}
+#product {
+    #quickmenu {
+        @include flexlayout();
+        height: 120px;
+        border-bottom: 3px double #ccc;
+        ul {
+            @include flexlayout();
+            li {
+                padding: 0 16px;
+            }
+        }
+    }
+    #newproduct {
+        text-align: center;
+        h2 {
+            text-align: center;
+            padding: 24px;
+        }
+        ul { 
+            @include flexlayout();
+            li {
+                width: 25%;
+            }
+        }
+        padding-bottom: 50px;
+    }
+}
+.clearBoth {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+#banner {
+    div {
+        float: left;
+        &:nth-child(1) {
+            width: 50%;
+        }
+        &:nth-child(2) {
+            width: 50%;
+        }
+        &:nth-child(3) {
+            width: 25%;
+        }
+        &:nth-child(4) {
+            width: 25%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+#footer {
+    div {
+        @include flexlayout();
+        &:nth-child(1) {
+            background: aliceblue;
+            border-radius: 4px;
+            margin-top: 24px;
+            padding: 16px;
+            ul {
+                @include flexlayout();
+                li {
+                    padding: 0 16px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            padding: 16px 0;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+﻿empty() 빈 값인지 아닌지를 체크
+비어있으면 true 비어있지 않으면 false
+isset() 존재하는지 아닌지를 체크
+존재한다면 true 존재하지 않는다면 false
+
+include
+다른 php 파일을 코드 안으로 불러와서 사용
+include "파일경로"
+
+디렉토리제어
+scandir('경로')
+
+파일제어
+1) 파일내용 불러오기
+file_get_contents('파일경로');
+2)파일 생성하기(내용 변경)
+file_put_contents(파일명, 내용);
+3) 파일 삭제하기
+unlink('파일경로');
+4) 파일 이름 변경하기
+rename(파일 이름, 변경할 이름)
+rename('abc','green')
+
+
+mysql 연동
+1)mysqli_connect("호스트주소","DB 아이디","DB 비밀번호", "데이터베이스명");
+
+2)myspli_query("컨넥트","쿼리문;");
+ex> mysqli_query($db,"insert into members(name, addr)
+values('ME','ADDRESS');");
+
+insert into members(name, tel, addr, license)
+values('ME','010-1111-1111','ADDRESS','Y');
+
+create table books(
+	id int primary key auto_increment,
+	writer varchar(20),
+	title varchar(60),
+	pub varchar(20),
+	price int,
+	bookdate varchar(30)
+);
+insert into booklist(title, writer, pub, cost, date)
+values(살고 싶다는 농담, )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

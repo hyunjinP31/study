@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //인수, 매개변수, 함수, 반환, 리턴, 매개변수 기본값 설정
+        //내가 전달해주고 싶은 특정 값이 있을 때 매개변수를 사용
+        // 함수 안에서 선언된 것은 함수 안에서만 쓸 수 있음
+        //return을 적지 않으면 함수가 알아서 undefined를 반환해줌
+        function 빵만들기(재료1, 재료2='밀가루'){
+            let 완성빵 = 재료1 + 재료2 + '빵';
+            return 완성빵;
+        }
+        let 재료1 = '밀가루';
+        let 재료2 = '옥수수';
+        //여기서 부른 변수는 함수 밖에 있는 변수
+        let 빵 = 빵만들기('딸기', '찹쌀');
+        console.log(빵);
+        let 빵2 = 빵만들기('찹쌀','팥');
+        console.log(빵2)
+
+        //함수를 작성할 때 중간에 return을 적으면 함수는 바로 종료됨
+        function myFunc() {
+            console.log(1);
+            console.log(2);
+            return;
+            console.log(3);
+            console.log(4);
+            console.log(5);
+        }
+        //2까지만 출력되고 맒
+        myFunc();
+
+        //함수 표현식
+        let 안녕 = function(){
+            console.log('안녕');
+            return '함수표현식';
+        }
+        안녕();
+        //콘솔에 함수를 할당시킨 변수를 부르면 함수의 구문이 몽땅 출력
+        //함수의 return값 출력
+        console.log(안녕());
+        
+        //콜백 함수
+        //함수를 값처럼 전달하는 함수
+        // 빵만들기('옥수수','밀가루')
+
+
+
+        function 대답(질문, 예스, 노) {
+            if (confirm(질문)) 예스()
+            else 노();
+        }
+        function 동의() {
+            alert('동의하셨습니다.');
+        }
+        function 비동의() {
+            alert('동의하지 않았습니다.');
+        }
+        //동의, 비동의 에 괄호가 없는 이유는 얘가 특정 조건이 없어도 걍 실행되어 버리기 때문임
+        //동의하면 동의함수, 비동의 하면 비동의 함수를 띄어야 되는데 괄호 붙이면 나발이고 걍 전부 실행시킴
+        대답('동의하십니까?', 동의, 비동의);
+    </script>
+</body>
+</html>

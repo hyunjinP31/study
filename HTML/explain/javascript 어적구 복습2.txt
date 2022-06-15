@@ -1,0 +1,154 @@
+﻿로딩
+로드시 이벤트 설정하기
+
+1. window.onload = function(){
+	실행문
+}
+2.<body onload="loadingFun()">
+<script>
+	function loadingFun(){
+		실행문
+	}
+</script>
+3.window.addEventListener("load",function(){
+	실행문
+})
+스피너 css 제공 사이트
+https://tobiasahlin.com/spinkit/
+
+
+배열, 객체, 셋
+let
+const
+기본타입
+number, string, boolean, null, undefined, Symbol
+참조형 타입
+object
+배열 - 순서가 있는 컬렉션
+let arr = [];
+let arr = new Array();
+let arr = [1,2,3,4,5,6,7];
+arr[0]
+arr[1]
+
+객체 - 키와 벨류가 있는 컬렉션
+let obj = {
+	key: value,
+	key2: value2,
+	key3: value3,
+	name: "bella",
+	age: 22,
+}
+객체 리터럴 방식
+let obj = {
+	key: value,
+};
+객체 생성자 방식
+let user = new Object();
+obj['name']
+obj.name
+obj['isjop'] = true;
+
+셋 -  	객체 형태의 컬렉션. 중복을 허용하지 않고 같은 값은 하나만 담는다. 키와 벨류로 구성되어 있다.
+	index는 개수와 같이 1부터 시작하며 length가 아닌 size를 사용한다.
+
+
+클래스 - 객체를 생성하는 템플릿
+class Person {
+	name;
+	age;
+	speak();
+}
+class Person {
+	constructor(name, age){
+		this.name = name;
+		this.age = age;
+	}
+	speke(){
+		console.log(`${this.name} 안녕`);
+	}
+}
+
+
+
+JSON (JavaScript Object Notation)
+서버와 데이터를 전송할 때 사용되는 포멧
+자바스크립트의 객체를 보고 만든 데이터 포멧
+텍스트를 기반으로 하여 가벼움
+데이터를 직렬화 하여 전송할 때 쓰임
+프로그램 언어나 플랫폼에 상관없이 쓸 수 있음
+
+XML -> JSON
+
+자바스크립트 객체 -> 직렬화 JSON
+JSON -> 자바스크립트 객체
+
+1. object to JSON
+JSON.stringify(obj)
+
+2. JSON to Object
+JSON.parse(json)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

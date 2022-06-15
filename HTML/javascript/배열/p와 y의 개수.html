@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문자열을 받아서 p의 개수가 몇 개인지? y의 개수가 몇 개인지?
+        //대소문자는 구분하지 않음
+        //개수를 비교해서 일치하면 true반환, 아니면 false 반환
+        function solution(s){
+            let answer;
+
+            // s = s.toUpperCase().split('');
+            // let parr = s.filter(str => str == "P").length;
+            // let yarr = s.filter(str => str == "Y").length;
+            // answer = parr == yarr;
+
+            let pnum = 0, ynum = 0;
+            s = s.toUpperCase();
+            for (let i of s){
+                pnum = i === 'p' ? pnum + 1 : pnum;
+                ynum = i === 'y' ? ynum + 1 : ynum;
+            }
+            answer = pnum === ynum;
+            return answer;
+        }
+        let result = solution('pppYy');
+        console.log(result)
+
+        //이거 split('') 이렇게 빈공백 따옴표 넣으면 문자 하나하나 배열 값으로 반환해주네
+        let a = 'abcdefg'
+        console.log(a.split(''))
+    </script>
+</body>
+</html>

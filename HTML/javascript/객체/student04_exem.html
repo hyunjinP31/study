@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Burger(kind, cost, size) {
+            this.kind = kind,
+            this.cost = cost,
+            this.size = size
+        }
+        let burgers = [
+            new Burger('새우버거', 5000, 'big'),
+            new Burger('불고기버거', 4500, 'reguler'),
+            new Burger('쥬니어불고기버거', 3500, 'small'),
+            new Burger('치즈버거', 5500, 'reguler'),
+            new Burger('스테이크버거', 7000, 'big'),
+            new Burger('치킨버거', 5500, 'reguler'),
+            new Burger('야채버거', 4500, 'reguler'),
+            new Burger('쥬니어새우버거', 3000, 'small'),
+        ]
+        let result = burgers.filter(name=>name.kind);
+        result = result.map(name=>{
+            return name.kind;
+        }).join(',');
+        console.log(result);
+        let result2 = burgers.filter(Cost=>Cost.cost <= 5000);
+        console.log(result2);
+        let result3 = burgers.filter(Size=>Size.size === 'big');
+        console.log(result3)
+        let result4 = burgers.some(lowCost => lowCost.cost <= 4000);
+        console.log(result4);
+    </script>
+</body>
+</html>

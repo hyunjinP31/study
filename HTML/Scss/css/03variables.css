@@ -1,0 +1,14 @@
+.box .so {
+  width: 200px;
+  height: 100px;
+}
+
+.big {
+  width: 200px;
+  height: 100px;
+}
+
+.bgbox {
+  width: 200px;
+  background: tomato;
+}

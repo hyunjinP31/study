@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :focus {
+            background: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="myForm" id="form1">
+        <input type="text" name="userId" id="userId">
+        <input type="text" name="userPass" id="userPass">
+        <textarea name="msg" id="myMsg" cols="30" rows="10">
+            안녕하세요
+        </textarea>
+    </form>
+    <form action="" name="myForm2" id="form2">
+        <input type="text" name="userId">
+        <input type="text" name="userPass">
+    </form>
+
+    <script>
+        //폼 탐색
+        let form1 = document.querySelector('#form1');
+        let form2 = document.forms.myForm2;
+        let form3 = document.forms[1];
+        console.log(form1);
+        console.log(form2);
+        console.log(form3);
+
+        //폼 안의 요소 탐색
+        //form.elements.name
+        console.log(form1.elements.userId)
+        console.log(document.querySelector('#userId'))
+        console.log(form1.userPass)
+        console.log(form1.msg.value)
+
+        document.querySelector('#userId').focus();
+
+        let input1 = form1.userId;
+        let input2 = form1.userPass;
+
+       input1.addEventListener('keydown',function(e){
+            if (e.key == 'Enter') input2.focus();
+        })
+    </script>
+</body>
+</html>

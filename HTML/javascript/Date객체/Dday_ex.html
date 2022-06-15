@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        #wrap {
+            width: 1000px;
+            height: 700px;
+            border: 3px solid slateblue;
+            border-radius: 50px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .aniversery {
+            width: 100%;
+            height: 200px;
+            background: slateblue;
+            border-radius: 45px 45px 0 0;
+            padding: 50px;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+        .aniversery h1 {
+            font-size: 48px;
+            padding-bottom: 10px;
+        }
+        .aniversery p{
+            font-size: 20px;
+        }
+
+        .inputs, .btns {
+            text-align: center;
+            padding-bottom: 60px;
+        }
+        input {
+            width: 180px;
+            height: 50px;
+            border: 0;
+            outline: none;
+            border-bottom: 3px dotted slateblue;
+            padding-left: 10px;
+            font-size: 20px;
+            color: slateblue;
+        }
+        input:not(:last-child){
+            margin-right: 30px;
+        }
+        button {
+            width: 150px;
+            height: 50px;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background: slateblue;
+        }
+        .info {
+            font-size: 50px;
+            font-weight: normal;
+            color: slateblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="aniversery">
+            <h1>기념일</h1>
+            <p>사귄 날짜를 입력하세요~</p>
+        </div>
+        <div class="inputs">
+            <input type="text" class="year">
+            <input type="text" class="month">
+            <input type="text" class="day">
+        </div>
+        <div class="btns">
+            <button class="day50">50일은?</button>
+            <button class="day100">100일은?</button>
+            <button class="daybeen">오늘은 몇일째?</button>
+        </div>
+        <div>
+            <h1 class="info"></h1>
+        </div>
+    </div>
+
+    <script>
+        let now = new Date();
+        let year = document.querySelector('.year');
+        let month = document.querySelector('.month');
+        let day = document.querySelector('.day');
+        let btn50 = document.querySelector('.day50');
+        let btn100 = document.querySelector('.day100');
+        let btnBeen = document.querySelector('.daybeen');
+        let info = document.querySelector('.info');
+        //만난 날 세기
+        function calcMet() {
+            let metDay = new Date(`${year.value}-${month.value}-${day.value}`);
+            let Been = Math.floor((now.getTime() - metDay.getTime())/(1000*60*60*24));
+            info.innerHTML = `우리가 만난 지 ${Been}일이 되었습니다.`
+        }
+        btnBeen.addEventListener('click', function(){
+            calcMet()
+        })
+
+        //50일 세기
+        function calc50() {
+            let metDay = new Date(`${year.value}-${month.value}-${day.value}`);
+            metDay.setDate(year.value/1, (month.value+1)/1, day,value/150);
+            info.innerHTML = `50일은 ${metDay.toLocaleDateString()} 입니다.`
+        }
+        btn50.addEventListener('click', function(){
+            calc50();
+        })
+
+        //100일 세기
+        function calc100() {
+            let metDay = new Date(`${year.value}-${month.value}-${day.value}`);
+            metDay.setDate(+100);
+            info.innerHTML = `100일은 ${metDay.toLocaleDateString()} 입니다.`
+        }
+        btn100.addEventListener('click', function(){
+            calc100();
+        })
+    </script>
+</body>
+</html>

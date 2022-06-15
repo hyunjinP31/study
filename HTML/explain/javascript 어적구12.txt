@@ -1,0 +1,86 @@
+﻿DOM 문서객체모델
+웹브라우저에서 사용하려고 만든 언어
+-> 현재는 다양한 사용처와 플랫폼을 지원함
+
+window 호스트 환경
+1)DOM(Document Object Model)
+웹페이지내의 모든 콘텐츠를 객체로 나타내줌
+2)BOM(Browser Object Model)
+문서 이외의 다른 것을 제어하기 위해 브라우저가 제공하는 추가 객체를 나타내줌
+3)Javascript
+
+
+<html> -> document.documentElement
+<body> -> document.body
+<head> -> document.head
+
+-자식노드 탐색하기
+childNodes - 자식노드탐색
+children - 자식요소노드 탐색
+firstChild - 자식노드중 첫번째 자식노드
+lastChild - 자식노드중 마지막 자식노드
+firstElementChild - 자식요소노드중 첫번째 요소노드
+lastElementChild - 자식요소노드중 마지막 요소노드
+nodeName - 노드의 이름을 나타냄
+(text 노드는 #text 요소노드는 태그명 주석노드는 #comment)
+
+
+노드 
+텍스트노드(text)
+요소노드(element)
+주석노드(comment)
+
+elem.nodeType
+
+선택한 요소의 내용 조작
+innerHTML = '<h1>안녕하세요</h1>' //h1이 태그로 들어감
+textContent = '<h1>안녕하세요</h1>' //h1이 텍스트로 들어감
+
+요소 생성하기
+1) 요소노드 생성하기
+document.createElement(tag)
+2)텍스트노드 생성하기
+document.createTextNode('안녕하세요')
+
+요소 추가하기
+1) node.append - 노드나 문자열을 node 끝에 추가합니다.
+2) node.prepend = 노드나 문자열을 node맨 앞에 추가합니다
+3)node.before - 노드나 문자열을 node 이전에 추가
+4)node.after = 노드나 문자열을 node다음에 추가
+5)node.insertAdjacentHTML(where, html)원하는 위치에 html 추가합니다.
+'beforebegin' node의 바로앞에 html을 추가
+'afterbegin' node의 첫번째 자식요소 앞에 html 추가
+'beforeend' node의 마지막 자식요소 다음에 html 추가
+'afterend' node의 바로 다음에 html을 추가
+
+요소 복제하기
+elem.cloneNode(true) :내용까지 복사
+elem.cloneNode(false) :요소만 복사
+
+요소 삭제하기
+elem.remove()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

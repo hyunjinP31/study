@@ -1,0 +1,175 @@
+/* reset */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li { list-style: none;}
+a { text-decoration: none; color: inherit;}
+h1, h2, h3 {
+    font-weight: normal;
+    color: #3f51b5;
+}
+h1:first-child {
+    color: #333;
+}
+img {vertical-align: top;}
+/* input {
+    border-style: none;
+}
+textarea {
+    border-style: none;
+} */
+/* 상단 */
+.mobile {display: none;}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+header ul {
+    display: flex;
+}
+header li {
+    padding: 0 20px;
+    font-size: 14px;
+}
+.inner_con {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.title {
+    padding: 30px 0;
+    font-size: 24px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* 비쥬얼 */
+#visual img {
+    width: 100%;
+}
+/* WE ARE */
+#weare {
+    display: flex;
+    flex-wrap: wrap
+}
+#weare .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+#weare .title h2 {
+    width: 40%;
+    border-right: 5px solid #ccc;
+    line-height: 0.8;
+}
+#weare .title p {
+    font-size: 14px;
+    margin-left: 100px;
+}
+#weare ul {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#weare li {
+    margin: 70px 0;
+    width: 20%;
+}
+#weare ul li img {
+    width: 30%;
+}
+#weare li h3 {
+    padding: 30px 0;
+}
+/* work */
+#work ul{
+    display: flex;
+    flex-flow: row wrap;
+}
+#work li {
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+}
+#work ul li img {
+    width: 100%;
+}
+.bluebg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, 0.2);
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.bluebg > div {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    top: -50px;
+    left: 50px;
+    transition: 0.5;
+}
+.bluebg > div h3 {
+    color: #fff;
+}
+#work li:hover .bluebg {
+    opacity: 1;
+}
+#work li:hover .bluebg > div {
+    top: 50px;
+}
+/* 블로그 */
+#blog {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#blog .title {
+    width: 40%;
+}
+#blog ul {
+    display: flex;
+    justify-content: space-between;
+}
+#blog li {
+    width:32%;
+    font-size: 14px;
+}
+#blog li img {
+    width: 100%;
+}
+/* 콘텍트 */
+#contact {
+    display: flex;
+    justify-content: center;
+}
+#contact .title {
+    width: 40%;
+}
+#inputdiv {
+    display: flex;
+    flex-flow: column wrap;
+    height: 200px;
+    justify-content: flex-end;
+}
+#formdiv {
+    width: 60%;
+}
+#inputdiv input {
+    width: 45%;
+    height: 50px;
+}
+button {
+    float: right;
+    margin: 60px 0;
+}
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+            padding: 200px 0;
+            font-size: 70px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hour"></span> :
+        <span class="minute"></span> :
+        <span class="second"></span>
+    </div>
+
+    <script>
+        
+
+        
+        setInterval(function(){
+            let now = new Date();
+            let nowH = now.getHours();
+            let nowM = now.getMinutes();
+            let nowS = now.getSeconds();
+            document.querySelector('.hour').innerHTML = nowH;
+            document.querySelector('.minute').innerHTML = nowM;
+            document.querySelector('.second').innerHTML = nowS;
+        },1000)
+        let de = new Date(0);
+        console.log(de.toLocaleTimeString());
+        console.log(de.toLocaleDateString());
+
+        let now2 = new Date();
+        //Day 0~6 일~토
+        let dayString = "";
+        switch(now2.getDay()){
+            case 0 :
+                dayString = "일요일";
+                break;
+            case 1 :
+                dayString = "월요일";
+                break;
+            case 2 :
+                dayString = "화요일";
+                break;
+            case 3 :
+                dayString = "수요일";
+                break;
+            case 4 :
+                dayString = "목요일";
+                break;
+            case 5 :
+                dayString = "금요일";
+                break;
+            case 6 :
+                dayString = "토요일";
+                break;
+        }
+        console.log(dayString);
+
+    </script>
+</body>
+</html>

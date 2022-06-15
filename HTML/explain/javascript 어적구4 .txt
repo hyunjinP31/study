@@ -1,0 +1,35 @@
+﻿자바스크립트 기초구문
+산술 연산자, 논리 연산자, 비교 연산자, 조건문
+
+자바스크립트 DOM
+이벤트
+onclick 클릭이벤트
+onmouseenter 마우스를 올렸을 때
+onmouseleave 마우스가 떠났을 때
+onmousemove 마우스를 움직였을 때
+resize 창의 크기가 조절될 때
+
+
+이벤트 넣는 방법
+1. html 요소 태그 안의 속성
+<button onclick="함수()">
+2.이벤트 리스너
+addEventListener() 메소드 사용
+
+이벤트 리스너의 두번째 자리에는 함수 자체가 들어가야 함!
+
+document.querySelector('button').addEventListener("이벤트",함수명);
+document.querySelector('button').addEventListener("이벤트",function() {
+	alert('aaa');
+});
+
+
+
+
+
+
+
+
+
+
+

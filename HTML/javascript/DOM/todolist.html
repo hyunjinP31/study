@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #todo_header {
+            color: #fff;
+            padding: 30px 0;
+            /* linear-gradient(방향, 색상1, 색상2, 색상3,....) */
+            background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+            text-align: center;
+        }
+        #todo_header h1 {
+            padding-bottom: 16px;
+        }
+        #todo_header input {
+            border: none;
+            outline: none;
+            width: 60%;
+            height: 40px;
+            border-radius: 20px;
+            background: #fff;
+            padding-left: 30px;
+        }
+        #todo_header button {
+            border: none;
+            outline: none;
+            background: transparent;
+            vertical-align: middle;
+        }
+        #todo_header button i {
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #list_ul li {
+            list-style: none;
+            background: #eee;
+            line-height: 40px;
+            padding-left: 20%;
+            padding-right: 20%;
+            position: relative;
+        }
+        #list_ul li span {
+            float: right;
+            cursor: pointer;
+        }
+        #list_ul li.check {
+            text-decoration: line-through;
+            background: #ddd;
+        }
+        #list_ul li.check::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 10px;
+            border-bottom: 3px solid tomato;
+            border-left: 3px solid tomato;
+            transform: rotate(320deg);
+            position: absolute;
+            left: 16%;
+            top: 8px;
+        }
+    </style>
+    <script defer src="todoScript.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="todo_header">
+            <h1>to do list</h1>
+            <div>
+                <input type="text" id="todo_input">
+                <button id="insert_btn"><i class="material-icons">insert_emoticon</i></button>
+            </div>
+        </div>
+        <div id="todo_list">
+            <ul id="list_ul">
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

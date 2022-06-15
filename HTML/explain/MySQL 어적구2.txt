@@ -1,0 +1,138 @@
+﻿insert into members(name, tel, addr, license)
+values('김승용','051-123-4567','부산광역시 남구 대연동','y');
+insert into members(name, tel, addr, license)
+values('김양호','051-890-1234','부산광역시 사상구 학장동','n');
+insert into members(name, tel, addr, license)
+values('임정제','02-1234-1234','부산광역시 강남구 삼성동동','n');
+insert into members(name, tel, addr, license)
+values('김재호','052-098-7654','울산광역시 남구 야음동','n');
+insert into members(name, tel, addr, license)
+values('전용진','043-456-4567','충청남도 논산구 논산읍','y');
+insert into members(name, tel, addr, license)
+values('황인용','051-234-1234','부산광역시 연제구 연산동','n');
+insert into members(name, tel, addr, license)
+values('박지호','031-345-6789','인천광역시 남구 주안동','y');
+
+
+update 테이블명
+set 컬럼명 = "변경값", 컬럼명2 = "변경값"
+where 조건절
+
+update members
+set name = "김그린", tel = "052-123-4567"
+where no = 2;
+
+//충청남도 사는 사람 레코드 삭제하기
+delete from 테이블명
+where 조건절
+
+delete from members
+where addr like "충청%";
+
+update members
+set license = "y"
+where addr like "부산%";
+
+select * from members
+where name in ('김승용','임정제','전용진');
+
+employee table
+급여 컬럼 최댓값
+select max(sal) as '최대급여' from employee;
+현재 근무자 수 검색
+select count(*) as '근무자 수' from employee
+where firedate is null;
+보너스를 수령한 사람 수를 검색
+select count(*) as '보너스수여자' from employee
+where bonus is not null;
+직급이 과장인 사람의 평균 월급여를 검색
+select avg(sal) as '과장평균월급' from employee
+where job = '과장';
+
+사원명으로 내림차순 정렬 후 3개만 출력
+select * from employee
+order by pname desc limit 3;
+2012년 입사자를 급여기준 내림차순 후 4개 출력
+select * from employee
+where hiredate like '2012%'
+order by sal desc limit 4;
+부서번호 30번인 사람의 이름으로 오름차순 정렬 후 상위 2개행 검색
+select * from employee
+where deptno = 30
+order by pname asc limit 2;
+입사일이 2012년인 입사자 수 검색
+select count(*) as '2012년 입사자 수' from employee
+where hiredate like '2012%';
+부서번호별로 부서번호와 급여의 평균을 출력
+select deptno, avg(sal) as '부서별 급여 평균' from employee
+group by deptno;
+직급의 갯수를 출력해보세요
+select count(distinct job) as '직급수' from employee;
+
+
+create table employee(
+	inx int primary key auto_increment,
+	partno varchar(10) not null,
+	name varchar(10) not null,
+	sal int not null,
+	bonus int
+	);
+
+
+insert into employee(partno, name, sal, bonus)
+values('1부서','안중근',1000000, null);
+insert into employee(partno, name, sal, bonus)
+values('1부서','윤봉길',1500000, 200000);
+insert into employee(partno, name, sal, bonus)
+values('2부서','김유신',1300000, null);
+insert into employee(partno, name, sal, bonus)
+values('2부서','이순신',1800000, 200000);
+insert into employee(partno, name, sal, bonus)
+values('2부서','유관순',2000000, 200000);
+insert into employee(partno, name, sal, bonus)
+values('3부서','이사부',1800000, null);
+insert into employee(partno, name, sal, bonus)
+values('3부서','장보고',2100000, 200000);
+insert into employee(partno, name, sal, bonus)
+values('3부서','장영실',1700000, null);
+
+
+
+01)
+select * from employee
+where name like '장%';
+
+02)
+select avg(sal) as '2부서 급여 평균' from employee
+where partno like '2%';
+
+03)
+select count(distinct partno) as '부서수' from employee;
+
+04)
+select partno, avg(sal) as '부서별 평균 급여' from employee
+group by partno;
+
+05)
+select count(*) as '보너스 미지급' from employee
+where bonus is null;
+
+06)
+select partno, sum(sal) as '부서별 월급합계' from employee
+group by partno
+having partno in('1부서','2부서');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+        @keyframes fadein {
+            0%{
+                opacity: 0.4;
+            }
+            100%{opacity: 1;}
+        }
+        .fadeImg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadein 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="fadeImg"><img src="../images/img_lights1.jpg" alt=""></div>
+    <div class="fadeImg"><img src="../images/img_lights2.jpg" alt=""></div>
+    <div class="fadeImg"><img src="../images/img_lights3.jpg" alt=""></div>
+    <div class="fadeImg"><img src="../images/img_lights4.jpg" alt=""></div>
+
+    <script>
+        let imgDivs = document.querySelectorAll('.fadeImg');
+        console.log(imgDivs);
+        let indexNum = 0;
+        let nextNum;
+        // for(let i = 0; i < imgDivs.length; i++){
+        //     imgDivs[i].style.display = 'none';
+        // } 밑에 forEach문이랑 똑같음
+        //imgDivs 안에 있는 값 div의 스타일 display를 none으로 변경
+        imgDivs.forEach(div=> div.style.display = 'none')
+        imgDivs[0].style.display = 'block';
+        setInterval(function(){
+            //인덱스넘이 3이면 넥스트 넘은 0을 만들고 아니면 인덱스 넘에 +1을 해라
+            nextNum = indexNum === 3? 0: indexNum + 1;
+            imgDivs[indexNum].style.display = 'none';
+            imgDivs[nextNum].style.display = 'block';
+            indexNum = nextNum;
+        },3000)
+        
+            //인덱스넘의 숫자가 계속 고정이면 div1만 계속 안보일거임
+            //그러니까 함수의 마지막에 인덱스넘을 넥스트 넘에 할당해줌.
+            //왜냐면!!!! 인덱스 넘은 함수가 다시 시작할 때마다 1씩 증가하거든
+            //함수가 다시 시작할 때마다? 그래! 왜냐면 이 구문은 애초에 setInterval이라는 거임 내가 지정한 시간만큼 존나 반복함
+            //지정 시간마다 함수는 새로 실행됨 그 때 인덱스넘은 정적넘버지만 넥스트 넘은 아니라고 함수 한 번 시작할 때마다 1씩 증가한다고
+            //이 구문에서 제일 중요한 건 순서임 사실 자바스크립트는 순서가 존나 중요함 존나 제일 중요함
+            //이걸 동기라고 함 순차적으로 실행되는 거.
+    </script>
+</body>
+</html>

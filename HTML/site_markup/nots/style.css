@@ -1,0 +1,227 @@
+#wrap {
+    width: 100%;
+    padding: 20px;
+}
+/* header */
+header .mobile {
+    display: none;
+}
+header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px 0;
+}
+header > ul {
+    display: flex;
+}
+header > ul li {
+    padding: 0 10px;
+}
+header > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+header > div:nth-child(3) {
+    flex-direction: column;
+}
+header > div:nth-child(3) ul {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+header > div:nth-child(3) ul li {
+    padding: 0 20px;
+    font-size: 16px;
+}
+header > div:nth-child(4) form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+header > div:nth-child(4) form img {
+    width: 16%;
+}
+header > div:nth-child(4) form input {
+    width: 250px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin-right: 20px;
+}
+/* visual */
+#visual {
+    position: relative;
+}
+#visual > img {
+    width: 100%;
+}
+#visual div {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+}
+#visual div h3 {
+    font-size: 58px;
+    padding-bottom: 10px;
+}
+#visual div p {
+    font-size: 24px;
+}
+/* product */
+#product {
+    padding: 30px 0;
+}
+#product ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#product ul li {
+    width: 49%;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+#product ul li img {
+    width: 100%;
+}
+#product ul li div {
+    position: absolute;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 50%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+#product ul li div h3 {
+    font-size: 40px;
+}
+#product ul li div h4 {
+    font-weight: bold;
+    padding: 14px 0 4px;
+}
+#product ul li:hover div {
+    top: 50%;
+}
+/* new_best */
+#new_best {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#new_best div {
+    width: 49%;
+    text-align: center;
+}
+#new_best img {
+    width: 100%;
+}
+#new_best ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#new_best ul li {
+    width: 33.3333%;
+}
+#new_best h3 {
+    font-size: 40px;
+}
+/* movie */
+#movie img {
+    width: 100%;
+}
+.dot {
+    display: none;
+}
+/* footer */
+footer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+footer > ul {
+    display: flex;
+    padding: 70px 0 50px;
+}
+footer > ul li {
+    padding: 0 10px;
+}
+footer > div:nth-child(2) {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #ccc;
+}
+footer > div:nth-child(2) select {
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+footer > div:nth-child(3) {
+    text-align: center;
+    padding-bottom: 30px;
+}
+footer > div:nth-child(3) address {
+    font-size: 16px;
+    font-style: normal;
+}
+/* 1024 */
+@media screen and (max-width:768px) {
+    .web {
+        display: none;
+    }
+    header > div:nth-child(3) ul{
+        display: none;
+    }
+    header > div:nth-child(4) form input {
+        display: none;
+    }
+    header .mobile {
+        display: flex;
+        flex-flow: wrap column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+    }
+    header .mobile span {
+        width: 60%;
+        height: 5px;
+        background: #666;
+    }
+    header .mobile span:not(:first-child) {
+        margin-top: 14px;
+    }
+    header {
+        align-items: center;
+    }
+    #product ul li {
+        width: 100%;
+    }
+    #new_best ul {
+        flex-direction: column;
+
+    }
+    #new_best ul li {
+        width: 100%;
+    }
+    header > div:nth-child(4) form img {
+        width: 100%;
+    }
+}

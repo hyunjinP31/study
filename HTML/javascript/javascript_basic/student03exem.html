@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        a { text-decoration: none; color: inherit;}
+        .open {
+            width: 100%;
+            height: 100vh;
+            padding: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .open a {
+            font-size: 40px;
+        }
+        .hidden {
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: 0.7s;
+        }
+        ul {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        li {
+            font-size: 30px;
+            padding: 30px;
+        }
+        .hidden > a {
+            font-size: 40px;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+        a.on {
+            color: teal;
+            transition: 0.3s;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="open">
+        <a href="#" onclick="left(0)" onmouseenter="addOn()" onmouseleave="removeOn()">open</a>
+        <div class="hidden">
+            <a href="#" onclick="left('-100%')" onmouseenter="addOn()" onmouseleave="removeOn()">X</a>
+            <ul >
+                <a href="#"><li>menu1</li></a>
+                <a href="#"><li>menu2</li></a>
+                <a href="#"><li>menu3</li></a>
+                <a href="#"><li>menu4</li></a>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function left(value) {
+            document.querySelector('.hidden').style.left = value;
+        }
+        function addOn() {
+            document.querySelectorAll('a')[0].classList.add('on');
+            document.querySelectorAll('a')[1].classList.add('on');
+        }
+        function removeOn() {
+            document.querySelectorAll('a')[0].classList.remove('on');
+            document.querySelectorAll('a')[1].classList.remove('on');
+        }
+    </script>
+</body>
+</html>

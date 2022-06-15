@@ -1,0 +1,293 @@
+/* 리셋 */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li { list-style: none;}
+a { text-decoration: none; color: inherit;}
+img { vertical-align: top; border: 0;}
+.inner_con {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+body { font-family: "나눔 고딕", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+/* 상단 */
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding-left: 20px;
+}
+.mobile {
+    display: none;
+}
+header ul {
+    display: flex;
+}
+header ul li {
+    padding: 0 20px;
+}
+img {
+    width: 100%;
+}
+.title {
+    display: flex;
+    padding: 30px 0;
+    align-items: center;
+}
+.title h2 {
+    color: #3f51b5;
+    font-size: 36px;
+}
+/* 본문 */
+#weare .title h2 {
+    width: 30%;
+    position: relative;
+}
+#weare .title p {
+    width: 70%;
+}
+#weare .title h2::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 30px;
+    background: #ccc;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}
+#weare ul {
+    display: flex;
+}
+#weare ul li {
+    width: 25%;
+    text-align: center;
+}
+#weare ul li img {
+    height: 60px;
+    width: auto;
+}
+#weare h3 {
+    padding: 30px 0;
+    color: #3f51b5;
+}
+/* work */
+section:not(#visual) {
+    padding: 50px 0;
+}
+#work ul {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+#work ul li {
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+}
+.bluebg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(63, 81, 171, 0);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: 0.5s;
+}
+.bluebg h3 {
+    position: absolute;
+    top: -100px;
+    left: 50px;
+    transition: 0.5s;
+}
+.bluebg p {
+    position: absolute;
+    top: -70px;
+    left: 50px;
+    transition: 0.5s;
+}
+#work li:hover .bluebg {
+    background: rgba(63, 81, 171, 0.5);
+}
+#work li:hover .bluebg h3 {
+    top: 50px;
+}
+#work li:hover .bluebg p {
+    top: 80px;
+}
+#blog {
+    display: flex;
+    align-items: flex-start;
+}
+#blog .title {
+    width: 35%;
+}
+#blog ul {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+#blog ul li {
+    width: 32.5%;
+}
+#contact {
+    display: flex;
+    align-items: flex-start;
+}
+#contact .title {
+    width: 35%;
+}
+#contact #formdiv {
+    width: 65%;
+}
+#inputdiv {
+    display: flex;
+    flex-flow: column wrap;
+    height: 200px;
+}
+#inputdiv input {
+    width: 45%;
+    line-height: 60px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+#inputdiv textarea {
+    width: 45%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    height: 180px;
+}
+#formdiv button {
+    width: 160px;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #3f51b5;
+    float: right;
+}
+/* 하단 */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #3f51b5;
+}
+/* 1024px이하일 때 */
+@media screen and (max-width:1024px){
+    #weare .title {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    #weare .title h2::after {
+        display: none;
+    }
+    #weare ul {
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    #weare ul li {
+        width: 40%;
+        margin: 40px 0;
+    }
+    #work .title h2 {
+        width: 100%;
+        text-align: center;
+    }
+    #work ul li {
+        width: 50%;
+    }
+    #blog {
+        flex-flow: column wrap;
+        width: 100%;
+    }
+    #blog .title {
+        width: 100%;
+    }
+    #blog .title h2 {
+        width: 100%;
+        text-align: center;
+    }
+    #blog ul {
+        width: 100%;
+    }
+    #contact {
+        flex-flow: column wrap;
+        justify-content: space-between;
+    }
+    #contact .title {
+        width: 100%;
+        text-align: center;
+    }
+    #contact .title h2 {
+        width: 100%;
+    }
+    #contact #formdiv {
+        width: 100%;
+    }
+}
+    /* 768px일 때 */
+    @media screen and (max-width:768px) {
+        header ul {
+            display: none;
+        }
+        .mobile {
+            display: flex;
+            width: 60px;
+            flex-flow: column wrap;
+        }
+        .mobile span {
+            width: 60%;
+            background: #3f51b5;
+            height: 5px;
+            margin: 3px 0;
+        }
+        #weare .title h2 {
+            width: 100%;
+        }
+        #weare .title p {
+            width: 100%;
+        }
+        #weare ul {
+            flex-flow: column;
+        }
+        #weare ul li {
+            width: 100%;
+        }
+        #work ul {
+            flex-direction: column;
+        }
+        #work ul li {
+            width:100%;
+        }
+        #blog ul {
+            flex-direction: column;
+        }
+        #blog ul li {
+            width: 100%;
+        }
+        #contact {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        #inputdiv {
+            height: auto;
+        }
+        #inputdiv input {
+            width: 100%;
+        }
+        #inputdiv textarea {
+            width: 100%;
+        }
+        #formdiv button {
+            margin-top: 20px;
+        }
+    }

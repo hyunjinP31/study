@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* reset */
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        li { list-style: none;}
+        a { text-decoration: none; color: inherit;}
+        /* reset// */
+        #wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            text-align: center;
+            padding: 15px 0;
+        }
+        #header_left li {
+            float: left;
+            padding: 0 10px;
+        }
+        #header_middle {
+            display: inline-block;
+        }
+        #header_right ul {
+            float: right;
+        }
+        #header_right li {
+            float: left;
+            padding: 0 10px;
+        }
+        .material-icons, #header_right {color: #fff;}
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #header, #main_visual { background: #000;}
+        #main_menu1 {
+            border-bottom: 3px double #ccc;
+            padding: 30px 0;
+        }
+        #main_menu1 img {
+            float: left;
+        }
+        #main_mene1 ul {
+            float: right;
+        }
+        #main_menu1 li {
+            float: left;
+            padding: 0 20px;
+        }
+        #main_menu2 {
+            text-align: center;
+            padding: 30px 0;
+        }
+        #main_menu2 ul {
+            float: center;
+        }
+        #main_menu2 li {
+            float: left;
+            padding: 0 40px;
+        }
+        #footer_top {
+            background: aliceblue;
+        }
+        #footer_left {
+            float: left;
+            padding: 25px;
+        }
+        #footer_middle { text-align: center;}
+        #footer_middle ul {float: left;}
+        #footer_middle li {
+            float: left;
+        }
+        #footer_right {float: right;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 상단영역 -->
+        <div id="header" class="clearboth">
+            <div id="header_left" class="clearboth">
+                <ul>
+                    <li><a href="#"><i class="material-icons">reorder</i></a></li>
+                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                    <li><a href="#"><i class="material-icons">store</i></a></li>
+                </ul>
+            </div>
+            <div id="header_middle"><img src="./images/so_title.gif" alt="이자녹스타이틀"></div>
+            <div id="header_right" class="clearboth">
+                <ul>
+                    <li><a href="#">Login></a></li>
+                    <li><a href="#">Join></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 본문영역 -->
+        <div id="containal">
+            <!-- 1번 -->
+            <div id="main_visual"><img src="./images/visual.gif" alt="비쥬얼"></div>
+            <!-- 2번 -->
+            <div id="main_menu">
+                <div id="main_menu1"  class="clearboth">
+                    <div><img src="./images/so_title.gif" alt="이자녹스타이틀"></div>
+                    <div>
+                        <ul>
+                            <li><a href="#">Brand</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Store</a></li>
+                            <li><a href="#">Customer Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="main_menu2" class="clearboth">
+                    <p>NEW PRODUCT</p>
+                    <ul>
+                        <li><img src="./images/product01.gif" alt="상품1"> <br> X2D2 <br>
+                            링클 포커스 세럼 wrinkle <br> focus serum</li>
+                        <li><img src="./images/product02.gif" alt="상품2"> <br> X2D2 <br>
+                            링클 포커스 세럼 wrinkle <br> focus serum</li></li>
+                        <li><img src="./images/product03.gif" alt="상품3"> <br> X2D2 <br>
+                            링클 포커스 세럼 wrinkle <br> focus serum</li></li>
+                        <li><img src="./images/product04.gif" alt="상품4"> <br> X2D2 <br>
+                            링클 포커스 세럼 wrinkle <br> focus serum</li></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 3번 -->
+            <div id="main_banners">
+                <div><img src="./images/main_banner01.gif" alt="배너1"></div>
+                <div><img src="./images/main_banner02.gif" alt="배너2"></div>
+                <div><img src="./images/main_banner03.gif" alt="배너3"></div>
+                <div><img src="./images/main_banner04.gif" alt="배너4"></div>
+            </div>
+        </div>
+        <!-- 하단영역 -->
+        <div id="footer">
+            <div id="footer_top">
+                <div id="footer_left"><img src="./images/f_icon.gif" alt="페이스북아이콘"></div>
+                <div id="footer_middle"  class="clearboth">
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보 취급방식</a></li>
+                    </ul>
+                </div>
+                <div id="footer_right"  class="clearboth">
+                    <select name="footershit">
+                        <option value="famillysite">famillysite</option>
+                        <option value="famillysite">관련사이트1</option>
+                        <option value="famillysite">관련사이트2</option>
+                    </select>
+                </div>
+            </div>
+            <div id="footer_bottom">
+                <div>(주)LG생활건강 / 서울틀별시 종로구 세문안로 58 LG광화문빌딩 110-783 대표이사 차석용 / 고객상담실 080-023-7007 / 사업자등록번호 107-81-98143 COPYRIGHT & LG HOUSEHOLD HEALTH CARE LTD. 2015 ALL RIGHT RESERVED.</div>
+                <div><img src="./images/bottom_logo.gif" alt="LG생활건강"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

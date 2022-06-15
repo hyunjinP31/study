@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        #parent {
+            width: 1000px;
+            background-color: lightblue;
+            height: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+        .item {
+            width: 300px;
+            height: 100px;
+            background-color: lightcoral;
+        }
+        .item:nth-child(3) {
+            background-color: limegreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="item">div1</div>
+        <div class="item">div2</div>
+        <div class="item">div3</div>
+        <div class="item">div4</div>
+        <div class="item">div5</div>
+    </div>
+</body>
+</html>

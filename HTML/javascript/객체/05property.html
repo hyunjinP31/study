@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let key ="likes birds"
+        let minyoung = {
+            name: '민영',
+            age: 32,
+            hasJob: true,
+            [key] : true, 
+        }
+        // . 으로 접근을 하게 되면 undefined 가 나온다.
+        console.log(minyoung[key])
+        function printValue(obj, key){
+            console.log(obj.key);
+            console.log(obj[key]);
+        }
+        //키 값은 스트링 타일으로 적어야 함 key 값에는 스트링 외 다른 타입이 올 수 없다.
+        printValue(minyoung, 'name');
+
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        let person1 = new Person('bella', 30);
+        console.log(person1);
+        console.log('name' in person1);
+        console.log('abc' in person1);
+
+        //객체의 순환
+        //그냥 (key) 라고 적으면 key 이름이 오고 [key] 라고 적으면 담겨있는 value 값이 찍힌다.
+        //let ...in 사이에 들어가는 이름은 걍 변수명임. aaa 이따구로 적어도 됨(근데 그러지 말자.) 걍 받아올 key값에 임시로 이름 적어주는거
+        for (let key in person1){
+            console.log(person1[key]);
+        }
+
+        //객체의 복사
+
+        let dog1 = {
+            name: '구름',
+            age: 3,
+            color: 'white',
+        }
+        let dog2 = {};
+        for (let key in dog1){
+            dog2[key] = dog1[key];
+        }
+        console.log(dog2);
+        //앞에 있는 으브젝트에 같은 이름이 있어도 뒤에 오브젝트 값으로 덮어씌어 짐
+        //객체끼리 합쳐지면서 같은 이름의 것들은 뒤의 오브젝트 값으로 덮고 나머지는 그대로 받아옴 = assign
+        let dog3 = Object.assign({name:'abc', wheigt: 500}, dog1);
+        console.log(dog3);
+        //여러개의 객체를 복사하면 key가 똑같은 애들은 가장 나중의 오브젝트 값을 받는다.
+        let fruit1 = { color: 'red' };
+        let fruit2 = { color: 'blue', size: 'big'};
+        let fruit3 = Object.assign({}, fruit1, fruit2);
+        console.log(fruit3);
+
+        //Object.keys = 객체의 key 값들을 배열로 반환해줌
+        //Object.values = 객체의 value값들을 배열로 반환해줌
+        //Object.entries = 객체의 key와 value를 각각 하나의 배열로 만들어 그 값을 다시 배열로 반환한다. 와 내가 적고 이게 뭔 소린지 모르겠는걸
+        //한번 찍어봐라 한 번에... 알 수도 있고
+        let objkeyarr = Object.entries(dog3);
+        console.log(objkeyarr);
+
+        let arr2 = [1, 'nama', true, undefined, [0,1], {name: 'abc', age:3,}]
+    </script>
+</body>
+</html>

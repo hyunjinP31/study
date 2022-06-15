@@ -1,0 +1,55 @@
+﻿메서드와 this
+
+객체 프로퍼티에 할당된 함수 -> 메서드
+let user = {
+	name: 'green',
+	age: 30,
+	say: function(){
+	console.log('aaa');
+	},
+}
+let user = {
+	name: 'green',
+	age: 30,
+	//동일하게 작동되는 단축 프로퍼티
+	say(){
+	console.log(this.name);
+	},
+}
+
+동기 비동기
+console.log(1)
+console.log(2)
+console.log(3)
+console.log(4)
+console.log(5)
+for (let i = 0; i<100; i++){
+	console.log(i);
+}
+console.log(6)
+console.log(7)
+
+setInterval
+setInterval(함수, 시간)
+지정한 시간이 지날 때 마다 함수를 실행(다회성)
+setInterval(function(){}, 1000) //1000 = 1s 1000이 1초와 같음
+setInterval(function(){
+	console.log('안녕');
+}, 1000)
+
+setTimeout(함수, 시간)
+지정 시간이 지날 때 해당 함수를 한 번만 실행시킴(일회성) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

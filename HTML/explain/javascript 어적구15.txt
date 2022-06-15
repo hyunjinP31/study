@@ -1,0 +1,21 @@
+﻿폼과 폼 조작하기
+1. 폼과 요소 탐색하기
+폼은 특수한 컬렉션인 document.forms의 구성원입니다.
+1)폼의 name값으로 접근 : document.forms.폼이름
+<form name="myForm">
+	<input type="text" name="userId">
+</form>
+ex>document.forms.myForm
+2) 폼의 순서로 접근 : document.forms[0] --> 문서내에 첫 번째 폼
+3)폼의 요소에 접근 form.elements.요소name값
+ex> form.elements.userId
+짧은 표기법 form.name
+4) focus 지정하기
+-autofocus 속성 추가
+-node.focus() 메서드
+
+폼이벤트
+input : input태그에 값을 적을 때
+change : 폼 요소의 값이 변경될 때
+focus : 커서가 선택되었을 때
+blur : 커서가 떠났을 때

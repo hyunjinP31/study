@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: inherit;}
+        #slide_wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #slide_group_view {
+            width: 60%;
+            height: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+        #slide_group {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: salmon;
+        }
+        .slide_img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 100%;
+        }
+        #nav {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+        }
+        #nav a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: darkorange;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+        }
+        #nav a.prev {
+            margin-left: calc(-30% - 75px);
+        }
+        #nav a.next {
+            margin-left: calc(30% + 25px);
+        }
+    </style>
+</head>
+<body>
+    <div id="slide_wrap">
+        <div id="slide_group_view">
+            <div id="slide_group">
+                <img src="../img/images/img_lights1.jpg" alt="" class="slide_img">
+                <img src="../img/images/img_lights2.jpg" alt="" class="slide_img">
+                <img src="../img/images/img_lights3.jpg" alt="" class="slide_img">
+                <img src="../img/images/img_lights4.jpg" alt="" class="slide_img">
+            </div>
+        </div>
+        <div id="nav">
+            <a href="#" class="prev">이전</a>
+            <a href="#" class="next">다음</a>
+
+        </div>
+    </div>
+
+    <script>
+        //변수
+        const slideGroup =  document.querySelector('#slide_group');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const lastImg = slideGroup.lastElementChild; //마지막 자식 선택
+        const firstImg = slideGroup.firstElementChild; //첫 번째 자식 선택
+        //노드 복사하기
+        let cloneFirst = firstImg.cloneNode(true);
+        let cloneLast = lastImg.cloneNode(true);
+
+        //복사한 노드 추가하기
+        slideGroup.append(cloneFirst); //마지막에 추가하기
+        slideGroup.prepend(cloneLast); // 첫 번째에 추가하기
+
+        let prev;
+        let next;
+        let current = 1;
+
+        const slideImgs = document.querySelectorAll('.slide_img');
+        //스타일 작성하기
+        slideGroup.style.width = (slideImgs.length) * 100 + '%'; //이미지를 담은 div의 크기를 (이미지갯수 * 100%)로 변경
+        slideGroup.style.left = -(current*100)+'%';
+        //이미지크기를 100/이미지 갯수 % 로 변경
+        slideImgs.forEach((img,index)=> {
+            img.style.width = (100 / slideImgs.length) + '%'; //각각의 이미지들 width를 나눠준 것
+            img.style.left = (index*(100 / slideImgs.length)) + '%';
+        })
+
+        //이미지 전환되는 함수
+        function slideMove(imgNum){
+            slideGroup.style.transition = '0.5s';
+            slideGroup.style.left = -(imgNum*100)+'%';
+            current = imgNum;
+            console.log(current);
+            if(imgNum == 4){
+                console.log("마지막이미지 입니다.");
+                firstCurrent();
+            }
+            if(imgNum == 0){
+                console.log('처음 이미지 입니다.');
+                lastCurrent();
+            }
+        }
+        let timer;
+        function startIt (){ //setInterval 함수 실행
+            if(timer) stopIt();
+            timer = setInterval(function(){
+                slideMove(current+1);
+            },2000)
+        }
+        function stopIt(){ //setInterval 함수 중지
+            clearInterval(timer);
+            console.log('중지');
+        }
+        startIt();
+        function firstCurrent(){
+            setTimeout(function(){ //맨 뒤에서 앞으로 올 때 속임수 
+                slideGroup.style.transition = '0s'; //transition 0초로 바꿔줌 --> 동작이 보이지 않아 이미지 교체를 눈속임으로 처리가능
+                slideGroup.style.left = -(0*100)+'%'; //실제 위치 이동하는 코드
+                current = 0; // 위치를 이동하면서 계속 무한적으로 돌아갈 수 있도록 커런트를 0으로 돌림
+            },500)
+        }
+        function lastCurrent(){
+            setTimeout(function(){
+                slideGroup.style.transition = '0s';
+                slideGroup.style.left = -(400)+'%';
+                current = 4;
+            },500)
+        }
+
+        //이전 버튼에 이벤트 연결하기
+        prevBtn.addEventListener('mouseenter', stopIt);
+        prevBtn.addEventListener('mouseleave', startIt);
+        prevBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            prev = current - 1
+            slideMove(prev);
+        })
+
+        //다음버튼에 이벤트 연결하기
+        nextBtn.addEventListener('mouseenter', stopIt);
+        nextBtn.addEventListener('mouseleave', startIt);
+        nextBtn.addEventListener('click', function(e){
+            e.preventDefault(); //원래 있는 이벤트들을 떼줌
+            next = current + 1;
+            slideMove(next);
+        })
+
+    </script>
+</body>
+</html>

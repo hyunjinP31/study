@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let now = new Date();
+        now.setDate(30);
+        console.log(now.toLocaleDateString());
+
+        //Date 객체를 숫자로 변경해 시간차 측정하기
+        let start = new Date(); // 측정시간
+        for(let i= 0; i <10; i++){
+            let doSomething = i * i * i;
+        }
+        let end = new Date(); //측정종료
+        let time = end - start;
+        console.log(`반복문을 모두 도는데 ${time}밀리초가 걸렸습니다.`);
+
+        let firstDay = new Date("2000-02-06");
+        let nowDate = new Date();
+        let toDayTime = nowDate.getTime();
+        let startTime = firstDay.getTime();
+    
+        let dayday = Math.floor((toDayTime - startTime)/(1000*60*60*24)) // (지금 날짜 - 지정 날짜 = 밀리초 단위의 값) / (밀리초 * 초 * 분 * 하루시) ---> 일 단위로 나옴
+        console.log(`2000년 2월 6일 부터 +${dayday} 일이 되었습니다.`)
+        console.log(firstDay.toLocaleDateString())
+    </script>
+</body>
+</html>

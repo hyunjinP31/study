@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //.length 는 배열이나 문자열에만 쓸 수 있기 때문에 변수 s는 반드시 문자열로의 형변환이 이루어져야 한다.
+        function solution(s){ //Googled
+            s = String(s);
+            let answer ='';
+            if(s.length % 2 == 0){
+                answer = s[s.length / 2 - 1] + s[s.length / 2];
+            }else {
+                answer = s[Math.floor(s.length / 2)];
+            }
+            return answer;
+        }
+        console.log(solution(123456789));
+
+        function solution2(s){ //taacher
+            let answer = '';
+            //2로 나눴을 때 값이 0이면 짝수 1이면 홀수
+            answer = s.length % 2 == 0 ? s.slice(s.length / 2-1,s.length/2 +1) : s.slice(s.length/2,s.length/2+1);
+            if(s.length % 2 == 0){
+                answer = s.slice(s.length/2-1,s.length/2+1);
+            }else {
+                answer = s.slice(s.length/2,s.length/2+1)
+            }
+        }
+        console.log(solution2('abcde'))
+
+        let strrr = '슬라이스 너무 어려운데'
+        console.log(strrr.slice(1, 11)); //--> '라이스 너무 어려운'
+    </script>
+</body>
+</html>

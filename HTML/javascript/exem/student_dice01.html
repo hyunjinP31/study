@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //내가 랜덤한 값을 받아야 함.
+        //컴퓨터도 랜덤한 값을 받아야 함
+        //그 둘을 비교해서 더 높은 쪽이 승리하는 형식.
+
+
+        let me = Math.floor(Math.random() * 6 + 1);
+        let com = Math.floor(Math.random() * 6 + 1);
+
+
+        if (me > com) {
+            console.log(`컴퓨터의 주사위는 ${com} 입니다.`);
+            console.log(`당신의 주사위는 ${me}입니다.`);
+            console.log('당신의 승리입니다.');
+        }else if (me < com) {
+            console.log(`컴퓨터의 주사위는 ${com} 입니다.`);
+            console.log(`당신의 주사위는 ${me}입니다.`);
+            console.log('컴퓨터의 승리입니다.');
+        }else {
+            console.log(`컴퓨터의 주사위는 ${com} 입니다.`);
+            console.log(`당신의 주사위는 ${me}입니다.`);
+            console.log('비겼습니다.');
+        }
+    </script>
+</body>
+</html>

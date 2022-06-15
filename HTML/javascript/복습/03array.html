@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let foods = ['🥧','🍖','🥘','🥞'];
+        console.log(foods[foods.length - 1]);
+        //배열의 순환 for문
+        for(let i = 0; i<foods.length ; i++){
+            console.log(foods[i]);
+        }
+        // 배열 메소드 forEach문 얘는 자리에 따라 값, 인덱스 넘, 범위를 받아옴
+        foods.forEach((val,index,arr)=>{
+            console.log(val); // 값을 불러줌
+            console.log(index); //인덱스 넘버 반환
+            console.log(arr); // 배열 자체 반환
+        })
+        foods.forEach((val,index,arr)=> console.log(index))
+        //for...of문 얘는 값만 받아옴
+        for(let val of foods){
+            console.log(val);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //일단 s의 대소문자 구분이 없어야 하니까 toUpperCase나 toLowerCase사용해서 대소문자 통일 시켜주기
+        //그리고 split을 사용, 각각 p와 y를 구분자로 넣어줌
+        //그러면 p와 y를 구분자로 한 배열이 만들어짐
+        //배열의 값 개수는 구분자인 p와 y에 의해서 결정됨. "PaevPaevYY" 라는 값이 들어오면 p를 구분자로 했을 때 ['','aev','aevy']라는 배열이
+        //y를 구분자로 했을 때 ['PaevPaev','',''] 라는 배열이 만들어짐
+        //이 때 y랑 p는 쉼표로 치환
+        //각각의 배열 길이를 비교하면 p와 y의 개수가 같은 때 배열의 길이도 같아짐. p와 y가 둘 다 없어도 배열의 길이는 같음!
+        //삼항연산자로 두 배열의 길이를 비교한 걸 조건으로 두고 맞으면 true, 아니면 false 반환
+        function solution(s) {
+            let answer = "";
+            console.log(s.toLowerCase().split("p"))
+            console.log(s.toLowerCase().split("y"))
+            answer = s.toLowerCase().split("p").length == s.toLowerCase().split("y").length ? true : false;
+            return answer;
+        }
+        console.log(solution("asdfghjkl"));
+    </script>
+    
+</body>
+</html>

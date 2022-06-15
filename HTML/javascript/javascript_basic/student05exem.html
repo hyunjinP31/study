@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <h1>회원가입</h1>
+        </li>
+        <li>
+            <p>아이디<input type="text" id="userId"></p>
+        </li>
+        <li>
+            <p>비밀번호<input type="password" id="userPass"></p>
+        </li>
+        <li>
+            <p>비밀번호확인<input type="password" id="passCh"></p>
+        </li>
+        <li>
+            <p>전화번호<input type="text" id="userNum"></p>
+        </li>
+        <li>
+            <p>이메일<input type="email" id="userEmail"></p>
+        </li>
+        <li>
+            <button onclick="join()">회원가입</button>
+        </li>
+    </ul>
+
+    <script>
+        let id = document.querySelector('#userId').value;
+        let pass = document.querySelector('#userPass').value;
+        let passCh = document.querySelector('#passCh').value;
+        let num = document.querySelector('#userNum').value;
+        let email = document.querySelector('#userEmail').value;
+
+        function join(){
+            if(id.length < 7) {
+                alert("아이디를 8자 이상 입력해주세요.")
+                if(pass)
+            }
+        }
+    </script>
+</body>
+</html>

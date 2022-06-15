@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function work(){
+        //     const start = Date.now();
+        //     for(let i = 0 ; i<1000000000 ; i++){
+
+        //     }
+        //     const end = Date.now();
+        //     console.log(end-start+'ms');
+        // }
+        function work(callback){
+            //setTimeout으로 해당 작업을 비동기적으로 처리하는 것.해당 작업이 끝나지 않아도 뒤의 작업들이 실행될 수 있도록 한다.
+            setTimeout(()=>{
+                const start = Date.now();
+                for(let i = 0 ; i<1000000000 ; i++){
+
+                }
+                const end = Date.now();
+                console.log(end-start+'ms');
+                //함수가 끝나면 callback인자를 부름으로 원하는 시점에서 원하는 작업을 처리할 수 있게 해준다.
+                callback();
+            },0)
+        }
+        console.log('work 호출하기')
+        work(()=>{
+            console.log('작업이 끝났어요'); //함수의 인자로 함수를 받은 것. 보통 콜백 함수라 부르는 그것이다.addEventLitsener에 두번째 인자로 받는 함수가 콜백함수의 대표적 예시다.
+        });
+        console.log('다음 작업')
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ["🍹","🍸","🍺","🥃","🍷"]
+        //구조분해할당
+        let [fruit1, fruit2, , ,fruit3] = fruits;
+        console.log(fruit1, fruit2, fruit3)
+        //나머지 매개변수를 배열로 받기
+        let [fru, ...frus] = fruits;
+        console.log(`fru 변수에 담긴 값은 : ${fru} 입니다`); //fruits[0] 값
+        console.log(`frus에 담긴 값은 : ${frus} 배열 입니다.`); // fruits[0] 값을 뺀 나머지 값들이 배열로 담김
+        console.log(frus);
+        //변수값 변경하기
+        let green = 'green';
+        let blue = 'blue';
+        console.log(`green변수에 담긴 값은 ${green} 이다`);
+        console.log(`blue변수에 담긴 값은 ${blue} 이다`);
+        [green, blue] = [blue, green] //변수값 서로 변경해주기
+        console.log(`green변수에 담긴 값은 ${green} 이다`);
+        console.log(`blue변수에 담긴 값은 ${blue} 이다`);
+
+        let [a, b, c] = ["green","blue","pink"];
+
+        //기본값
+        let [name = "bob", age = 30] = ["guest", 50]; //후배열에 값을 주면 그 값이 재할당 되고 주지 않으면 전배열에서 할당한 값이 출력됨.
+        console.log(name);
+        console.log(age);
+
+
+        //객체 구조분해할당
+        let options = {
+            title : "Menu",
+            width : 100,
+            height : 200,
+        }
+        let { width, height } = options;
+        console.log(width);
+
+        //키명과 다른 변수명으로 할당
+        let { title: M, } = options;
+        console.log(M);
+
+        //객체 구조분해할당 나머지 할당하기
+        let { title, ...rest } = options;
+        console.log(`title변수에는 ${title} 이 할당됨`);
+        console.log(`rest변수에는 ${rest} title을 제외한 나머지 값이 객체로 할당됨`);
+        console.log(rest);
+
+        //객체 구조분해 할당 기본값 설정하기
+        let person1 = {
+            name: "bob",
+            age: 30,
+            subname : "abc",
+            isJob : true,
+            hobby : "음악감상",
+        }
+        let { name: N , age: A, subname, isJob, hobby='독서' } = person1; //없으면 기본값으로 할당해주는 객체에 해당 키값이 있다면 할당객체에서 값을 갖고 온다.
+        console.log(hobby)
+
+        let opt = {
+            title2: "Menu",
+        }
+        let {width2 = prompt("width?"), height2 = prompt('height?'), title2 } = opt;
+        console.log(width2, height2, title2)
+    </script>
+</body>
+</html>

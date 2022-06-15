@@ -1,0 +1,149 @@
+﻿Git 하나의 프로젝트를 버전별로 관리할 수 있도록 도와주는 출(프로그램)
+유저이름 설정
+git config --global user.name "hyunjin.P"
+유저이메일 설정
+git config --global user.email "wldwlddl0531@gmail.com"
+** github 가입시 사용한 이메일 입력!!
+정보 확인하기
+git config --list
+
+GitHub - 프로젝트 소스코드를 저장해주는 원격 저장소
+1. 내 소스코드를 저장
+2. 소스코드 공유
+3. 협업하는 공간
+
+로컬저장소
+1. git 설치하기
+2. git bash열기
+3. git bash에서 환경설정하기
+	1)유저이름 설정
+	2)유저 이메일 설정
+	3)환경설정 바로 되었는지 확인
+4. github에 처음 코드 입력하기
+	1) 초기화
+	    git init --> 이 폴더를 git으로 관리함 선언. 초기 한 번만 해줌(.git 폴더 생성-숨김 파일 보기. .git 생긴 이후로는 git init X)
+	2) 파일 추가하기
+	    git add . --> . 은 모든 파일을 의미. 만약 특정 파일을 저장하고 시픙면 파일명을 적어준다.(ex> git add index.html
+	3) 상태 확인(선택사항)
+	    git status
+	4) 히스토리 만들기
+	    git commit -m "first commit" --> m은 massage의 m.  ""안에 히스토리의 이름 작성
+	5) GitHub 레포짓토리와 나의 로컬 프로젝트랑 연결 (초기에 한 번만 해주면 됨)
+	    git remote add origin 주소 (주소는 레포지토리 안에 있음) 
+	6) 원격 저장소 연결 확인
+	    git remote -v
+	7) GitHub에 올리기
+	git push origin main(올릴 브런치 이름)
+5. 업데이트 하는 법
+	1) 파일 더하기
+	    git add .
+	2) 히스토리 만들기
+	    git commit -m "히스토리 이름"
+	3) GitHub로 올리기
+	    git push origin main
+6.GitHub로 팀 프로젝트 하기
+	1) GitHub에서 소스코드 다운로드
+	    git clone 주소 폴더이름
+		**주소는 GitHub에서 가지고 와야함
+		**폴더이름은 선택사항(없어도 됨)
+	2) GitHub에서 내 브런치 만들기
+	    git checkout -b 브런치이름
+	3) 내 브런치에 소스코드 업데이트 하기
+	    git add .
+	    git commit -m "fresh commit"
+	    git push origin 브런치 이름(main에 바로 업로드 하는 건 위험하기 때문에 새로 브런치를 만들어 올린다.
+
+	A가 다시 작업중
+	git add . git commit -m "aaa" 히스토리 만든 다음 원격저장소로 바로 올리면 안됨!!! push 후 pull 할 것!
+
+
+	4) 메인 브런치에서 소스 가져오기
+	    git pull origin main
+
+
+
+
+
+GreenArt@303PC-22 MINGW64 /d/01-STUDY/박현진/HTML/javascript/gitTest (main)
+$ git add .
+
+GreenArt@303PC-22 MINGW64 /d/01-STUDY/박현진/HTML/javascript/gitTest (main)
+$ git commit -m "div 추가완료"
+[main 0004c72] div 추가완료
+ 1 file changed, 3 insertions(+)
+
+
+$ git pull origin main // marge하고 해야 함.
+
+
+GreenArt@303PC-22 MINGW64 /d/01-STUDY/박현진/HTML/javascript/gitTest (main|MERGING)
+$ git push origin main
+
+
+
+
+
+
+
+
+//순서
+git init //.git 폴더 생성 - 한 번만
+
+git add . //넣어줌
+
+git branch -M main //브런치 설정
+
+git remote add origin https://github.com/hyunjinP31/academyStuff.git //주소 연결 - 한 번만
+
+git commit -m "first commit" - 히스토리 생성
+
+git push origin main // 실제로 넣어줌
+
+
+파일 크기 너무 크면 안 됨(무료버전이라서) 
+
+
+
+1.   $ git init
+
+2.   $ git status
+
+3.   $ git add (파일📄or폴더📁명)
+
+4.   $ git commit -m "텍스트 내용"
+
+5.   $ git remote add origin "자신의 저장소 주소"
+
+6.   $ git remote -v
+
+7.   $ git push origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
