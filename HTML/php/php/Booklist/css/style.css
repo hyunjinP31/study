@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@300&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+body {
+
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+header {
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: #fff;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+header ul li {
+    padding: 0 10px;
+}
+header ul li:last-child {
+    margin-right: 30px;
+}
+.contents {
+    margin-top: 140px;
+}
+.contents h2 {
+    font-size: 24px;
+    padding: 20px 0;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.contents p {
+    padding: 16px 0;
+    color: #fff;
+}
+.contents table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: #fff;
+}
+.contents table tr:first-child td {
+    border: none;
+    background: #f68084;
+    font-weight: bold;
+
+}
+.contents table tr:last-child td {
+    border-bottom: 1px solid #fff;
+}
+.contents table td {
+    border-top: 1px solid #fff;
+    padding: 10px;
+    color: #fff;
+}
+.searchBox {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.searchBox ul {
+    display: flex;
+    align-items: center;
+}
+.searchBox ul li:first-child {
+    padding-right: 14px;
+}
+.searchBox input {
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.searchBox ul li:nth-child(3){
+    padding: 0 10px;
+    background: #f68084;
+}
+.searchBox > a {
+    padding: 0 10px;
+    background: #f68084;
+}
+footer {
+    padding-top: 40px;
+}
+

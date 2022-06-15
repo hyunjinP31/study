@@ -1,0 +1,723 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+body {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #222;
+  background: whitesmoke;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+header {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #headerTop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+header #headerTop ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #headerTop ul li {
+  margin: 0 6px;
+  vertical-align: middle;
+  height: 20px;
+  line-height: 20px;
+}
+
+header #headerTop ul li a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+header #headerTop ul li a img {
+  width: 100%;
+  height: 100%;
+}
+
+header #headerTop ul li i {
+  font-size: 20px;
+  color: #23bc38;
+}
+
+header #headerTop ul:last-child {
+  width: 400px;
+}
+
+header #headerTop ul:last-child li {
+  width: 20%;
+}
+
+header #headerTop ul:last-child li a {
+  width: 100%;
+  text-align: center;
+}
+
+header #headerMiddle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 130px;
+}
+
+header #headerMiddle h1 {
+  width: 20%;
+}
+
+header #headerMiddle h1 a img {
+  width: 50%;
+}
+
+header #headerMiddle #search {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+}
+
+header #headerMiddle #search #border {
+  border: 3px solid #72f3ac;
+  overflow: hidden;
+  border-radius: 50px;
+  background: #fff;
+  width: 70%;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #headerMiddle #search #border input {
+  height: 45px;
+  padding-left: 10px;
+  vertical-align: top;
+  width: 80%;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+header #headerMiddle #search #border button {
+  height: 45px;
+  vertical-align: top;
+  width: 18%;
+  position: absolute;
+  right: -10px;
+  border: none;
+  background: none;
+  outline: none;
+  background: #72f3ac;
+}
+
+header #headerMiddle #search #border button i {
+  color: #fff;
+  padding-right: 15px;
+  font-size: 30px;
+}
+
+header #headerMiddle #search #border form {
+  width: 100%;
+}
+
+header #headerMiddle #addDiv {
+  width: 20%;
+  height: 100%;
+}
+
+header #headerBottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: #72f3ac;
+  position: relative;
+}
+
+header #headerBottom > div {
+  position: relative;
+}
+
+header #headerBottom #burger {
+  display: none;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  padding-top: 7px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header #headerBottom #burger span {
+  border-radius: 100px;
+  width: 60%;
+  height: 3px;
+  margin-bottom: 5px;
+  background: #555;
+}
+
+header #headerBottom ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header #headerBottom ul li {
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+#contents #visual {
+  background: paleturquoise;
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+#contents #visual #visuWrap {
+  position: relative;
+  height: 100%;
+}
+
+#contents #visual #moveDiv {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #visual #moveDiv div.slideDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#contents #visual #moveDiv div.slideDiv .posiText {
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  transform: translateY(-50%);
+}
+
+#contents #visual #moveDiv div.slideDiv .visuText {
+  position: absolute;
+  left: 0;
+}
+
+#contents #visual #moveDiv div.slideDiv img {
+  width: 45%;
+}
+
+#contents #visual #nav span {
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 9px;
+  cursor: pointer;
+}
+
+#contents #visual #nav i {
+  color: #555;
+  font-size: 30px;
+  vertical-align: bottom;
+}
+
+#contents #visual #prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+#contents #visual #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+#contents #today {
+  width: 100%;
+  height: 410px;
+  padding: 10px 30px;
+}
+
+#contents #today > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #today h2 {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+#contents #today .toBooks {
+  background: palegreen;
+  border-radius: 15px;
+  width: 32%;
+  height: 320px;
+  padding: 10px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #today .toBooks > div {
+  height: 240px;
+}
+
+#contents #today .toBooks > div img {
+  width: 100%;
+  height: 100%;
+}
+
+#contents #today .toBooks a p {
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#contents #today .toBooks a p i {
+  vertical-align: top;
+}
+
+#contents #banner1 {
+  width: 100%;
+  height: 400px;
+  background: #209af7;
+  margin: 0 auto;
+}
+
+#contents #banner1 a {
+  width: 1200px;
+  height: 400px;
+  display: inline-block;
+}
+
+#contents #banner1 a img {
+  width: 100%;
+  height: 100%;
+}
+
+#contents #news {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #news #newBooks {
+  height: 100%;
+  width: 100%;
+}
+
+#contents #news #newBooks h3 {
+  text-align: center;
+  padding: 40px;
+}
+
+#contents #news #newBooks ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #news #newBooks ul li {
+  height: 370px;
+  width: 33.3333%;
+  padding: 20px 10px;
+  text-align: center;
+  position: relative;
+}
+
+#contents #news #newBooks ul li > a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+#contents #news #newBooks ul li > a p:nth-of-type(2) {
+  height: 100%;
+}
+
+#contents #news #newBooks ul li .imgDiv {
+  width: 180px;
+  height: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+#contents #news #newBooks ul li .imgDiv img {
+  width: 100%;
+  height: 100%;
+}
+
+#contents #news #newBooks ul li .imgDiv:hover {
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+#contents #news #newBooks ul li .hoverBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+#contents #news #newBooks ul li .hoverBtn i {
+  vertical-align: top;
+  color: inherit;
+}
+
+#contents #news #notice {
+  height: 100%;
+  width: 40%;
+  text-align: center;
+}
+
+#contents #news #notice h3 {
+  padding: 40px;
+}
+
+#contents #news #notice h3 i {
+  vertical-align: top;
+}
+
+#contents #news #notice ul li {
+  border-bottom: 1px solid #aaa;
+  padding: 20px 0 20px 10px;
+  text-align: left;
+}
+
+#contents #bestBooks {
+  margin-bottom: 110px;
+  width: 100%;
+  height: 1150px;
+}
+
+#contents #bestBooks h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#contents #bestBooks ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#contents #bestBooks ul li {
+  width: 25%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contents #bestBooks ul li p {
+  padding-top: 10px;
+}
+
+#contents #bestBooks ul li p i {
+  vertical-align: top;
+}
+
+#contents #bestBooks ul li a {
+  width: 200px;
+  height: 100%;
+  display: inline-block;
+}
+
+#contents #bestBooks ul li a img {
+  width: 100%;
+  height: 300px;
+  transition: 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#contents #bestBooks ul li a img:hover {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+#contents #board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+
+#contents #board #banner2 {
+  width: 50%;
+  height: 100%;
+}
+
+#contents #board #banner2 #bannerImg {
+  display: inline-block;
+  width: 513px;
+  height: 513px;
+  overflow: hidden;
+  position: relative;
+}
+
+#contents #board #banner2 #bannerImg:hover .bg {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#contents #board #banner2 #bannerImg:hover p {
+  opacity: 1;
+}
+
+#contents #board #banner2 #bannerImg img {
+  width: 100%;
+}
+
+#contents #board #banner2 #bannerImg p {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #222;
+  border: 1px solid #fff;
+  padding: 6px 12px;
+  background: #fff;
+  transition: 0.5s;
+}
+
+#contents #board #banner2 #bannerImg p i {
+  vertical-align: top;
+}
+
+#contents #board #review {
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#contents #board #review i {
+  vertical-align: top;
+  padding-right: 10px;
+}
+
+#contents #board #review #bookReviews {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 40px;
+}
+
+#contents #board #review #bookReviews ul li {
+  text-align: left;
+  border-bottom: 1px solid #aaa;
+  padding: 10px 8px;
+}
+
+#contents #board #review #bookReviews ul li a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#contents #board #review #bookReviews ul li a #writeNo {
+  width: 12%;
+}
+
+#contents #board #review #bookReviews ul li a #writeCon {
+  color: #222;
+  font-weight: bold;
+  width: 70%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#contents #board #review #bookReviews ul li a #writeDate {
+  width: 18%;
+}
+
+#contents #board #review #opinions {
+  width: 100%;
+  height: 50%;
+}
+
+#contents #board #review #opinions i {
+  vertical-align: top;
+  padding-right: 10px;
+}
+
+#contents #board #review #opinions ul li {
+  text-align: left;
+  border-bottom: 1px solid #aaa;
+  padding: 10px 8px;
+}
+
+#contents #board #review #opinions ul li a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#contents #board #review #opinions ul li a #writeNo {
+  width: 12%;
+}
+
+#contents #board #review #opinions ul li a #writeCon {
+  color: #222;
+  font-weight: bold;
+  width: 70%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#contents #board #review #opinions ul li a #writeDate {
+  width: 18%;
+}
+
+footer {
+  margin-top: 50px;
+  height: 200px;
+  text-align: center;
+  background: #333;
+  color: #eee;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer #footerLogo {
+  width: 15%;
+}
+
+footer #footerLogo h1 {
+  padding: 20px 0;
+}
+
+footer #footerLogo h1 img {
+  width: 100%;
+}
+
+footer #footerText {
+  width: 80%;
+  text-align: left;
+  padding-left: 30px;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
