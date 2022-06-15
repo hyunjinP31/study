@@ -34,9 +34,35 @@
         
         //단어를 띄어쓰기로 구분하여 1차로 배열에 담음
         //각각의 값을 다시 split으로 구분하여 배열에 담음
-        //인덱스를 이용해 홀짝을 구분하여(+1) toUpperString해주기 forEach
-        //각 배열을 볼 때 앞의 배열 길이가 홀수라면 인덱스에 +3 아니라면 +2...?
 
+        //다시 str로 반환해줘야함
+        function solution3(str){
+            let answer = str.split("");
+            let even = [];
+            let odd = [];
+            answer.forEach((value,index)=>{
+                index%2 == 0 ? even.push(index) : odd.push(index);
+            })
+            for(let i = 0; i< even.length ; i++){
+                answer[even[i]] = answer[even[i]].toUpperCase();
+            }
+            for(let i = 0; i< odd.length ; i++){
+                answer[odd[i]] = answer[odd[i]].toLowerCase();
+            }
+            answer = answer.join("");
+            return answer;
+        }
+        console.log(solution3(" T"));
+
+        function solution4(str){
+            let answer = str.split("");
+            answer.map((value,index)=>{
+                index % 2 == 0 ? answer[index].toUpperCase() : answer[index].toLowerCase();
+            })
+            answer = answer.join("");
+            return answer;
+        }
+        console.log(solution4("try hello world"));
     </script>
 </body>
 </html>
