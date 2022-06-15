@@ -93,7 +93,7 @@ git add . //넣어줌
 
 git branch -M main //브런치 설정
 
-git remote add origin https://github.com/hyunjinP31/academyStuff.git //주소 연결 - 한 번만
+git remote add origin https://github.com/hyunjinP31/study.git //주소 연결 - 한 번만
 
 git commit -m "first commit" - 히스토리 생성
 
@@ -101,7 +101,7 @@ git push origin main // 실제로 넣어줌
 
 
 파일 크기 너무 크면 안 됨(무료버전이라서) 
-
+git
 
 
 1.   $ git init
@@ -116,7 +116,7 @@ git push origin main // 실제로 넣어줌
 
 6.   $ git remote -v
 
-7.   $ git push origin master
+7.   $ git push origin main
 
 
 
