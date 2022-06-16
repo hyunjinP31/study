@@ -38,9 +38,20 @@ butt, round, square (default : butt)
 *캔버스에 이미지 그리기
 ctx.drawImage(image, dx, dy, dWidth, dHeight);
 
+6)애니메이션 적용
+window.requestAnimationFrame() - 비동기 함수
+css의 transition으로 처리하기 어려운 애니메이션이나, html5 canvas, SVG등의 애니메이션 구현을 위하여 사용됨.
+모든 애니메이션을 직접 프레임 단위로 계산을 함
 
+setInterval -> 스스로 반복해서 호출 (O)
+requestAnimationFrame() -> 스스로 반복해서 호출 (X)
+재귀적으로 window.requestAnimationFrame() 함수를 다시 호출해줘야 함
 
-
+function frame(){
+	window.requestAnimationFrame(frame);	
+}
+window.requestAnimationFrame(frame);
+--> 재귀함수(함수 안에서 자신을 호출하는 함수)
 
 
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background: linen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interaction</h1>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+        const boxs = [];
+        //글자 서식 지정
+        context.font = "bold 24px sans-serif"
+        class Box {
+            constructor(index, x, y, speed) {
+                this.index = index;
+                this.x = x;
+                this.y = y;
+                this.speed = speed
+                this.width = 100;
+                this.height = 100;
+                this.draw();
+            }
+            draw(){
+                context.fillStyle = "rgba(0,0,0,0.4)";
+                context.fillRect(this.x,this.y,this.width,this.height);
+                context.fillStyle = "#fff";
+                //fillText("내용",x,y)
+                context.fillText(this.index, this.x+30,this.y+30);
+            }
+        }
+        let tempX, tempY, tempSpeed;
+        for(let i=0; i<10; i++){
+            //speed는 1~5사이의 숫자로 지정
+            tempSpeed = Math.floor(Math.random()*5)+1;
+            tempX = Math.random() * canvas.width * 0.8;
+            tempY = Math.random() * canvas.height * 0.8;
+            boxs.push(new Box(i, tempX, tempY, tempSpeed))
+        }
+        console.log(boxs);
+        //box 이동 시키기
+        function boxMove(){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            boxs.forEach(box=>{
+                box.x += box.speed;
+                if(box.x > canvas.width){
+                    box.x = -box.x;
+                }
+                box.draw();
+            })
+            requestAnimationFrame(boxMove);
+        }
+        boxMove();
+    </script>
+</body>
+</html>

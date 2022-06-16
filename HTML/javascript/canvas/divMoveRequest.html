@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button>정지</button>
+    <script>
+        const div = document.querySelector('div');
+        const button = document.querySelector('button');
+        let animation;
+        let x = 100;
+        function divMove() {
+            x += 1;
+            div.style.left = x +'px';
+            animation = requestAnimationFrame(divMove); //재귀함수 : 내 안에서 나 자신을 호출하는 함수
+        }
+        divMove();
+        button.addEventListener('click',()=>{
+            cancelAnimationFrame(animation);
+        })
+    </script>
+</body>
+</html>
