@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        canvas {
-            background: lavender;
-        }
-    </style>
+    <title>Cat Jumps</title>
 </head>
 <body>
     <canvas width="600" height="600"></canvas>
@@ -17,30 +12,45 @@
 
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext('2d');
-        let cat = new Image();
+        let catElem = new Image();
+        catElem.src = './img/cat.png';
         let huddleElem = new Image();
-        cat.src = './img/cat.png';
+        huddleElem.src = './img/obs0.png';
+        
         let huddles = [];
-
+        let cat = {
+            width: 50,
+            height : 50,
+            x : 50,
+            y : 300,
+            draw(){
+                ctx.drawImage(catElem,this.x,this.y,this.width,this.height);
+            }
+        }
         class huddle {
-            constructor(x, speed){
+            constructor(ind ,x, speed){
                 this.x = x;
                 this.y = 300;
                 this.speed = speed;
+                this.width = 50;
+                this.height = 50;
                 this.draw();
             }
             draw(){
-                ctx.drawImage(huddleElem,30,30)
+                ctx.drawImage(huddleElem,this.x,this.y,this.width,this.height);
             }
         }
         let tempX, tempSpeed;
         for ( let i = 0; i<3; i++){
-            tempSpeed = Math.floor(Math.random()) * 3 + 1;
+            tempSpeed = Math.floor(Math.random()*3+1);
             tempX = Math.random() * canvas.width * 0.8;
-            huddleElem.src = `./img/obs${i}.png`;
-            huddles.push = new huddle(tempX, tempSpeed);
+            huddles.push = new huddle(i, tempX, tempSpeed);
         }
+        console.log(huddles);
 
+        function huddleMove () {
+
+        }
         
         
     </script>
