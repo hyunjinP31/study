@@ -55,14 +55,32 @@
         console.log(solution3(" T"));
 
         function solution4(str){
-            let answer = str.split("");
-            answer.map((value,index)=>{
-                index % 2 == 0 ? answer[index].toUpperCase() : answer[index].toLowerCase();
+            let answer = str.split(" ")
+            .map((word,index)=>{
+                
+                index % 2 == 0 ? answer[index].toUpperCase() : answer[index].toLowerCase()
             })
-            answer = answer.join("");
+            .join("");
             return answer;
         }
-        console.log(solution4("try hello world"));
+        
+        function solution5(s) {
+        return s
+            .split(" ")
+            .map((word) =>
+            word
+                .split("")
+                .map((char, index) =>
+                index % 2 === 0
+                    ? word[index].toUpperCase()
+                    : word[index].toLowerCase()
+                )
+                .join("")
+            )
+            .join(" ");
+        }
+        console.log(solution4("try hello world"))
+        console.log(solution5("try hello world"));
     </script>
 </body>
 </html>
