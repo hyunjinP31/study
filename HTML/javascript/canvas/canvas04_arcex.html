@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background: lightslategrey;
+        }
+    </style>
+    <script>
+        function draw(){
+            let  canvas = document.querySelector('#canvas');
+            let ctx = canvas.getContext('2d');
+            //호와 원 그리기
+            //ctx.arc(x,y,startA,endA,true)
+            //360도 = Math.PI *2 (라디안 각도)
+            //1도 = Math.PI / 180
+            for( let i = 0; i < 3 ; i++){
+                for (let j = 0; j<3; j++){
+                    ctx.beginPath();
+                    let x = 150+j*200; //시작 위치에서 200씩 옮겨가도록
+                    let y = 150 + i*200; //3행이 만들어지도록
+                    let endA = Math.PI + (Math.PI*j)/2 //기본 90도 j가 올라갈수록 올라감
+                    let anticlockwise = i % 2 != 0 ? true : false;
+                    ctx.arc(x,y,50,0,endA,anticlockwise);
+                    if(i>1) ctx.fill();
+                    else ctx.stroke();
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="draw()">
+    <canvas width="1000" height="1000" id="canvas"></canvas>
+</body>
+</html>

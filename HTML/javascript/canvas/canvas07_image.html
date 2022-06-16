@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background: lavender;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="1000" height="1000"></canvas>
+    <div style="display:none"><img id ="source" src="../img/images/img_lights1.jpg" width="300" height="227"></div>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+        let image = document.querySelector('#source');
+        image.addEventListener('load',e=>{
+            ctx.drawImage(image, 50,100,200,140);
+        })
+        //const imgElem = document.createElement('image');
+        const imgElem = new Image();
+        imgElem.src = '../img/images/img_lights1.jpg';
+        imgElem.addEventListener('load',()=>{
+            ctx.drawImage(imgElem,50,50)
+            ctx.drawImage(imgElem,200,50,100,60);
+            ctx.drawImage(imgElem,400,100,200,140,0,0,100,50) //(x,y,width,height,cropX,cropY,cropWidth,cropHeight?)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿canvas
+1. html에 canvas태그 추가하기
+<canvas width="150" height="150"></canvas>
+canvas에 너비와 높이가 지정되지 않으면 300px 150px(width,height)로 자동지정(기본)
+
+2. javascript = getContext()메서드
+캔버스의 드로잉 컨텍스트를 반환해줌
+
+1)사각형그리기
+fillRect(x,y,width,hegth) 채워진 사각형 그리기
+strokeRect(x,y,width,height) 선으로 된 사각형 그리기
+clearRect(x,y,width,height) 지정된 사각형 영역을 지움
+
+2)패스그리기
+beginPath() 새 경로를 만듦
+closePath() 마지막 위치에서 시작 위치를 연결
+stroke() 윤곽선 그리기
+fill() 칠하기
+moveTo(x,y) 지정된 위치에서 시작
+lineTo(x,y) x,y좌표까지 선을 그린다.(다음 점)
+
+3)호(arc)그리기
+arc(x,y,radius,startAngle,endAngle,anticlockwise)
+라디안 각도
+Math.PI * 2 ==> 360도
+
+4)선과 면 스타일 지정하기
+lineWidth 선의 두께를 지정
+fillStyle 면 색을 지정
+strokeStyle 선 색을 지정
+lineCap 선의 끝점 모양을 결정
+butt, round, square (default : butt)
+
+5)이미지 적용
+* 이미지 객체 만들기
+	- const imgElem = document.createElement('img');
+	- const imgElem = new Image();
+*캔버스에 이미지 그리기
+ctx.drawImage(image, dx, dy, dWidth, dHeight);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

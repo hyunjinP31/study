@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: lavender;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas width="1000" height="600"></canvas>
+    <div id="btns">
+        <button data-color="red">red</button>
+        <button data-color="blue">blue</button>
+        <button data-color="pink">pink</button>
+        <button data-color="black">black</button>
+        <button>이미지</button>
+        <button>지우기</button>
+    </div>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+        let drawing;
+        let color;
+        let brush = 'color';
+        const imgElem = new Image();
+        imgElem.src = '../img/images/img_lights1.jpg';
+        canvas.addEventListener('mousemove', draw)
+        canvas.addEventListener('mousedown',()=>{
+            drawing = true;
+        })
+        canvas.addEventListener('mouseup',()=>{
+            drawing = false;
+        })
+        //버튼 이벤트 지정하기
+        let btns = document.querySelector('#btns');
+        btns.addEventListener('click',(e)=>{
+            let dataset = e.target.dataset;
+            color = dataset.color;
+            if (e.target.innerHTML == "지우기"){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+            }
+            if(e.target.innerHTML == "이미지"){
+                brush = "img"
+            }else {
+                brush = 'color'
+            }
+
+        })
+    function draw(e){
+        //선의 두께 지정
+        ctx.lineWidth = 10;
+        //선의 끝부분 둥글게
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = `${color}`;
+        let x = e.pageX;
+        let y = e.pageY;
+        if (!drawing) return; //drawing이 false면 이 함수는 종료됨
+        if (brush == 'color'){
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x,y);
+            ctx.stroke();
+        }else {
+            ctx.drawImage(imgElem,x,y,50,50);
+        }
+       
+        
+    }
+    </script>
+</body>
+</html>

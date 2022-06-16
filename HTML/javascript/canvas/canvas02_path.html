@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background: lavenderblush;
+        }
+    </style>
+    <script>
+        function draw(){
+            let canvas = document.querySelector('#canvas');
+            let ctx = canvas.getContext('2d');
+            //패스를 시작(펜도구 선택)
+            ctx.beginPath();
+            //시작위치 - 처음 점 찍기
+            ctx.moveTo(70,50);
+            //선그리기 - 다음 점 찍기
+            ctx.lineTo(150,50);
+            //선그리기 - 다음 점 찍기
+            ctx.lineTo(150,150);
+            ctx.closePath(); //closePath를 하는 순간 제일 처음 점과 마지막에 그린 점의 위치를 잇고 끝이 난다. 안 하면 잇지 않음
+            ctx.stroke();
+
+            ctx.fill();
+            ctx.fillStyle = "red";
+            let num = 100;
+            for(let j = 1 ; j < 10 ; j++){
+                for(let i = 0 ; i< 10; i++){
+                    ctx.fillRect(num+ (i*80),100,50,50);
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body onload="draw()">
+    <canvas width="1000" height="500" id="canvas"></canvas>
+    <script>
+
+    </script>
+</body>
+</html>
