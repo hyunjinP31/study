@@ -53,9 +53,11 @@ function frame(){
 window.requestAnimationFrame(frame);
 --> 재귀함수(함수 안에서 자신을 호출하는 함수)
 
+cancelAnimationFrame(변수명)
 
 
-
+고양이는 내가 화살표위 키를 누르면 위로 올라가도록 함. 키가 떼어지면 다시 내려옴
+화분은 캔버스 끝에서 나와서 고양이를 지나쳐 감(이 때 고양이가 화분과 부딪히면 게임오버(멈춤) (cat.e.pageX == huddle.e.pageX && cat.e.pageY == huddle.e.pageY ) )
 
 
 
