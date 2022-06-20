@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5];
+        let a = arr[0];
+        let b = arr[1];
+        let [c, d] = arr; //c, d에 arr배열의 0번째, 1번째 값인 1,2가 순차적으로 담긴다.
+        let newobj = {
+            name: 'bella',
+            age : 30,
+        }
+        let name1 = newobj['name'];
+        let age1 = newobj['age'];
+        let { age: aa, name } = newobj; //name과 age에 newobj의 값이 키와 같은 이름의 변수에 담김 다른 이름으로 받고 싶을 땐 (a: b)라고 적어주면 된다.
+        console.log(name);
+        console.log(aa);
+    </script>
+</body>
+</html>

@@ -72,6 +72,14 @@ class Line {
         ctx.closePath();
     }
 }
+// 추가 마우스 객체 만들기
+let mouse = {
+    x: 0,
+    y:0,
+    isActive : false,
+    radius: 5,
+
+}
 
 // 3. 파티클 만들기
 const TOTAL = 50; //파티클의 수 정해주기
@@ -91,7 +99,14 @@ for(let i = 0; i<TOTAL; i++){
 function render(){
     ctx.clearRect(0,0,canvas.width, canvas.height); //프레임이 생겨날 때마다 지워줌(이전 프레임은 지워줌으로써 프레임끼지 겹치지 않도록 하기)
     requestAnimationFrame(render); //프레임 만들기
-    particles.forEach(particle=>particle.animate()) 
+    particles.forEach(particle=>particle.animate())
+    if(mouse.isActive){
+        let velocity = {
+            x:0,
+            y:0,
+        }
+        new Particle(mouse.x,mouse.y,mouse.radius,velocity).animate();
+    }
 }
 // 5. 실행하기
 render();
@@ -100,4 +115,16 @@ render();
 window.addEventListener('resize',()=>{
     canvas.width = window.innerHeight;
     canvas.height = window.innerHeight;
+})
+
+// 7. 마우스 이벤트 연결하기
+canvas.addEventListener('mouseenter',function(){
+    mouse.isActive = true;
+})
+canvas.addEventListener('mouseleave',function(){
+    mouse.isActive = false;
+})
+canvas.addEventListener('mousemove', function(e){
+    mouse.x = e.pageX;
+    mouse.y = e.pageY;
 })
