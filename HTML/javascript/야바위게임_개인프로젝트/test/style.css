@@ -8,6 +8,8 @@
     background: lightsteelblue;
 }
 .cup {
+    text-align: center;
+    font-size: 20px;
     width: 180px;
     height: 350px;
     background: mediumslateblue;

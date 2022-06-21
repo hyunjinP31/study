@@ -31,14 +31,13 @@ startBtn.addEventListener('click',()=>{
     cups.forEach(cup=>cup.style.opacity = 1)
     setTimeout(()=>{
         coin.style.opacity = 0;
-        swap();
     },600)
-
+    switching();
 })
 
-const cup1 = (wrap.offsetWidth*startCoinPlace[0])/2-(cups[0].offsetWidth/2)
-const cup2 = (wrap.offsetWidth*startCoinPlace[1])-(cups[1].offsetWidth/2)-((wrap.offsetWidth*0.33)/2)
-const cup3 = (wrap.offsetWidth*startCoinPlace[2])-(cups[2].offsetWidth/2)-((wrap.offsetWidth*0.33)/2)
+let cup1 = (wrap.offsetWidth*startCoinPlace[0])/2-(cups[0].offsetWidth/2)
+let cup2 = (wrap.offsetWidth*startCoinPlace[1])-(cups[1].offsetWidth/2)-((wrap.offsetWidth*0.33)/2)
+let cup3 = (wrap.offsetWidth*startCoinPlace[2])-(cups[2].offsetWidth/2)-((wrap.offsetWidth*0.33)/2)
 cupArr = [cup1, cup2, cup3]
 
 
@@ -54,22 +53,29 @@ function swap(){
 }
 console.log(ranNum);
 console.log(ranNum2);
-console.log(cupArr[ranNum]);
-console.log(cupArr[ranNum2])
+
+let tempCup;
+let tempCup2;
+
+let tempArr = [0,1,2];
 
 function switching (){
     setInterval(()=>{
         let cupran = Math.floor(Math.random()*3);
         let cupran2 = Math.floor(Math.random()*3);
+        tempCup = cups[cupran].style.left;
+        tempCup2 = cups[cupran2].style.left;
         if(cupran != cupran2){
-            cups[cupran].style.left = Number(cupArr[cupran2])+'px';
-            cups[cupran2].style.left = Number(cupArr[cupran])+'px';
+            cups[cupran].style.left = tempCup2;
+            cups[cupran2].style.left = tempCup;
         }
+        //같은 값일 때 뒤에 애 하나를 다른 값으로 바꿔주기
+        console.log(cups[cupran].style.left);
+        console.log(cups[cupran2].style.left);
         console.log(cupran);
         console.log(cupran2);
-    },3000)
+    },700)
 }
-// switching();
 
 //해야 하는 것
 //Math.random으로 가져오기 때문에 화면이 한 번 새로고침 될 때마다 새로운 숫자를 가져옴 == 컵을 계속해서 셔플시켜줄 방법이 필요함
@@ -84,3 +90,6 @@ function switching (){
 //현재 문제점
 //cups의 인덱스를 이용해 left값을 바꾸다보니 컵들이 겹치는 일이 발생. 1번 자리에 있던게 2번 자리로 간다고 해서 인덱스까지 2번으로 바뀌는 건 아니기 때문
 
+
+// div는 잘 움직였지만 좌표가 문제. 두 번째에 div는 0번과 1번이 잘 움직였는데 좌표를 첫 번째 자리와 두 번째 자리로 움직여져서 이미 첫 번째 자리에 있던 div와 겹치는 일이 발생
+// 절대 좌표값이 아닌 상대의 좌표로 이동하도록 해야함

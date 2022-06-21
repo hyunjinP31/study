@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
-import MyComponent from './MyComponent';
-import MyComponentClass from './MyComponentClass';
+import MyComponent from './functionComponent/MyComponent';
+import MyComponentClass from './classComponent/MyComponentClass';
 import Counter from './Counter.js';
 import CounterF from './CounterF.js';
 import EventPractice from './Event';
@@ -20,7 +20,7 @@ function App() {
     {/* <Counter></Counter> */}
     {/* <CounterF></CounterF> */}
     {/* <EventPractice></EventPractice> */}
-    <EventF></EventF>
+    <MyComponent name='green' age='20'><h2>h2입니다.</h2></MyComponent>
     <h2>하이하이</h2>
     <input type="text"/>
   </div>

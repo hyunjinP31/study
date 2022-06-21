@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //구조분해할당
+        //객체나 배열에 담긴 데이터의 일부분 새로운 변수에 담을 때 사용
+        let arr = ["green", "yellow", "red"];
+        // let a = arr[0];
+        // let b = arr[1];
+        // let c = arr[2];
+        let [a, b, c] = arr;
+        let newState = ['여러분',function(){console.log('a')}];
+        // let s = newState[0];
+        // let f = newState[1];
+        let [s, f] = newState;
+        console.log(a,b,c,s,f)
+
+        let newArr = ["a","b","c","d","e"];
+        // let newArr2 = ["a","b","c","d","e","f"];
+        let newArr2 = [...newArr,"f"];
+
+        let obj = {
+            name: "green",
+            age: 20,
+        }
+        let objname = obj['name'];
+        let objage = obj['age'];
+        let { name, age } = obj; //키와 같은 이름의 변수를 사용해 담아준다. 객체이기 때문에 중괄호 사용
+        let props = {
+            username:'a',
+            email:'a@gmail.com',
+        }
+        function user ({username}){
+
+        }
+    </script>
+</body>
+</html>
