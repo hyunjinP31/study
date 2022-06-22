@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CreateNewList from './Component/CreateNewList';
 import { useRef, useState} from 'react';
@@ -17,19 +16,29 @@ function App() {
   }
   const { listInput } = input;
 
+  const nextId = useRef(1);
+
   const [lists, setlists] = useState([]);
   const onCreate = ()=>{
     const list = {
+      id: nextId.current,
       listInput,
     }
     setlists([...lists, list])
+    setInput({
+      listInput: "",
+    })
+    nextId.current += 1;
+    console.log(lists);
+  }
+  const onDelete = (id)=>{
+    setlists(lists.filter(list=> id !== list.id));
   }
   return (
     <div className="App">
       <CreateNewList listInput={listInput} onChange={onChange} onCreate={onCreate}></CreateNewList>
-      <Lists lists={lists}></Lists>
+      <Lists lists={lists} onDelete={onDelete}></Lists>
     </div>
   );
 }
-
 export default App;

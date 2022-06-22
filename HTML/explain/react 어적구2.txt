@@ -91,6 +91,62 @@ state 변경 this.setState({})
 
 
 
+ref (reference) : DOM에 이름달기
+1. 클래스형 컴포넌트
+1)ref객체 생성
+const input = React.createRef()
+2)DOM 요소 ref속성으로 지정
+input ref={this.input}
+3) DOM요소 접근
+this.input.current
+
+2. 함수형 컴포넌트
+1)useRef 임폴트
+import { useRef } from 'react';
+2) ref 객체
+const input = useRef();
+3) DOM요소 지정
+<input ref={input} />
+4)DO<요소 접근
+input.current
+
+배열다루기
+1.배열에 항목을 추가하기
+CreateUser.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
