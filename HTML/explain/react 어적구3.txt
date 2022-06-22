@@ -1,0 +1,89 @@
+﻿라이프 사이클 - 수명주기
+컴포넌트의 수명은 페이지에 렌더링 되기 전인 준비과정에서 시작해 페이지에서 사라질 때 끝남
+
+클래스 컴포넌트 -> 라이프 사이클 메서드 (함수형 X)
+
+함수형 컴포넌트 -> Hooks기능을 사용하여 처리
+Hooks
+ 1) useState
+ 2) useRef
+ 3) useEffet
+
+
+마운트 ,업데이트, 언마운트
+1) 마운트 : 페이지에 컴포넌트가 나타남
+	컴포넌트 만들기(클래스)
+	constructor : 컴포넌트를 새로 만들 때마다 호출되는 클래스 생성자 메서드->
+	getDerivedStateFromProps :props에 있는 값을 state에 넣을 때 사용되는 메서드->
+	render : 우리가 준비한 UI함수를 렌더링하는 함수 ->
+	componentDidMount : 컴포넌트가 웹 브라우상에 나타난 후 호출되는 메서드
+
+2) 업데이트 : 컴포넌트 정보를 업데이트 - 리렌더링
+	1. props가 변경될 때
+	2. state가 변경될 때
+	3. 부모 컴포넌트가 리렌더링 될 때
+	4. this.forceUpdate로 강제 렌더링을 트리거할 때
+	업데이트 발생
+	getDerivedStateFromProps :props에 있는 값을 state에 넣을 때 사용되는 메서드->
+	shouldComponentUpdate : 컴포넌트가 리렌더링 해야할 지 말아야 할 지 결정하는 메서드 (true반환 시 render호출, false반환 시 여기에서 작업 취소)
+	render ->
+	getSnapshotBeforeUpdate : 컴포넌트 변화를 DOM에 반영하기 직전에 호출하는 메서드->
+	componentDidUpdate : 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드->
+	
+3) 언마운트 : 페이지에서 컴포넌트가 사라짐
+	언마운트 하기
+	componentWillUnmount : 컴포넌트가 웹 브라우저 상에서 사라지기 전에 호출되는 메서드
+
+함수형 컴포넌트
+useEffect : 컴포넌트가 마운트 됐을 때, 언마운트 됐을 때, 업데이트 될 때 특정작업을 처리하는 Hook
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

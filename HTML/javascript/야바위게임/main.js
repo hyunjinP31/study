@@ -85,6 +85,8 @@ cups.forEach((cup,index)=>{
     cup.addEventListener('click',()=>{
         if(index == coinNum) {
             cup.style.opacity = 0;
+            console.log(cup.style.left)
+            console.log(cup.style.left.split("").splice(0,3));
             coin.style.left = Number(cup.style.left.split("").splice(0,3).join(""))+(cup.offsetWidth/2)-(coin.offsetWidth/2)+'px';
             coin.style.opacity = 1;
             setTimeout(()=>{endDiv.classList.add('win');},1000)
