@@ -1,0 +1,80 @@
+﻿yarn add node-sass
+npm install --sace-dev sass sass-loader mini-css-extrac-plugin
+yarn add classname
+Css in JS
+yarn add styled-components
+yarn add react-icons sstyled-component //icon과 styled-components같이 설치
+
+
+리액트 컴포넌트 스타일링 하기
+
+1. scss 사용하기
+2. css Module
+css 클래스 중첩을 방지
+.module.css
+style.module.css
+.box {
+	background: green;
+}
+main.module.css
+.box {
+	background: green;
+}
+위의 둘이 겹쳐지지 않고 다른 클래스 이름처럼 다뤄짐
+
+3. styled-components / emotion / styled-jsx
+
+classname 라이브러리 - 문자열, 배열, 객체들을 전달하여 문자열을 조합
+classNames("button", "small") --> "button small"
+classNames(['button', 'large']) --> "button large"
+classNames({ button: true }) --> "button"
+classNames({ button: false }) --> ""
+classNames('button', { bar: true, duck: false }, 'abc') --> "button bar abc"
+
+    //해당 클래스와 같은 클래스가 옆에 있을 때 해당 스타일을 주겠다.
+    // & + &{
+    //     style 
+    // }
+// background: lighten($blue, 20%); //앞에 있는 색상을 뒤에 있는 퍼센테이지 만큼 밝게 함 (darken도 있다.)
+
+
+
+
+
+
+컴포넌트 만들기
+1. TodoTempate
+레이아웃을 설정하는 컴포넌트 페이지의 중앙에 그림자가 적용된 흰색 박스
+2. TodoHead
+오늘의 날짜와 요일을 나타냄 앞으로 해야 할 일이 몇 개 남았는지 보여줌
+3. TodoList
+할 일에 대한 정보가 들어있는 todos배열의 내장함수 map을 사용하여 여러개의 Todoitem 컴포넌트를 렌더링함
+4. TodoItem
+각 할 일에 대한 정보를 렌더링 해주는 컴포넌트
+5. TodoCreate
+새로운 할 일을 등록하는 컴포넌트
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

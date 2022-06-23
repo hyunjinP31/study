@@ -1,0 +1,13 @@
+.App {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px;
+  border: 1px solid black;
+  padding: 30px;
+}
+.align {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+}
