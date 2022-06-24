@@ -1,0 +1,101 @@
+﻿html, css, javascript
+index.html
+css - style.css
+js - main.js nav.js
+document.querySelector()
+
+react
+SPA(single-page application)
+변수
+state 상태
+const [ state, setState ] = useState();
+setState(state+1)
+
+
+
+useState() - 하나당 하나의 상태만을 관리해줌
+useReduce - 하나를 불러주면 여러개의 상태를 관리할 수 있음 각각의 상황을 만들어 해당 case일 때 해당 상태가 실행되도록 한다.
+
+
+
+
+
+useState() - 단순한 상태를 관리할 때 자주 사용
+
+useReducer - 상태관리 복잡한 상태를 관리할 때 추천
+import { useReducer } from 'react';
+useReducer(함수, 초깃값)
+const [state, dispatch] = useReducer(함수, 초깃값) //dispatch가 useReucer안에 있는 함수를 실행시킨다.
+
+action {
+	type: "",
+}
+dispatch({type: "INCREASE"}) //action을 발생시키는 함수
+
+function reducer(state, action){
+	switch (action.type){
+	case 'INCREASE':
+	return state+1;
+	case 'DECREASE':
+	return state-1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

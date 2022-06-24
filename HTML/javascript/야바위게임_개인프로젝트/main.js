@@ -7,6 +7,7 @@ let startBtn = document.querySelector('.startBtn'); //게임 스타트 버튼
 let nextDiv = document.querySelector('.end'); //게임 끝 화면
 let whileShuffleDiv = document.querySelector('.whileShuffle'); //셔플하는 동안 화면을 덮을 div
 let restartBtn = document.querySelector('.restart'); //게임이 끝났을 때 나타나는 재시작 버튼
+let homeBtn = document.querySelector('.home'); //게임이 끝났을 때 나타나는 처음으로 버튼
 
 
 let startPlace = [0.33,0.66,0.99]; //각 오브젝트 들의 x좌푯값을 구해 배치해주기 위한 숫자
@@ -34,6 +35,7 @@ for(let i = 0; i<startPlace.length; i++){
 
 //게임 시작 버튼을 눌렀을 때
 startBtn.addEventListener('click',()=>{
+    console.log(coinNum,"   coin first")
     startDiv.style.display = 'none'; //게임 시작화면 off
     whileShuffleDiv.style.display = 'block'; //셔플동안 화면을 덮어서 동작을 못 하게 함
     //coin의 위치를 보여주고 1초뒤 cup 오브젝트들이 나타나면서 셔플 시작. 셔플동안 coin은 보이지 않음
@@ -73,15 +75,15 @@ function shuffleStart(speed, volume){
     interval = setInterval(()=>{
         switching(volume);
         if(isShuffleDone) shuffleStop();
-    },speed) //1000, 600, 200 결정! 인자로 받기?
+    },speed)
 }
 //셔플 끝
 function shuffleStop(){
     clearInterval(interval);
     whileShuffleDiv.style.display = 'none' //셔플이 끝나면 사라져 동작을 할 수 있게 함
 }
-
-restartBtn.addEventListener('click',()=>{
+//처음화면으로 돌아가기
+homeBtn.addEventListener('click',()=>{
     count = 0
     stageCount = 0;
     isShuffleDone = false;
@@ -89,13 +91,26 @@ restartBtn.addEventListener('click',()=>{
     nextDiv.classList.remove('lose');
     startDiv.style.display = 'block';
     restartBtn.style.display = 'none';
-
+    homeBtn.style.display = 'none';
 })
-
-
-
-
-console.log(coinNum);
+//게임 바로 재시작하기
+restartBtn.addEventListener('click',()=>{
+    count = 0
+    stageCount = 0;
+    isShuffleDone = false;
+    coinNum = Math.floor(Math.random()*3);
+    console.log(coinNum,"   coin first")
+    nextDiv.classList.remove('win');
+    nextDiv.classList.remove('lose');
+    homeBtn.style.display = 'none'
+    restartBtn.style.display = 'none';
+    whileShuffleDiv.style.display = 'block';
+    setTimeout(()=>{
+        cups.forEach(cup=>cup.style.opacity = 1)
+        coin.style.opacity = 0;
+        shuffleStart(1000,8);
+    },1000)
+})
 
 cups.forEach((cup,index)=>{
     //셔플이 끝나고 컵을 클릭했을 때
@@ -128,7 +143,7 @@ cups.forEach((cup,index)=>{
                         nextDiv.classList.remove('stage3');
                         coinNum = Math.floor(Math.random()*3);
                         whileShuffleDiv.style.display = 'block';
-                        console.log(coinNum,"   coinNum second")
+                        console.log(coinNum,"   coinNum third")
                         setTimeout(()=>{
                             cups.forEach(cup=>cup.style.opacity = 1)
                             coin.style.opacity = 0;
@@ -137,14 +152,16 @@ cups.forEach((cup,index)=>{
                     },1500)
                 }else if (stageCount == 3) {
                     nextDiv.classList.add('win');
-                    restartBtn.style.display = 'block';
+                    homeBtn.style.display = 'inline'
+                    restartBtn.style.display = 'inline';
                 }
             },2000)
         }else {
             //틀렸다면 바로 lose화면 출력
             setTimeout(()=>{
                 nextDiv.classList.add('lose');
-                restartBtn.style.display = 'block';
+                homeBtn.style.display = 'inline'
+                restartBtn.style.display = 'inline';
             },2000)
         }
         //컵을 누르고 난 후 0.7초 뒤에 다른 컵들의 투명도를 0으로 줘서 다른 컵들 안에는 무엇이 담겨있는지 확인 시켜준다.

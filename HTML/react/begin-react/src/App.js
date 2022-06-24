@@ -6,6 +6,7 @@ import Counter from './Counter.js';
 import CounterF from './CounterF.js';
 import EventPractice from './Event';
 import EventF from './EventF';
+import Counter2 from './Counter2';
 
 function App() {
   const name = "리액트";
@@ -13,16 +14,7 @@ function App() {
   // * JSX에서 자바스크립트 표현식을 사용하려면 {}로 감싼다
   // * if문 대신 조건부 연산자 - 삼함연산자 사용
   <div  className='react'>
-    {/* <MyComponentClass name="classGreen" age={30}>
-      <h3>children</h3>
-    </MyComponentClass>
-    <MyComponentClass></MyComponentClass> */}
-    {/* <Counter></Counter> */}
-    {/* <CounterF></CounterF> */}
-    {/* <EventPractice></EventPractice> */}
-    <MyComponent name='green' age='20'><h2>h2입니다.</h2></MyComponent>
-    <h2>하이하이</h2>
-    <input type="text"/>
+      <Counter2></Counter2>
   </div>
     
   );

@@ -43,3 +43,6 @@ button {
 .abc button {
   margin-left: 20px;
 }
+span {
+  cursor: pointer;
+}
