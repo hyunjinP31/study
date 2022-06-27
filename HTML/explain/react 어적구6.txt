@@ -1,0 +1,93 @@
+﻿1.MainPage.js
+2.Header.js
+3.Footer.js
+4.Content.js
+
+
+
+context API
+주로 resucer과 같이 쓰이며 프롭스로 주기에는 불필요한 단계가 많을 때 사용한다.
+
+1. 컨텍스트 만들기
+const MyContext = createContext(기본값) //기본값을 넣어주기는 하지만 .Provider value ="여기에 들어가는 값이 출력된다."
+App
+<MyContext.Provider value={user}>
+</MyContext.Provider>
+
+2.컨텍스트 값 사용하기
+const user = useContext(MyContext)
+
+
+
+import { useContext } from 'react';
+import { TodoStateContext, TodoDispatchContext } from ''
+
+function Sample(){
+	const state = useContext(TodoStateContext);
+	const dispatch = useContext(TodoDispatchContext);
+	return <div>Sample</div>
+}
+
+미리 useContext를 함수에 담아 만들어서 export 해주고 실제 해당 Context를 쓸 컴포넌트 에서는 해당 함수만 import받아서 바로 사용한다.
+굳이 컴포넌트에서 useContext를 해줄 필요 없도록 하는 것.
+import { useTodoState, useTodoDispatch } from '../TodoContext'
+
+
+useReducer + context API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

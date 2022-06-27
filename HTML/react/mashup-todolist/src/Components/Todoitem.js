@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
 import {MdDone, MdDelete } from 'react-icons/md';
+import { useTodoDispatch } from '../todoContext';
 
 const Remove = styled.div`
     display: flex;
@@ -51,19 +52,23 @@ const Text = styled.div`
     ${props=>
         props.done &&
         css `
-            // text-decoration: line-through;
+            text-decoration: line-through;
             color: #ced4da;
         `
     }
 `;
 
 const Todoitem = ({id, done, text}) => {
+    const dispatch = useTodoDispatch();
+    //항목 클릭했을 때 실행
+    const onToggle = ()=> dispatch({type:'TOGGLE', id:id});
+    const onRemove = ()=> dispatch({type:'REMOVE', id:id})
     //여기서 지금 넘겨준 props들은 위의 styled에서 받아서 조건문을 생성할 때 쓰인다.
     return (
         <TodoItemBlock>
-            <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
+            <CheckCircle done={done} onClick={onToggle}>{done && <MdDone />}</CheckCircle>
             <Text done={done}>{text}</Text>
-            <Remove>
+            <Remove onClick={onRemove}>
                 <MdDelete/>
             </Remove>
         </TodoItemBlock>

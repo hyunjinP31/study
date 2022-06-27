@@ -1,0 +1,104 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+li { list-style: none;}
+.App{
+  width: 1200px;
+  margin: 0 auto;
+}
+.header {
+  height: 150px;
+  width: 100%;
+  text-align: center;
+}
+.header h2 {
+  font-size: 34px;
+  padding: 20px 0;
+}
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul li {
+  width: 17%;
+  background: #222;
+  border-radius: 4px;
+  height: 40px;
+  padding: 10px 0 ;
+  color: #fff;
+}
+.content ul li {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+.content ul li span {
+  width: 33%;
+}
+.content .em {
+  font-weight: bold;
+  border-top: 3px solid #222;
+}
+li.on {
+  background: slategray;
+  color: #fff;
+}
+.content ul li span.delete {
+  width: 50px;
+  opacity: 0;
+  color: crimson;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.content ul li:hover .delete{
+  opacity: 1;
+}
+.blackBg {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.whiteBox {
+  background: #fff;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-right: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.whiteBox span {
+  display: inline-block;
+  width: 70px;
+}
+.whiteBox input {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.close {
+  font-size: 48px;
+  color: #fff;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  cursor: pointer;
+}

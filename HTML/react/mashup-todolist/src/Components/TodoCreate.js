@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled,{css} from 'styled-components';
 import {MdAdd } from 'react-icons/md';
+import { useTodoDispatch, useTodoNextId } from '../todoContext';
 
 const CircleButton = styled.button`
     background: #38d9a9;
@@ -54,18 +55,39 @@ const Input = styled.input`
 
 const TodoCreate = () => {
     const [open, setOpen] = useState(false);
-    const onToggle = ()=> setOpen(!open);
+    const [ value, setValue] = useState('');
+    const onToggle = ()=> {
+        setOpen(!open);
+    };
+    const dispatch = useTodoDispatch();
+    const nextId = useTodoNextId();
+
+
+    const onChange = e=>setValue(e.target.value);
+    const onSubmit = e=>{
+        e.preventDefault(); //새로고침방지(submit의 이벤트 제거)
+        dispatch({
+            type: 'CREATE',
+            todo: {
+                id: nextId.current,
+                text: value,
+                done: false,
+            }
+        })
+        setValue('');
+        setOpen(false);
+        nextId.current += 1;
+    }
+
     return (
         <> {open && (
-                <InsertForm>
-                    <Input placeholder='할 일을 입력한 후 Enter 누르세요' />
+                <InsertForm onSubmit={onSubmit}>
+                    <Input placeholder='할 일을 입력한 후 Enter 누르세요' value={value} onChange={onChange}/>
                 </InsertForm>
             )}
             <CircleButton open={open} onClick={onToggle}>
                 <MdAdd />
             </CircleButton>
-            
-            
         </>
     );
 };
