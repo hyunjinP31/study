@@ -1,0 +1,155 @@
+﻿리액트 라우터
+패이지 이동
+* 기존 웹페이지 - 여러개의 페이지를 사용(새로운 페이지를 로드하는 방식)
+* 리액트 - SPA방식 새로운 페이지를 로드하지 않고 하나의 페이지 안에서 필요한 데이터만 가져오는 형태를 가짐
+라우팅
+사용자가 요청한 url에 따라 해당 url에 맞는 페이지를 보여주는 것.
+
+*React-Router : 신규페이지를 불러오지 않는 상황에서 각각의 url에 따라 선택된 데이터를 하나의 페이지에서 렌더링해주는 라이브러리
+
+라우터 설치
+npm install react-router-dom
+
+<Link>
+<NavLink> - 링크 클릭시 컴포넌트에 active 클래스를 붙여줌
+	*클릭한 링크의 스타일을 지정할 수 있음
+	<li><NavLink to="/product" className={({isActive})=>"green " + (isActive ? "okay" : "")}>상품페이지</NavLink></li>
+
+URL파라미터
+주소창에 데이터를 적어서 활용할 수 있도록 함
+- 사용법: 경로에 :(콜론)을 사용해서 설정.
+	ex> /product/:productId
+<Route path="/product/:productId" />
+<Route path="/product/:productId/:productName" element={<Product />} />
+<NavLink to="/product/1">
+
+useParams() --> 파라미터값을 가지고 있는 객체를 반환
+
+
+쿼리스트링
+/경로/id/name?(쿼리스트링시작)
+product/1/신발?search=productname&q=demo#text
+useLocation() --> 쿼리스트링 값을 가지고 있는 객체를 반환
+	- hach :주소의 #문자열 뒤의 값
+	- pathname: 현재 주소 경로
+	- search : ?포함한 쿼리스트링
+	- key : location 객체의 고유 값, 초기값은 default, 페이지가 변경될 때 마다 고유의 값이 생성된다.
+#text -> hash
+product/1/신발 -> pathname
+search=productname&q=demo -> search
+
+
+API 연동하기
+axios 라이브러리
+
+axios를 사용하여 get, put, post, delete 드으이 메서도르 api를 요청함
+rest api
+get : 데이터 조회
+post : 데이터 등록
+put : 데이터 수정
+delete : 데이터 제거
+
+axios 사용법
+import axios from 'axios';
+데이터 조회하기
+사용법> axios.get(경로)
+	ex> axios.get('/users/1');
+데이터 등록
+사용법> axios.post(경로,데이터정보)
+	ex> axios.post('/users/',{
+		username: "green",
+		name: "aaaa"
+	})
+
+
+https://jsonplaceholder.typicode.com/users
+https://jsonplaceholder.typicode.com/posts
+
+
+useState와 useEffect로 데이터 로딩하기
+useState 요청 상태를 관리
+1 .요청의 결과
+2. 로딩상태
+3. 에러
+useEffect 컴포넌트가 렌터링 되는 시점에 요청을 시작
+
+
+중첩 라우팅 (라우터 안에 서브 라이터가 있는 경우)
+1. Outlet 사용
+Outlet은 서브 라우터를 감싸는 메인 라우터에 적는다.
+<Routes>
+	<Route path="/" element={<Main />} />
+	<Route path="/Product" element={<Product />} />
+	<Route path="/detail" element={Detail/}>
+		<Route path="detail1" element={</Detail1>} />
+		<Route path="detail2" element={</Detail2>} />
+	</Route>
+</Routes>
+
+//detail 컴포넌트
+return(
+	<div>
+		상품상세보기입니다.
+		<Outlet />
+	</div>
+)
+
+2.부모 Route의 path마지막에 /* 표시 == 중첩 라우터의 사용을 명시적으로 표시
+자식 라우터는 부모 라우터 컴포넌트 안에 작성
+서브 라우터의 path는 슬러쉬 붙이지 않음
+Route와 Link 헷갈리지 말기..
+
+Routes컴포넌트는 여러 Route를 감싸서 그 중 url이 일치하는 라우트 단 하나만 렌더링
+Route는 path속성에 경로, element 속성에 컴포넌트를 넣어줌 <-- path-경로 이름 정해주는 것. element-실제로 보여줄 컴포넌트 태그 넣어주기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -36,6 +36,8 @@ import { useTodoState, useTodoDispatch } from '../TodoContext'
 useReducer + context API
 
 
+HOOK함수를 return 해주는 함수를 쓸 때는 함수 이름 앞은 use로 뒤의 단어의 첫 글자는 무조건 대문자를 쓴다.
+
 
 
 
