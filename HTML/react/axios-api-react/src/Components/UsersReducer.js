@@ -50,6 +50,8 @@ const UsersReducer = () => {
         fetchUsers();
     },[])
 
+    //초깃값을 다시 객체구조분해할당으로 변수를 받아온 것.
+    //초깃값은 useReducer 함수에 들어간 그 초깃값이 맞음
     const { loading, data, error } = state;
     if (loading) return <div>로딩중...</div>;
     if (error) return <div>에러발생</div>;

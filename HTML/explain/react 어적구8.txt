@@ -1,0 +1,79 @@
+﻿리액트 - 싱글 페이지 애플리케이션
+한 개의 페이지로 이루어진 애플리케이션
+
+상태
+상태가 변경될 때 리렌더링, 부모 컴포넌트가 변경될 때 하위 컴포넌트까지 전부 리렌더링
+
+useState(초깃값) -> [ state, setState ] (상태는 js의 변수처럼 바로 접근 불가)
+하나당 하나의 상태만을 관리
+해당 값에만 접근할 수 있는 것이 state(벡터함수), 그 값을 변경할 수 있는 것이 setState(세터함수)
+
+구조분해할당으로 배열을 변수에 바로 담기 
+const state = useState(10)[0];
+const setState = useState(10)[1];
+== const [ state, setState ] = useState(10)
+
+function reducer(state, action){
+	switch(action.type){
+		case "CHANGE_USER":
+			return{
+				해당 case일 때 실행할 구문
+			}
+	}
+}
+
+
+useReducer(함수, 초깃값) -> [ state, dispatch ]		여러개의 상태를 묶음으로 관리
+dispatch(액션객체) -> reducer를 실행
+dispatch의 값은 항상 객체로, 제일 처음엔 type을 적어줘야 하며, 해당 case에서 action 객체가 가지고 있어야 하는(쓰여야 하는) 값이 있으면 뒤에 추가로 받아와 전달해준다.(id가 대표적.)
+dispatch({
+	type: "CHANGE_USER",
+	id: id, //컴포넌트에서 id를 받아와 action 객체를 통해 전달해줌
+})
+
+
+props : 부모 컴포넌트가 하위 컴포넌트에게 전달해주는 값
+App컴포넌트(상태) -> Users 컴포넌트 -> UserList 컴포넌트
+function onDelete(){ 상태에서 유저 한 명만 제거하는 함수 } -> App내에 존재
+해당 함수를 하위 컴포넌트에서 발생시키려면 전달해야 함.(props 전달은 자식 컴포넌트에만 줄 수 있음<하위 컴포넌트라고 무조건 전부 불러서 줄 수 없음>)
+<Users usersArr={usersArr} /> //App에서 Users 컴포넌트로 값 전달해주기
+<UserList user={user}> //Users에서 UserList 컴포넌트로 값 전달해주기
+
+Context API
+프로젝트 안에서 전역적으로 사용할 수 있는 값을 관리(바로 전달 가능)
+createContext(초깃값); -> context를 리턴(컴포넌트 형태)
+const MyContext = createContext(초깃값); //context 생성
+context 컴포넌트로 감싸주면 context컴포넌트의 하위 컴포넌트들은 해당 값을 바로 import 해 사용 가능
+<MyContext.Provider value="green">
+	<App></App>
+</MyContext.Provider>
+context 값 사용하기
+const name = useContext(컨텍스트 이름) -> context가 가진 value값을 반환
+
+
+
+
+동기 -> 앞의 작업이 끝나야 뒤의 작업에 들어감.
+비동기 -> 앞의 작업이 끝나지 않아도 뒷줄을 읽어내려 갈 수 있음
+await 키워드는 async 키워드가 붙어있는 함수 내부에서만 사용할 수 있음
+await 키워드를 사용하면 일반 비동기 처리처럼 바로 실행이 다음 라인으로 넘어가는 것이 아니라 결과값을 얻을 수 있을 때까지 기다린다.
+
+
+index에서 제일 먼저 App을 BrowserRouter로 감싸준다.
+import { BrowserRouter } from 'react-router-dom';
+<BrowserRouter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
