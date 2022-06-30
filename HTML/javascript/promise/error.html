@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // try{
+        //     alert('try 블럭 실행');
+        //     //try가 실행되고 catch도 실행(에러가 발생되는 시점부터 catch에게 주도 이전)
+        //     green;
+        // }
+        // catch(e){
+        //     alert('catch 블럭 실행');
+        // }
+
+
+
+        let json = '{"name""green","age":30}';
+        try{
+            let user = JSON.parse(json);
+            //위의 문자를 객체로 변경
+            console.log(user.name);
+            console.log(user.age)
+        }
+        catch(e){
+            console.log('데이터에 에러가 있어 재요청을 합니다.');
+        }
+        //try catch를 적지 않으면 에러가 발생했을 때 스크릡트 자체가 죽어 그 뒤에 올바른 구문이 있어도 실행시키지 못함
+        console.log('dddddddddddd')
+
+        let json2 = '{"age":20}';
+        try{
+            let user2 = JSON.parse(json2);
+            //이름이 없으므로 에러 발생
+            //해당 데이터가 없으면 try에서 자체적으로 에러를 발생시킴.
+            if(!user2.name){
+                throw new SyntaxError("불완전한데이터: 이름이 없음")
+            }
+        }
+        catch(e){
+            console.log(e," catch실행");
+            console.log(e.name);
+            console.log(e.message);
+        }
+        //throw 연산자 - 에러 처리를 통보
+        //throw <error object>
+        //자바스크립트 에러 객체 생성자
+        //Error, SyntexError, ReferenceError, TypeError
+        let e = new Error('에러 발생');
+        // new SyntaxError(message);
+        // new ReferenceError(message);
+
+        
+
+    </script>
+</body>
+</html>
