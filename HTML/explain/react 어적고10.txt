@@ -1,0 +1,82 @@
+﻿웹브라우저
+api
+데이터베이스 - mySQL
+
+1. 데이터베이스 프로그램 설치
+2. 데이터베이스 생성
+3. 테이블 생성 (데이터를 논리적으로 나누도록 컬럼을 설정)
+4. 테이블에 데이터 추가
+
+
+sqlite 데이터베이스
+- 개발용으로 많이 사용
+- ORM(Ovject Relational Mapping): 서버에서 데이터를 손쉽게 다루도록 도와주는 툴
+- 데이터베이스 모델링을 쉽게 할 수 있음
+- SQL을 사용하지 않고 CRUD 작업을 할 수 있음
+
+Sqlite와 Sequelize 사용하기
+1. sqlite와 sequelize 설치(서버에서)
+npm install sequelize sqlite3
+
+2. sequelize 기본환경 설치
+sequelize init
+
+3. config.json 수정하기
+
+DB Browser for SQLite 설치
+Sqlite 데이터베이스를 GUI환경에서 보여주는 도구
+
+github.com/design-view/lamp-shopping-server
+
+* sqlite 데이터 조회하기
+불러오기
+const models = require('./models');
+여러개의 데이터를 조회하기
+models.Product.findAll
+.then(products=>{
+	res.send({
+		products
+	})
+})
+하나만 조회하기
+models.Product.findOne({
+	//조건절 넣어주기
+	where: {
+		id:1,
+	}
+})
+
+테이블에 데이터를 넣기(insert)
+moduls.Product.create
+
+moduls.Product.create({
+	name: "",
+	price: 50000,
+	seller: '',
+	imageUrl: '/images/stuff.png'
+})
+.then(result=>{
+	console.log("상품생성결과", result)
+})
+.catch(e=>{
+	console.error(e)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
