@@ -1,0 +1,103 @@
+﻿리액트
+상태가 변경될 때 리렌더링 된다
+use가 붙은 함수를 Hook
+1. useState(초기값) => [ state, f ]
+* 상태값 관리
+const [ state, setState ] = useState(초기값)
+setState(변경될 값)
+2. useReducer()
+*어떤 경우에 상태가 어떻게 업데이트 될 건지 관리
+useReducer(함수,초기값) => [ state, 함수를 실행시키는 함수 ]
+
+const users = [
+	{
+		id:1,
+		name: "a",
+		age: 30,
+		active: false,
+	}
+]
+const [ state, dispatch ] =useReducer(reducer, initailState);
+dispatch({action})
+dispatch({
+	type: 'USER_DELETE',
+	id: 10
+})
+function reducer (state,action){
+	switch(action.type){
+		case'USER_DELETE'"
+			return state.filter(list=> list.id !== action.id);
+		case'USER_CREATE':
+			return state;
+		case'USER_TOGGLE':
+			return state;
+		default:
+			return state;
+	}
+}
+
+
+파일 업로드 관리하기
+업로드 이미지를 관리하는 스토리지 서버
+multer
+const multer = require('multer');
+const upload = multer({dest: 'upload/'})
+
+이미지 파일을 post로 요청이 왔을 때 업로드라는 폴더에 이미지를 저장
+app.post("/image",upload.single('image'),(req, res)=>{
+	const file = req.file;
+	res.send({
+		imageUrl: file.path
+	})
+})
+
+api서버
+데이터베이스
+스토리지서버
+
+//sequelize 설명
+https://baeharam.netlify.app/posts/Node.js/Node.js-Sequelize-다루기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

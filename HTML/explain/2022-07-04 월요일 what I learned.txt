@@ -1,0 +1,56 @@
+﻿오늘 뭘 했나
+
+server 만들기
+폴더 생성 (npx create-react-app 아님)
+npm init(package-json 만들어줌)
+npm으로 express, cors, sequelize, multer, sqlite3 설치(필요한 파일이나 폴더가 생성됨)
+그리고 그 뭐냐.. 그걸한다
+
+서버 다시 한 번 보기..
+create랑 delete 만듦 이미지 불러오는 거 다시 보기(upload 폴더 만들어서 어적고)
+
+콜백함수에 인자를 넣어야 하면 함수로 다시 감싸서 넣을 것
+
+import {useNavigate} from 'react-router-dom';
+
+지워야 할 아이템이 있는 경로의 정확한 주소를 작성
+axios.delete(`http경로/path경로/:파라미터`)
+axios.delete(`http://localhost:3000/product/${id}`);
+
+
+nodemon 서버를 감시해서 새로운 업데이트가 있을 때마다 알아서 적용해줌. npm 설치
+nodemon server.js
+(안 되면) npx nodemon server.js
+
+php $_POST 를 생각하면 form 안에 있는 input들에 적힌 데이터를 submit할 때 보내주는 역할이었음 비슷함
+
+app.post('path경로', (req, res)=>{
+	//res는 굳이 해야할 역할이 없다면 불러주지 않아도 된다. 서버에서 http 로 응답하는 용도
+	const body = req.body;(데이터가 바디에 담김)
+	const { name1, name2, name3, name4 } = body; body에 담긴 값들을 구조분해 할당 input의 name값이 key값으로 담겨옴. 
+	//테이블에 넘어온 데이터들을 담아줌 이름이 같기 때문에 한 번만 적어줘도 됨
+	models.테이블명.create({
+		name1: name1,
+		name2: name2,
+		name3,
+		name4,
+	}).then(result=>{
+		console.log('CREATED!')
+	})
+	.catch(e){
+		console.log(e);
+	}
+}
+})
+
+app.delete('/path경로/:파라미터', async (req, res)=>{
+	const params = req.params;
+	models.사용중인테이블명.destroy({조건절})
+	.then (result=> 성공했을 때 실행문. 성공한 시점에서 데이터를 지운다는 목저을 달성했기 때문에 딱히 적을 건 없고 콘솔에 지워졌다고 찍어나 주자)
+})
+
+app.delete('/product/:id', async (req,res)=>{
+	const params = req.params;
+	models.Product.destroy({ where: {id: params.id} })
+	.then(result => res.send('DELETED!'))
+})
