@@ -1,0 +1,93 @@
+﻿rest란
+Representational State Transfer 의 약자
+자원의 이름응로 구분하여 해당 자원을 상태를 주고 받는 모든 것을 의미
+
+웹의 기존 기술과 http프로토콜을 그대로 활용하여 웹의 장점을 최대한 활용할 수 있는 스타일이다.
+CRUD
+create	생성	post
+read	읽기	get
+update	수정	put
+delete	삭제	delete
+
+클라우드
+서버배포 heroku
+회원가입 -> 로그인 후 -> create new app
+deploy -> Heroku CLI. 설치
+heroku git:remote -a app name
+git push heroku main
+
+react배포 vercel
+new project
+BUILD COMMAND CI=false react-scripts build
+선생님 블로그 참고
+
+
+서버배포
+1. 포트 번호 변경
+2. json script start 넣기
+
+
+
+
+
+useEffect(함수,[])<- 두번째 인자가 의존성 배열(해당 감시대상이 변경될 때 마다 재연산을 시켜줌)
+
+Memoization 메모이제이션
+
+1) useMemo
+값 재사용하기
+계속 재연산 하지 않고 연산된 값을 재사용하도록 함
+useMemo(콜백함수, 의존성 배열)
+ex> const value = useMemo(()=>{
+	return calulate()
+})
+2) useCallback
+함수 재사용하기
+특정 함수를 새로 만들지 않고 재사용하고 싶을 때 사용
+
+useCallback(콜백함수, 의존성 배열)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

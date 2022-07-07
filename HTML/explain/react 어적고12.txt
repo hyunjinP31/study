@@ -1,0 +1,32 @@
+﻿고객관리
+green_customer_client
+Header
+Footer
+CustomerList
+Customer
+DetailCustomer
+
+
+라이브러리
+axios
+react-router-dom
+material-ui
+npm install react-daum-postcode
+
+고객관리 서버
+api서버
+node.js
+express
+
+데이터베이스 AWS Amazon Web Servic
+
+서버만들기
+npm init (enter 연속
+express, cors
+
+
+localhost mysql 연결 시키기
+
+ALTER USER '[계정]'@'[호스트]' IDENTIFIED WITH mysql_native_password BY '[비밀번호]';
+
+ex> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
