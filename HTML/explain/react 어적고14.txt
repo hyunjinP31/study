@@ -1,0 +1,111 @@
+﻿리덕스 미들웨어
+
+1. 미들웨어 만들기
+2. thunk 미들웨어 사용하기
+
+dispatch -> 미들웨어 -> reducer
+
+dispatch를 호출하면 reducer가 호출되는 데 reducer가 호출됙 전에 중간에서 비동기 작업을 해줌
+
+const middleware = store => next => action =>{
+	
+}
+
+function middleware(store){
+	return function(next){
+		return function(action){
+			하고싶은 작업
+		}
+	}
+}
+
+
+
+
+카운터 만들기
+1. 리덕스 모듈
+액션타입, 초기값, 액션생성함수, 리듀서
+modules 폴더
+	1) counter.js - 카운터를 관리하는 리듀서
+	2) index.js - 여러개의 리듀서를 하나로 합치기 rootReducer(combineReducer로 여러 리듀서를 combine)
+
+2. 리액트 프로젝트에 리덕스 사용하기
+	1) index.js 파일에서 store 생성하기
+		createStore(rootReducer)
+	2)<Provider store={store}><App /> </Provider>
+3. 컴포넌트 만들기
+	1) 프리젠테이셔널 컴포넌트 - props로 컨테이너 컴포넌트에서 필요한 상태를 받아옴
+	2) 컨테이너 컴포넌트 - 스토어에 접근(상태와 관련된 모든 작업)
+4. 미들웨어 만들기
+	1) middleware 폴더생성 myLogger.js 만들기
+	2) 미들웨어 사용하기
+		index.js -> applyMiddleware 함수 불러오기
+		createStore의 인수로 추가
+		createStore(rootReducer. appluMiddleware(myLogger))
+5. DevTools 사용하기
+	composeWithDevTools 불러오기
+	createStore(rootReducer. composeWithDevTools(appluMiddleware(myLogger)))
+6. redux-thunk
+리덕스에서 비동기 작업 처리할 때 가장 많이 사용하는 미들웨어. 액션 객체가 아닌 함수를 디스패치 할 수 있음.
+라이브러리 설치 npm or yarn redux-thunk
+미들웨어에 추가
+createStore(rootReducer. composeWithDevTools(appluMiddleware(ReduxThunk, myLogger)))
+
+//액션의 타입이 함수면 액션에 dispatch와 state를 반환해서 파라미터로 사용할 수 있게끔 한다
+const thunk = store => next => action =>{
+	typeof action === "function" ? action(store.dispatch, store.getState) : next(action);
+}
+
+dispatch({ type: INCREASE })
+
+
+7. 카운트 딜레이 하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

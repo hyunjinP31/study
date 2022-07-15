@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>With</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <style>
+        .component{
+            border: 5px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="yellow"></div>
+    
+    <script>
+        //스토어 만들기 state와 reducer를 관리
+        //Redux.createStore(reducer)
+
+        function reducer(state, action){
+            let newState;
+            //초깃값이 없을 때.(가장 처음 값)
+            if(state==undefined){
+                //return 되는 값 == state
+                return {color: "yellow"};
+            }
+            if(action.type ==="CHANGE_COLOR"){
+                //assign(안에 있는 객체들을 합쳐줌 == 스프레드 구문을 쓰는 것과 동일)
+                newState = Object.assign({}, state, {color: action.color});
+                console.log(newState);
+            }
+            //reducer가 return 해주는 애가 state가 됨
+            return newState;
+        }
+
+        let store = Redux.createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+        function red(){
+            let state = store.getState();
+            //state값에 접근하려면 getState()함수를 실행
+            document.querySelector('#red').innerHTML=`
+                <div class="component" style="background-color: ${state.color}">
+                    <h1>red</h1>
+                    <button onclick="store.dispatch({type:'CHANGE_COLOR', color:'red'})">
+                        redcolor
+                    </button>
+                </div>
+            `
+        }
+        //구독
+        
+        red();
+        store.subscribe(red);
+
+        function green(){
+            let state = store.getState();
+            document.querySelector('#green').innerHTML=`
+                <div class="component" style="background-color: ${state.color}">
+                    <h1>green</h1>
+                    <button onclick="store.dispatch({type:'CHANGE_COLOR', color:'green'})">
+                        greencolor
+                    </button>
+                </div>
+            `
+        }
+        store.subscribe(green);
+        green();
+        function yellow(){
+            let state = store.getState();
+            document.querySelector('#yellow').innerHTML=`
+                <div class="component" style="background-color: ${state.color}">
+                    <h1>yellow</h1>
+                    <button onclick="store.dispatch({type:'CHANGE_COLOR', color:'yellow'})">
+                        yellowcolor
+                    </button>
+                </div>
+            `
+        }
+        store.subscribe(yellow);
+        yellow();
+    </script>
+  
+</body>
+</html>

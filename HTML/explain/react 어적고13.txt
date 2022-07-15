@@ -1,0 +1,82 @@
+﻿redux
+
+스토어(state, reducere)
+
+1. 하나의 애플리케이션은 하나의 스토어가 있다.
+2. 상태는 읽기 전용이다.
+3. 변화를 일으키는 함수 리듀서를 사용해서 이전의 상태를 절대로 변경하지 않고 새로운 상태객체를 만들어서 반환한다.
+똑같은 파라미터로 호출 된 리듀서 함수는 똑같은 결과값을 나타내야 한다.
+규모가 작은 프로젝트나 관리할 상태가 몇 개 없다면 굳이 찾아 쓰지 않아도 된다.
+
+new Date()/ Math.random() / axios.get 을 쓰면 안 됨(똑같은 값을 반환하지 못하기 때문)
+
+learn-redux
+스토어
+reducer() //실제로 상태를 관리할 함수
+createStore() //스토어 만들기
+store.getState() //스토어에서 상태 가지고 오기
+store.subscribe() //변화하는 대상을 감시해서 변경될 때 새로 리렌더링 되도록 해주기
+store.dispatch() //상태를 관리하는 함수를 내가 쓸 수 있도록 만들어 줌
+
+
+리액트 프로젝트에 리덕스를 사용하기
+
+액션, 리덕스
+하나의 파일에 만들 수도 있음
+액션 생성함수, 액션 타입, 리듀서를 하나의 파일에 작성하기
+-> ducks 패턴
+
+reducer는 export default로 내보내기
+액션생성함수는 export로 내보니기
+액션생성함수, 액션타입, 리듀서가 작성된 파일을 리덕스 모듈
+
+conuter.js
+상태 number, diff
+todos.js
+
+
+루트 리듀서 만들기
+하나의 프로젝트에 여러개의 리듀서가 있을 때 한 리듀서로 합쳐서 사용
+합쳐진 리두서를 루트리듀서 라고 부름
+* 리덕스의 내장함수인 combineReducers() 함수사용
+
+스토어 생성하기
+index.js/src
+const store = createStore(rootReducer)
+리액트 프로젝트에 리덕스 사용하기
+npm install react-redux
+
+import { Provider } from 'react-redux';
+<Provider store={store}>
+	<App />
+</Provider>
+* Provider로 store를 넣어서 App을 감싸게 되면 렌더링하는 그 어떤 컴포넌트에서도 리덕스 스토어로 접근할 수 있음
+
+카운터 구현하기
+1) 프리젠테이셔널 컴포넌트
+	리덕스 스토어에 직접적으로 접근하기 않고 필요한 값, 함수를 props로만 받아와서 사용하는 컴포넌트
+2) 컨테이너 컴포넌트
+	리덕스 스토어의 상태를 조회하거나 액션을 디스패치 할 수 있는 컴포넌트
+	html 태그들을 사용하지 않고 프리젠테이셔널 컴포넌트를 불러와서 사용
+
+
+import { composeWithDevTools } from 'redux-devtools-extension'
+createStore(rootReducer, composeWithDevTools())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

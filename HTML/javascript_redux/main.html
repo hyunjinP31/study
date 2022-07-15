@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>WithOut</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+</head>
+<body>
+    <div id="subject"></div>
+    <div id="toc"></div>
+    <div id="control"></div>
+    <div id="content"></div>
+
+    <script>
+    function subject(){
+        document.querySelector('#subject').innerHTML =`
+            <header>
+                <h1>web</h1>
+                hello, web!
+            </header>
+        `
+    }
+    function toc(){
+        //상태값 저장
+        let state = store.getState();
+        let liTags = "";
+        state.contents.forEach(li=>{
+            liTags = liTags + `
+                <li><a href="${li.id}" onclick="
+                    event.preventDefault();
+                    let action = {type:'SELECT', id: ${li.id}}
+                    store.dispatch(action);
+                    ">${li.title}</a></li>
+            `
+        })
+        document.querySelector('#toc').innerHTML=`
+            <nav>
+                <ul>
+                    ${liTags}
+                </ul>
+            </nav>
+        `
+    }
+    function control(){
+        let state = store.getState();
+        document.querySelector('#control').innerHTML=`
+            <ul>
+                <li><a href="#" onclick="
+                        event.preventDefault();
+                        store.dispatch({
+                            type: 'CHANGE_MODE',
+                            mode: 'create',
+                        })
+                    ">create</a></li>
+                <li><input type="button" value="delete" onclick="
+                        store.dispatch({
+                            type: 'DELETE',
+                        })
+                    "></li>
+            </ul>
+        `
+    }
+    function content(){
+        let state = store.getState();
+        //상태의 모드가 create면
+        if(state.mode ==='create'){
+            document.querySelector('#content').innerHTML=`
+                <article>
+                    <form onsubmit=
+                        "event.preventDefault();
+                        let title = this.title.value;
+                        let desc = this.desc.value;
+                        store.dispatch({
+                            type:'CREATE',
+                            title: title,
+                            desc: desc,
+                        })
+                    ">
+                        <p><input type='text' name='title' placeholder='title'/></p>
+                        <p><textarea name='desc' placeholder='description'></textarea></p>
+                        <p><button type='submit'>입력</button></p>
+                    </form>
+                </article>
+            `
+        }
+        //상태의 모드가 read면
+        else if (state.mode ==='read'){
+            let aTitle, aDesc;
+            state.contents.forEach(li=>{
+                if(li.id ===state.selected_id){
+                    aTitle = li.title;
+                    aDesc = li.desc;
+                }
+            })
+            document.querySelector('#content').innerHTML=`
+                <article>
+                    <h2>${aTitle}</h2>
+                    ${aDesc}
+                </article>
+            `
+        }
+        else if(state.mode === 'delete'){
+            document.querySelector('#content').innerHTML=`
+                <div>
+                    DELETED
+                </div>
+            `
+        }
+        //상태 모드가 welcome이면
+        else if (state.mode === 'welcome'){
+            document.querySelector('#content').innerHTML=`
+                <article>
+                    <h2>welcome</h2>
+                    hello redux!!!
+                </article>
+            `
+        }
+        
+    }
+
+    //리듀스 함수 reducer가 리턴해주는 값이 상태
+    function reducer(state, action){
+        //상태릐 초기값 설정
+        if(state === undefined){
+            return {
+                max_id: 2,
+                mode: 'welcome',
+                selected_id: null,
+                contents: [
+                    {id:1, title:'HTML', desc:"HTML is..."},
+                    {id:2, title:'React', desc:"React is..."},                   
+                ]
+            }
+        }
+        let newState;
+        if(action.type === 'SELECT'){
+            newState = Object.assign({},state, {selected_id:action.id, mode: 'read'})
+        }
+        else if (action.type === 'CREATE'){
+            let newMaxid = state.max_id + 1;
+            let newContents = state.contents.concat(); //원본 배열을 하나 더 만들어서 newContent에 넣어줌
+            newContents.push({ id: newMaxid, title: action.title, desc: action.desc})
+            //let newContent = [...state.contents, {id: newMaxid, title: action.title, desc: action.desc}]
+            newState = Object.assign({},state, {
+                max_id: newMaxid,
+                contents: newContents,
+                mode: 'welcome',
+            })
+        }else if(action.type === 'CHANGE_MODE'){
+                newState = Object.assign({},state,{
+                    mode: action.mode
+                })
+        }else if(action.type === 'DELETE'){
+            let newContent = state.contents.filter(li=>{
+                return li.id !== state.selected_id
+            })
+            newState = Object.assign({},state, {contents: newContent, mode: 'delete'})
+        }
+        console.log(action, state, newState);
+        return newState
+    }
+
+    //스토어 생성
+    let store = Redux.createStore(reducer);
+    //스토어 구독하기 - state값이 변경되면 다시 실행
+    store.subscribe(content);
+    store.subscribe(toc);
+    store.subscribe(control);
+    subject();
+    toc();
+    control();
+    content();
+
+   </script>
+</body>
+</html>

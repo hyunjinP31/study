@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>WithOut</title>
+    <style>
+        .component{
+            border: 5px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="yellow"></div>
+
+    <script>
+        function red(){
+            document.querySelector('#red').innerHTML = `
+                <div class="component">
+                    <h1>red</h1>
+                    <button onclick="
+                        document.querySelector('#red').style.background='red'
+                        document.querySelector('#green').style.background='red'
+                        document.querySelector('#yellow').style.background='red'
+                    ">redColor</button>
+                </div>
+            `
+        }
+        function green(){
+            document.querySelector('#green').innerHTML = `
+                <div class="component">
+                    <h1>green</h1>
+                    <button onclick="
+                        document.querySelector('#green').style.background='green'
+                        document.querySelector('#red').style.background='green'
+                        document.querySelector('#yellow').style.background='green'
+                    ">greenColor</button>
+                </div>
+            `
+        }
+        function yellow(){
+            document.querySelector('#yellow').innerHTML = `
+                <div class="component">
+                    <h1>yellow</h1>
+                    <button onclick="
+                        document.querySelector('#yellow').style.background='yellow'
+                        document.querySelector('#red').style.background='yellow'
+                        document.querySelector('#green').style.background='yellow'
+                    ">yellowColor</button>
+                </div>
+            `
+        }
+        yellow();
+        green();
+        red();
+    </script>
+</body>
+</html>
