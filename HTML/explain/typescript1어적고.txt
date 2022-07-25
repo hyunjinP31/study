@@ -1,0 +1,18 @@
+﻿타입스크립트
+2012년 발표된 오픈소스 프로그래밍 언어
+대규모 javascript 애플리케이션 개발을 목적
+마이크로소프트에 의해 개발됨
+
+javascript: 동적타입언어
+	-하나의 변수에 여러개의 타입을 담을 수 있음
+typescript: 정적타입언어
+	-하나의 변수에 하나의 타입만 담을 수 있음
+
+웹이 알아듣지 못하는 언어이기 때문에 javascript로의 변환이 필요
+typescript -> javascript
+app.ts -> tsc app.ts -> app.js
+타입스크립트 연습할 수 있는 사이트(설치없이)
+https://www.typescriptlang.org/
+
+2) 타입스크립트 컴파일러
+환경설정 npm install -g typescript

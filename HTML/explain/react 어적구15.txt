@@ -68,7 +68,10 @@ dispatch({ type: INCREASE })
 
 
 
-
+리덕스 쓸 때(이제 리덕스 쓴다 == 미들웨어는 디폴트로 깔고간다)
+install redux
+install redux-devtools-extension
+install redux-thunk
 
 
 

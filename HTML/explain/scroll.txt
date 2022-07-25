@@ -1,0 +1,135 @@
+﻿// import React, { useState, useEffect } from "react";
+// import "antd/dist/antd.css";
+// import Dots from "./Dots";
+// import styled from "styled-components";
+
+// const LongDiv = styled.div`
+//     height: 100vh;
+// `
+
+// const NewWheelHandle = () => {
+//     const [scrollIndex, setScrollIndex] = useState(1);
+//     const WheelEvent = (e) => {
+//         const scrollBody = document.querySelector('.scrollBody');
+//         const { deltaY } = e;
+//         const [NdeltaY, setNdeltaY] = useState(null);
+//         setNdeltaY(deltaY);
+//         const { scrollTop } = scrollBody;
+//         const pageHeight = window.innerHeight;
+//         const onWheel = () => {
+//             //스크롤 내릴 때
+//             if (deltaY > 0) {
+//                 //2페이지(첫 페이지에서 1번 스크롤 down)
+//                 if (scrollTop >= 0 && scrollTop < pageHeight) {
+//                     setScrollIndex(2);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     });
+//                     //3페이지(첫 페이지에서 2번 스크롤 down)
+//                 } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+//                     setScrollIndex(3);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 2,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     });
+//                     //4페이지(첫 페이지에서 3번 스크롤 down)
+//                 } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+//                     setScrollIndex(4);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 3,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     });
+//                     //5페이지(첫 페이지에서 4번 스크롤 down)
+//                 } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+//                     setScrollIndex(5);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 4,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     });
+//                     //6페이지(첫 페이지에서 5번 스크롤 down)
+//                 } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {
+//                     setScrollIndex(6);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 5,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     });
+//                 }
+//             } else {
+//                 //1페이지 (가장 처음 화면 top값 0)
+//                 if (scrollTop >= 0 && scrollTop < pageHeight) {
+//                     setScrollIndex(1);
+//                     scrollBody.scrollTo({
+//                         top: 0,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                     //2페이지
+//                 } else if (scrollTop <= pageHeight * 2 && scrollTop >= pageHeight) {
+//                     setScrollIndex(2);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                     //3페이지
+//                 } else if (scrollTop <= pageHeight * 3 && scrollTop >= pageHeight * 2) {
+//                     setScrollIndex(3);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 2,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                     //4페이지
+//                 } else if (scrollTop <= pageHeight * 4 && scrollTop >= pageHeight * 3) {
+//                     setScrollIndex(4);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 3,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                     //5페이지
+//                 } else if (scrollTop <= pageHeight * 5 && scrollTop >= pageHeight * 4) {
+//                     setScrollIndex(5);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 4,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                     //6페이지
+//                 } else if (scrollTop <= pageHeight * 6 && scrollTop >= pageHeight * 5) {
+//                     setScrollIndex(6);
+//                     scrollBody.scrollTo({
+//                         top: pageHeight * 5,
+//                         left: 0,
+//                         behavior: "smooth",
+//                     })
+//                 }
+//             }
+//         }
+//         console.log(NdeltaY)
+//         useEffect(() => {
+//             onWheel();
+//         }, [NdeltaY])
+//     }
+//     return (
+//         <>
+//             <section className="scrollBody" onWheel={WheelEvent}>
+//                 <Dots scrollIndex={scrollIndex} />
+//                 <LongDiv>1</LongDiv>
+//                 <LongDiv>2</LongDiv>
+//                 <LongDiv>3</LongDiv>
+//                 <LongDiv>4</LongDiv>
+//                 <LongDiv>5</LongDiv>
+//                 <LongDiv>6</LongDiv>
+//             </section>
+//         </>
+//     );
+// };
+
+// export default NewWheelHandle;
