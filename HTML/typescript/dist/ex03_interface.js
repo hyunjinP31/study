@@ -20,5 +20,10 @@ let dog1 = {
     color: '흰색',
     age: 3
 };
+let dog2 = {
+    name: '크림',
+    color: '누렁',
+    age: 7
+};
 let arrA = [1, 2, 3, 4];
 let arrB = [0, 9, 8, 7];
