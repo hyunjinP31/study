@@ -104,6 +104,8 @@ T extends U
 구문> Textends U ? X : Y
 
 
+리액트 프로젝트를 만들때 타입스크립트 명시
+npx create-react-app ts-react-tutorial --template typescript
 
 
 
@@ -115,9 +117,11 @@ T extends U
 
 
 
-
-
-
+Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+    at MainSlide (http://localhost:3000/static/js/bundle.js:418:90)
+    at MainIndex
+    at div
+    at App
 
 
 
