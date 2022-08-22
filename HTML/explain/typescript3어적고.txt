@@ -1,0 +1,96 @@
+﻿ContextAPI
+1)컨텍스트 만들기
+const stateContext = createContext(null)
+<stateContext.Provider value={}>
+	<compo/>
+</stateContext.Provider>
+
+2)컨텍스트 사용하기
+const state = useContext(stateContext)
+
+SampleContext.tsx
+
+
+
+
+react-redux
+1. 모듈리듀서 작성
+	1) 액션타입지정
+	2) 액션생성함수
+	3) 초기값
+	4) 리듀서 함수
+-> 루트리듀서
+2. 스토어 생성
+const store = createStore(루트리듀서)
+<Provider store={store}>
+	<App />
+</Provider>
+3. 컴포넌트생성
+	1) 컨테이너 컴포넌트
+	2) 프레젠테이션 컴포넌트
+
+* 카운터
+1. 모듈리듀서 -> 루트리듀서 -> combine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

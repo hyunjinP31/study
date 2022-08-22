@@ -1,0 +1,6 @@
+﻿my메뉴
+MySQL 관리(UTF-8)	wiseblue31.dothome.co.kr/myadmin
+로그인
+mySQL 테이블 백업 블로그 참조
+가져오기로 백업한 테이블파일 업로드
+php 파일 mysqli_connection ('localhost', '사용자아이디', '비밀번호', '데이터베이스 이름')

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1 = {
+            name: "green",
+            age: 20,
+            print: function (){
+                console.log("hi");
+            }
+        }
+        console.log(user1.name);
+        user1.print();
+        function User (name, age){
+            //this = {};
+            this.name = name;
+            this.age = age;
+            this.print = () => {
+                console.log(`내 이름은 ${this.name}`)
+            }
+            //return this;
+        }
+        let user2 = new User("blue", 31);
+        user2.print();
+    </script>
+</body>
+</html>

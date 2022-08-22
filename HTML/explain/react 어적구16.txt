@@ -1,0 +1,89 @@
+﻿서버 구현
+1) join 경로 post 요청시 customer_members테이블에 데이터 추가하기
+비밀번호 암호화하여 저장
+등록일은 Now()함수를 사용해서 현재 날짜를 저장
+패스워드 암호화 알고리즘 라이브러리 - bcrypt설치
+
+https://www.npmjs.com/package/bcrypt //bcrypt site
+//bcrypt 예제 자세한 건 green customer server에서 확인
+bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+        // Store hash in your password DB.
+    });
+});
+
+2) login 경로 post 요청시 
+usermail 값으로 일치하는 데이터를 조회(select)
+입력받은 userpass를 암호화 하여 조회한 데이터의 암호화된 값과 비교하여 일치하는 지 확인
+일치하면 조회한 데이터를 응답해줌
+
+3.클라이언트 구현
+JoinForm.js 생성
+
+1) 로그인 리듀서 작성
+logincheck.js 
+2)Login컴포넌트 생성
+3)util 폴더 안에 cookie.js 생성
+
+작업환경
+react-cookie 라이브러리 install : npm install react-cookie
+1) util 폴더 안에 쿠키 파일 생성
+2)쿠키 파일 내용 작성 (쿠키 객체 생성, 생성 함수, 접근 함수, 삭제 함수)
+//쿠키 객체 생성
+const cookies = new Cookies();
+//쿠키 생성함수
+export const setCookie = (name, value, options) => {
+    return cookies.set(name, value, {...options});
+}
+//쿠키 접근함수
+export const getCookie = (name) =>{
+    return cookies.get(name);
+}
+//쿠키 삭제 함수
+export const removeCookie = (name) =>{
+    return cookies.remove(name)
+}
+3) cookie가 생성되어야 하는 시점(컴포넌트)에 가서 cookie 생성
+let expires = new Date();
+//60분 더한 값으로 변경
+expires.setMinutes(expires.getMinutes()+60);
+//쿠키를 현재시간(생성시간) + 60분 까지만 유지시키겠다.
+setCookie('usermail', `${usermail}`, {path: '/', expires});
+setCookie('username', `${username}`, {path: '/', expires});
+
+SELECT DATE_FORMAT(NOW(),'%Y년%m월%d일 %H시%i분%S초') AS DATE FROM DUAL
+INSERT INTO `comet`.`members` (`userId`, `userPw`, `userBirth`, `userGender`, `userPhone`, `userName`, `userEmail`, `userAddr1`, `userAddr2`) VALUES ('ㅇㅈㅈ', 'ㅇㅈㅇㅇㅈㅇ', DATE_FORMAT('2001-01-01','%Y년%m월%d일'), 'ㅇㅈㅇㅈ', '010-1111-1111', '호ㅓㅓㅛㅎ', '효ㅓ허ㅛ', '효ㅓㅓ효', 'ㅓㅛ허효');
+
+
+
+
+
+
+
+We are sorry for the inconvenience but an unexpected exception has been raised by one of the MySQL Workbench modules
+In order to fix this issue we would kindly ask you to file a bug report. You can do that by pressing the [Report Bug] button below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
